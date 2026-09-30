@@ -1,0 +1,522 @@
+{
+  "shop": {
+    "name": "Aurae",
+    "domain": "auraevital.com",
+    "currency": "USD"
+  },
+  "syncedAt": "2026-09-30T00:00:00.000Z",
+  "products": [
+    {
+      "id": "gid://shopify/Product/15843634905374",
+      "numericId": "15843634905374",
+      "handle": "ashwagandha-plus",
+      "title": "CALM",
+      "productType": "Mental Clarity",
+      "vendor": "Aurae",
+      "tags": [],
+      "description": "Ashwagandha Plus is a carefully crafted formula combines essential vitamins with traditional adaptogens to help support everyday energy and vitality. Vitamin D3, B6, and B12 provide key nutrients that contribute to normal metabolism, healthy nervous system function, and overall wellness. L-Arginine helps support healthy circulation, while Maca and Panax Ginseng offer plant-based support for stamina and balance.KSM-66® Ashwagandha and Shatavari powders bring centuries of traditional botanical wisdom into a modern supplement. These functional botanicals support a normal response to occasional stress, relaxation, and overall vitality. Each ingredient is included in precise amounts to complement one another and maintain a clean, effective blend.Packaged in vegetarian-friendly HPMC capsules, this supplement is easy to incorporate into your daily routine. As a dietary supplement, adults take two (2) capsules daily, ideally with a meal. This blend is free from common allergens and artificial fillers, making it a versatile choice for those seeking a plant-forward approach to wellness.* Ingredients: Vitamin D3 (as Cholecalciferol) (20 mcg), Vitamin B6 (as Pyridoxine Hydrochloride) (2.5 mg), Vitamin B12 (as Methylcobalamin 1%) (25 mcg), KSM-66® Ashwagandha Extract (standardized to 5% Withanolides) (600 mg), L-Arginine (300 mg), Maca Root Powder (Lepidium meyenii) (root) (150 mg), Panax Ginseng Powder (root) (100 mg), Shatavari Powder (Asparagus racemosus) (root) (50 mg), HPMC (vegetable capsule).Manufacturer's country: USAProduct amount: 60 capsules / 1.6 oz / 0.1 lbs / 44 gGross weight (oz/lbs/g): 2.56 oz / 0.16 lbs / 73 gSuggested use: As a dietary supplement, adults take two (2) capsules daily. For best results, take with 6-8 oz (177-237ml) of water or as directed by healthcare professional.Warning: Do not exceed recommended dose. Pregnant or nursing mothers, children under the age of 18, and individuals with known medical conditions should consult a physician before using this or any dietary supplement. KEEP OUT OF THE REACH OF CHILDREN. DO NOT USE IF SAFETY SEAL IS DAMAGED OR MISSING. STORE IN A COOL, DRY PLACE.*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.",
+      "descriptionHtml": "<p><strong>Ashwagandha Plus</strong> is a carefully crafted formula combines essential vitamins with traditional adaptogens to help support everyday energy and vitality. Vitamin D3, B6, and B12 provide key nutrients that contribute to normal metabolism, healthy nervous system function, and overall wellness. L-Arginine helps support healthy circulation, while Maca and Panax Ginseng offer plant-based support for stamina and balance.<br></p><p>KSM-66® Ashwagandha and Shatavari powders bring centuries of traditional botanical wisdom into a modern supplement. These functional botanicals support a normal response to occasional stress, relaxation, and overall vitality. Each ingredient is included in precise amounts to complement one another and maintain a clean, effective blend.<br></p><p>Packaged in vegetarian-friendly HPMC capsules, this supplement is easy to incorporate into your daily routine. As a dietary supplement, adults take two (2) capsules daily, ideally with a meal. This blend is free from common allergens and artificial fillers, making it a versatile choice for those seeking a plant-forward approach to wellness.*</p><p> </p><p><strong>Ingredients:</strong> Vitamin D3 (as Cholecalciferol) (20 mcg), Vitamin B6 (as Pyridoxine Hydrochloride) (2.5 mg), Vitamin B12 (as Methylcobalamin 1%) (25 mcg), KSM-66® Ashwagandha Extract (standardized to 5% Withanolides) (600 mg), L-Arginine (300 mg), Maca Root Powder (Lepidium meyenii) (root) (150 mg), Panax Ginseng Powder (root) (100 mg), Shatavari Powder (Asparagus racemosus) (root) (50 mg), HPMC (vegetable capsule).</p><p><strong>Manufacturer's country:</strong> USA</p><p><strong>Product amount: </strong>60 capsules / 1.6 oz / 0.1 lbs / 44 g</p><p><strong>Gross weight (oz/lbs/g)</strong>: 2.56 oz / 0.16 lbs / 73 g</p><p><strong>Suggested use:</strong> As a dietary supplement, adults take two (2) capsules daily. For best results, take with 6-8 oz (177-237ml) of water or as directed by healthcare professional.</p><p><strong>Warning: </strong>Do not exceed recommended dose. Pregnant or nursing mothers, children under the age of 18, and individuals with known medical conditions should consult a physician before using this or any dietary supplement. KEEP OUT OF THE REACH OF CHILDREN. DO NOT USE IF SAFETY SEAL IS DAMAGED OR MISSING. STORE IN A COOL, DRY PLACE.</p><p><br></p><p><strong>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</strong></p> <p>\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/4c36cdfa54b26cb4291c359dc2cd7910d868f8ae-125x181.png\" alt=\"Gluten-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/f99540cc3d3f192a68004f4518d57b0cd7c27aa7-125x181.png\" alt=\"Antibiotic-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/0e9fc04e2f9353234d2b7794b96613f19c576efb-126x183.png\" alt=\"Non-GMO\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/2390692fa16a1bad9ae4453609bcd8b61afbb0b2-149x180.png\" alt=\"Vegetarian\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/a007d72855c1d7a309b8b6dec5eadf939bb8a80d-125x181.png\" alt=\"Corn-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/e2132e2f64f15727e375c7aa509fedd7bdcf1ae8-126x182.png\" alt=\"Hormone-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/cc4066d915d42e195ee9cf5bbce01a99f006af1e-126x181.png\" alt=\"Lactose-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/f7e562d6bb212503da89f944a0d799171e6d48fe-125x181.png\" alt=\"Allergen-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/5d63559a8d2977b109844a6f2e231d646d51c76d-520x641.png\" alt=\"Halal\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/cdfc952372e17b0816769aa917a3edb008f07af3-126x182.png\" alt=\"Alcohol Free\" style=\"height: 6rem; width: auto;\"></p>",
+      "images": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/C4A885DF-7266-4018-A871-FE2E1C3A767E.png?v=1785741006",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/193CE29E-401B-4CF6-AB03-08858EF14D4E.png?v=1785741006",
+          "altText": null,
+          "width": 1024,
+          "height": 1047
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/99FE715C-657C-461C-91CA-1A466D96C320.png?v=1785741006",
+          "altText": null,
+          "width": 1122,
+          "height": 1402
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/0238089F-4898-4837-AB77-BE80CA541E96.png?v=1785741006",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/13F55C19-88E6-4189-9DA4-75AC0A74CC13.png?v=1785741006",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/06B83B33-14DC-43CE-9BDD-6F06EC678A76.png?v=1785741006",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/2ad9601b2a71e9f00805797612b4db821614d226-1087x1282.png?v=1785469460",
+          "altText": null,
+          "width": 1087,
+          "height": 1282
+        }
+      ],
+      "currency": "USD",
+      "price": 29.5,
+      "compareAtPrice": null,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/59719428505886",
+          "numericId": "59719428505886",
+          "title": "Default Title",
+          "sku": "JTP4APLU",
+          "price": 29.5,
+          "compareAtPrice": null,
+          "availableForSale": true
+        }
+      ],
+      "metafields": {
+        "cardIngredient": "KSM-66 ASHWAGANDHA + 7 ADAPTOGENS",
+        "cardDetail": "+ Vitamins D3, B6, B12 · Maca · Ginseng · Shatavari · L-Arginine",
+        "howToUse": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Take two (2) capsules daily, ideally with a meal and 6–8 oz of water, or as directed by your healthcare professional.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Do not exceed the recommended dose. If you are pregnant, nursing, under 18, or have a known medical condition, consult a physician before use.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Keep out of reach of children. Do not use if the safety seal is damaged or missing. Store in a cool, dry place.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Made in the USA · 60 capsules · 30-day supply\"}]}]}",
+        "whatsInside": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"KSM-66® Ashwagandha 600mg\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nStandardized to 5% withanolides — the compounds researchers point to when they study ashwagandha. KSM-66 is one of the most researched extracts available, and this is a full clinical-range dose.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Three essential vitamins\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nVitamin D3 (20mcg), B6 (2.5mg) and B12 (25mcg) — nutrients that support normal metabolism, nervous system function and everyday energy.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Four botanicals for balance\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nL-Arginine 300mg, Maca root 150mg, Panax Ginseng 100mg and Shatavari 50mg. Traditional adaptogens chosen to complement each other rather than pad the label.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"No proprietary blends.\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nEvery ingredient listed at its exact dose. Vegetarian HPMC capsule, free from common allergens and artificial fillers.\"}]}]}"
+      },
+      "isBundle": false
+    },
+    {
+      "id": "gid://shopify/Product/10121267970334",
+      "numericId": "10121267970334",
+      "handle": "grass-fed-hydrolyzed-collagen-peptides",
+      "title": "GLOW",
+      "productType": "Radiant Skin",
+      "vendor": "Aurae",
+      "tags": [],
+      "description": "Grass-Fed Hydrolyzed Collagen Peptide Powder is essential for maintaining a healthy level of collagen in the body. Collagen is one of the most abundant proteins in the body and is responsible for keeping the skin, hair, and nails healthy.Collagen also gives structure to tendons and joints. The body’s ability to produce collagen slowly decreases as it ages. Therefore, individuals interested in their health should consider supplementing with it to keep the body functioning correctly.Hydrolyzed collagen is absorbed more readily and uses the amino acids present to boost functionality. Hydrolyzed Collagen Peptides Powder is rich in the amino acids glycine, proline, hydroxyproline, and alanine, which help promote collagen synthesis in our body.Our Grass-Fed Collagen Peptide Powder contains collagen types 1 and 3 necessary for healthy skin, muscles, and bones.*Ingredients: Bovine Hide Collagen Peptides.Flavor: UnflavoredManufacturer Country: USAProduct Amount: 0.62lb (280g)Gross Weight: 13.9 oz / 0.83 lb / 376 gSuggested Use: Add one (1) level scoop to 8-10 oz. (236-295 ml) of chilled water or preferred beverage in a shaker cup and mix for about 5 seconds. Drink and enjoy a shake each day.Warning: Keep out of reach of children. Do not use if the safety seal is damaged or missing. Store in a cool, dry place.*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+      "descriptionHtml": "<p>Grass-Fed Hydrolyzed Collagen Peptide Powder is essential for maintaining a healthy level of collagen in the body. Collagen is one of the most abundant proteins in the body and is responsible for keeping the skin, hair, and nails healthy.</p><p><br></p><p>Collagen also gives structure to tendons and joints. The body’s ability to produce collagen slowly decreases as it ages. Therefore, individuals interested in their health should consider supplementing with it to keep the body functioning correctly.</p><p><br></p><p>Hydrolyzed collagen is absorbed more readily and uses the amino acids present to boost functionality. Hydrolyzed Collagen Peptides Powder is rich in the amino acids glycine, proline, hydroxyproline, and alanine, which help promote collagen synthesis in our body.</p><p><br></p><p>Our Grass-Fed Collagen Peptide Powder contains collagen types 1 and 3 necessary for healthy skin, muscles, and bones.*</p><p><br></p><p><strong>Ingredients: </strong>Bovine Hide Collagen Peptides.</p><p><strong>Flavor: </strong>Unflavored</p><p><strong>Manufacturer Country: </strong>USA</p><p><strong>Product Amount: </strong>0.62lb (280g)</p><p><strong>Gross Weight: </strong>13.9 oz / 0.83 lb / 376 g</p><p><strong>Suggested Use:</strong> Add one (1) level scoop to 8-10 oz. (236-295 ml) of chilled water or preferred beverage in a shaker cup and mix for about 5 seconds. Drink and enjoy a shake each day.</p><p><strong>Warning:</strong> Keep out of reach of children. Do not use if the safety seal is damaged or missing. Store in a cool, dry place.</p><p><br></p><p><strong>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</strong></p> <p>\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/4c36cdfa54b26cb4291c359dc2cd7910d868f8ae-125x181.png\" alt=\"Gluten-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/cc4066d915d42e195ee9cf5bbce01a99f006af1e-126x181.png\" alt=\"Lactose-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/a007d72855c1d7a309b8b6dec5eadf939bb8a80d-125x181.png\" alt=\"Corn-free\" style=\"height: 6rem; width: auto;\"></p>",
+      "images": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/F08388EC-28FA-401B-B3A6-72DDF6198518.png?v=1785736923",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/E8D8DC20-AE03-4BBE-B055-4466A0CB4404.png?v=1785516835",
+          "altText": null,
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/IMG-1130.png?v=1785736865",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/1739F62D-59A1-46CC-878E-942E32EE2E46.png?v=1785737099",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/1B528824-0720-42E0-91A4-01D153B3E5F0.png?v=1785516835",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/6872DA74-01DE-4CBE-990E-6F48D1671B29.png?v=1785516835",
+          "altText": null,
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/865E3C15-2279-4A09-9D09-14C8EEDBD304.png?v=1785516836",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "currency": "USD",
+      "price": 39.9,
+      "compareAtPrice": null,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/51926623650078",
+          "numericId": "51926623650078",
+          "title": "Default Title",
+          "sku": "RLC8COLL",
+          "price": 39.9,
+          "compareAtPrice": null,
+          "availableForSale": true
+        }
+      ],
+      "metafields": {
+        "cardIngredient": "GRASS-FED COLLAGEN TYPES 1 & 3",
+        "cardDetail": "+ glycine, proline, hydroxyproline · skin, hair, nails, joints",
+        "howToUse": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Add one level scoop to 8–10 oz of cold water or your drink of choice. Mix for about five seconds. Enjoy daily.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Made in the USA\",\"bold\":true},{\"type\":\"text\",\"value\":\" · 280g (9.88 oz) · 14 servings\"}]}]}",
+        "whatsInside": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Hydrolyzed Collagen Peptides\",\"bold\":true},{\"type\":\"text\",\"value\":\" — 20g per scoop\\n\\nSourced from grass-fed bovine hide. Hydrolyzed means the protein is broken into smaller peptides, so your body absorbs it more easily than whole collagen.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Type I & III Collagen\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nThe two types that make up most of your skin, hair, nails and connective tissue.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Naturally rich in four amino acids\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nGlycine, proline, hydroxyproline and alanine — the building blocks your body uses to make its own collagen.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"One ingredient. That's it.\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nNo fillers, no sweeteners, no proprietary blends. Unflavored and mixes clear, so it disappears into coffee, smoothies or water.\"}]}]}"
+      },
+      "isBundle": false
+    },
+    {
+      "id": "gid://shopify/Product/15843635003678",
+      "numericId": "15843635003678",
+      "handle": "resveratrol-50-600mg",
+      "title": "RADIANCE",
+      "productType": "Longevity",
+      "vendor": "Aurae",
+      "tags": [],
+      "description": "Resveratrol is a plant compound with potent antioxidant functionality. Resveratrol is found mainly in red wine, red grapes, berries, and peanuts. It is most concentrated in the skin of grape skins and seeds.Resveratrol has been linked to many exciting health benefits, such as supporting normal cholesterol, brain health, and controlling weight loss. These, coupled with antioxidant abilities, make the perfect daily supplement.*Ingredients: Resveratrol (Polygonum cuspidatum)(root) Complex Containing 50% Trans-Resveratrol, Hypromellose (vegetable capsule), Microcrystalline Cellulose.Manufacturer Country: USAProduct Amount: 60 capsGross Weight: 0.25lb (113g)Suggested Use: Take one (1) veggie capsule twice a day as a dietary supplement. For best results, take 20-30 min before a meal or as directed by your healthcare professional.Caution: Do not exceed recommended dose. Pregnant or nursing mothers, children under the age of 18, and individuals with a known medical condition should consult a physician before using this or any dietary supplement.Warning: Keep out of reach of children. Do not use if the safety seal is damaged or missing. Store in a cool, dry place.*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+      "descriptionHtml": "<p>Resveratrol is a plant compound with potent antioxidant functionality. Resveratrol is found mainly in red wine, red grapes, berries, and peanuts. It is most concentrated in the skin of grape skins and seeds.</p><p><br></p><p>Resveratrol has been linked to many exciting health benefits, such as supporting normal cholesterol, brain health, and controlling weight loss. These, coupled with antioxidant abilities, make the perfect daily supplement.*</p><p><br></p><p><strong>Ingredients:</strong> Resveratrol (Polygonum cuspidatum)(root) Complex Containing 50% Trans-Resveratrol, Hypromellose (vegetable capsule), Microcrystalline Cellulose.</p><p><strong>Manufacturer Country: </strong>USA</p><p><strong>Product Amount:</strong> 60 caps</p><p><strong>Gross Weight: </strong>0.25lb (113g)</p><p><strong>Suggested Use: </strong>Take one (1) veggie capsule twice a day as a dietary supplement. For best results, take 20-30 min before a meal or as directed by your healthcare professional.</p><p><strong>Caution:</strong> Do not exceed recommended dose. Pregnant or nursing mothers, children under the age of 18, and individuals with a known medical condition should consult a physician before using this or any dietary supplement.</p><p><strong>Warning:</strong> Keep out of reach of children. Do not use if the safety seal is damaged or missing. Store in a cool, dry place.</p><p><br></p><p><strong>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</strong></p> <p>\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/4c36cdfa54b26cb4291c359dc2cd7910d868f8ae-125x181.png\" alt=\"Gluten-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/2390692fa16a1bad9ae4453609bcd8b61afbb0b2-149x180.png\" alt=\"Vegetarian\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/cc4066d915d42e195ee9cf5bbce01a99f006af1e-126x181.png\" alt=\"Lactose-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/f7e562d6bb212503da89f944a0d799171e6d48fe-125x181.png\" alt=\"Allergen-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/e2132e2f64f15727e375c7aa509fedd7bdcf1ae8-126x182.png\" alt=\"Hormone-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/28d7e07bb105f5cdb78b23808a653158de4f4b70-125x182.png\" alt=\"All natural\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/fe4d1f72a2f00d88cbc7ee0a22f90149af479d98-125x181.png\" alt=\"No fillers\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/392fe7a0ceded284f4aeb9c2eeb40c638917d6be-149x180.png\" alt=\"Vegan friendly\" style=\"height: 6rem; width: auto;\"></p>",
+      "images": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/3D644312-3BB7-4505-8A64-580B4DED0133.png?v=1785740618",
+          "altText": null,
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/5992D527-F480-4FD8-A1DA-17437C0017D3.png?v=1785740618",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/0F2EA665-A2BA-466D-8BF9-B58E6C433781.png?v=1785740619",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/6FC09404-83A1-4057-815E-42DE81627974.png?v=1785740618",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/295ACEFF-2992-4709-A598-4B8BFE0D625A.png?v=1785740619",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/1DDC9E23-DC03-4817-B7FE-DCE9A0A23F7F.png?v=1785740619",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/33B2EA2D-864E-446D-A5D5-B180EE99B271.png?v=1785740618",
+          "altText": null,
+          "width": 1024,
+          "height": 1536
+        }
+      ],
+      "currency": "USD",
+      "price": 29.9,
+      "compareAtPrice": null,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/59719428669726",
+          "numericId": "59719428669726",
+          "title": "Default Title",
+          "sku": "VOX4RESV",
+          "price": 29.9,
+          "compareAtPrice": null,
+          "availableForSale": true
+        }
+      ],
+      "metafields": {
+        "cardIngredient": "50% TRANS-RESVERATROL 600MG",
+        "cardDetail": "Japanese Knotweed · antioxidant · brain · cardiovascular health",
+        "howToUse": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Take one (1) vegetable capsule twice daily. For best results, take 20–30 minutes before meals, or as directed by your healthcare professional.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Keep out of reach of children. Do not use if the safety seal is damaged or missing. Store in a cool, dry place.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Made in the USA · 60 capsules · 30-day supply\"}]}]}",
+        "whatsInside": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Trans-Resveratrol 600mg — 50% concentration\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nSourced from Japanese Knotweed root (Polygonum cuspidatum). Resveratrol is the same plant compound found in red grape skin and red wine — this delivers it without the glass.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"A potent antioxidant\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nAntioxidants help defend cells against oxidative stress, one of the drivers of visible aging.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Studied for whole-body support\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nResearch has explored resveratrol's role in maintaining healthy cholesterol levels already within normal range, brain health, and weight management.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"A clean capsule.\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nVegetable capsule (hypromellose) with microcrystalline cellulose. No artificial fillers or binders.\"}]}]}"
+      },
+      "isBundle": false
+    },
+    {
+      "id": "gid://shopify/Product/15843634839838",
+      "numericId": "15843634839838",
+      "handle": "nad",
+      "title": "RENEWAL",
+      "productType": "Cellular Energy",
+      "vendor": "Aurae",
+      "tags": [],
+      "description": "NAD+ is a vital coenzyme that plays a key role in cellular energy production and overall metabolic function. Our NAD+ Supplement provides 500mg of NAD+ (Nicotinamide Adenine Dinucleotide), helping support normal cellular repair processes and maintain vitality as part of a healthy lifestyle. With the addition of Quercetin and Resveratrol, this formula offers plant-based support for overall well-being.Quercetin, a natural flavonoid, helps promote a normal inflammatory response and supports optimal immune function. Resveratrol, sourced from Japanese Knotweed, is known for its role in supporting cardiovascular health and helping maintain cognitive wellness. Together, these ingredients complement NAD+ to help sustain energy and promote cellular resilience.Designed for daily support, this supplement is ideal for adults looking to maintain energy, metabolic health, and cognitive function. Take two capsules daily with water, or as directed by your healthcare professional, to help your body perform at its best.*Ingredients: NAD+ (Nicotinamide Adenine Dinucleotide) (500 mg), Quercetin Dihydrate Extract (Sophora japonica) (whole flower bud) (250 mg), Japanese Knotweed Extract (98% Resveratrol) (Polygonum cuspidatum) (root) (150 mg), HPMC (vegetable capsule), Microcrystalline Cellulose (MCC), Brown Rice Flour, Olive Oil, Silicon Dioxide, Magnesium Stearate.Manufacturer's country: USAProduct amount: 60 capsules / 1.8 oz / 0.11 lb / 50 gGross weight (oz/lb/g): 2.4 oz / 0.15 lb / 68 gSuggested use: As a dietary supplement, adults take two (2) capsules daily. For best results, take with 6oz (177ml) of water or as directed by healthcare professional.Warning: Do not exceed recommended dose. Pregnant or nursing mothers, children under the age of 18, and individuals with known medical conditions should consult a physician before using this or any dietary supplement. KEEP OUT OF THE REACH OF CHILDREN. DO NOT USE IF SAFETY SEAL IS DAMAGED OR MISSING. STORE IN A COOL, DRY PLACE.*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+      "descriptionHtml": "<p><strong>NAD+</strong> is a vital coenzyme that plays a key role in cellular energy production and overall metabolic function. Our<strong> NAD+</strong> Supplement provides 500mg of<strong> NAD+ (Nicotinamide Adenine Dinucleotide)</strong>, helping support normal cellular repair processes and maintain vitality as part of a healthy lifestyle. With the addition of <strong>Quercetin</strong> and <strong>Resveratrol</strong>, this formula offers plant-based support for overall well-being.</p><p><br></p><p><strong>Quercetin</strong>, a natural flavonoid, helps promote a normal inflammatory response and supports optimal immune function. <strong>Resveratrol</strong>, sourced from <strong>Japanese Knotweed</strong>, is known for its role in supporting cardiovascular health and helping maintain cognitive wellness. Together, these ingredients complement <strong>NAD+</strong> to help sustain energy and promote cellular resilience.</p><p><br></p><p>Designed for daily support, this supplement is ideal for adults looking to maintain energy, metabolic health, and cognitive function. Take two capsules daily with water, or as directed by your healthcare professional, to help your body perform at its best.*</p><p><br></p><p><strong>Ingredients:</strong> NAD+ (Nicotinamide Adenine Dinucleotide) (500 mg), Quercetin Dihydrate Extract (Sophora japonica) (whole flower bud) (250 mg), Japanese Knotweed Extract (98% Resveratrol) (Polygonum cuspidatum) (root) (150 mg), HPMC (vegetable capsule), Microcrystalline Cellulose (MCC), Brown Rice Flour, Olive Oil, Silicon Dioxide, Magnesium Stearate.</p><p><strong>Manufacturer's country: </strong>USA</p><p><strong>Product amount: </strong>60 capsules / 1.8 oz / 0.11 lb / 50 g</p><p><strong>Gross weight (oz/lb/g):</strong> 2.4 oz / 0.15 lb / 68 g</p><p><strong>Suggested use:</strong> As a dietary supplement, adults take two (2) capsules daily. For best results, take with 6oz (177ml) of water or as directed by healthcare professional.</p><p><strong>Warning: </strong>Do not exceed recommended dose. Pregnant or nursing mothers, children under the age of 18, and individuals with known medical conditions should consult a physician before using this or any dietary supplement. KEEP OUT OF THE REACH OF CHILDREN. DO NOT USE IF SAFETY SEAL IS DAMAGED OR MISSING. STORE IN A COOL, DRY PLACE.</p><p><br></p><p><strong>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</strong></p> <p>\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/4c36cdfa54b26cb4291c359dc2cd7910d868f8ae-125x181.png\" alt=\"Gluten-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/2390692fa16a1bad9ae4453609bcd8b61afbb0b2-149x180.png\" alt=\"Vegetarian\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/cc4066d915d42e195ee9cf5bbce01a99f006af1e-126x181.png\" alt=\"Lactose-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/f7e562d6bb212503da89f944a0d799171e6d48fe-125x181.png\" alt=\"Allergen-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/e2132e2f64f15727e375c7aa509fedd7bdcf1ae8-126x182.png\" alt=\"Hormone-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/28d7e07bb105f5cdb78b23808a653158de4f4b70-125x182.png\" alt=\"All natural\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/f99540cc3d3f192a68004f4518d57b0cd7c27aa7-125x181.png\" alt=\"Antibiotic-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/0e9fc04e2f9353234d2b7794b96613f19c576efb-126x183.png\" alt=\"Non-GMO\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/a007d72855c1d7a309b8b6dec5eadf939bb8a80d-125x181.png\" alt=\"Corn-free\" style=\"height: 6rem; width: auto;\">\n            <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/392fe7a0ceded284f4aeb9c2eeb40c638917d6be-149x180.png\" alt=\"Vegan friendly\" style=\"height: 6rem; width: auto;\"></p>",
+      "images": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/CAE56C21-9E1B-4499-9C16-BF879793AE12.png?v=1785741109",
+          "altText": null,
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/DC9023A7-2E9A-408F-8CF7-BF2EDEA2C279.png?v=1785741109",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/3DA3478C-D9DC-4350-9D3B-9C90FF5755D7.png?v=1785741109",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/434D5458-2F5E-4C8C-BF30-1729965C82E3.png?v=1785741109",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/AA546D68-C359-4C7E-A093-6D0E1308EF14.png?v=1785741108",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/38153E8A-0665-4640-885C-CDF9911713AE.png?v=1785741109",
+          "altText": null,
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/C0A536B0-3EAA-4321-B2A1-E0E5FF0C77F6.png?v=1785741109",
+          "altText": null,
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/e0429bb6c804d71babdafdc9ba104c70e82072e9-1174x1176.png?v=1785469445",
+          "altText": null,
+          "width": 1174,
+          "height": 1176
+        }
+      ],
+      "currency": "USD",
+      "price": 60.0,
+      "compareAtPrice": null,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/59719428374814",
+          "numericId": "59719428374814",
+          "title": "Default Title",
+          "sku": "JTP4NADP",
+          "price": 60.0,
+          "compareAtPrice": null,
+          "availableForSale": true
+        }
+      ],
+      "metafields": {
+        "cardIngredient": "NAD+ 500MG + QUERCETIN + RESVERATROL",
+        "cardDetail": "3-in-1 longevity stack · cellular energy · cognitive support",
+        "howToUse": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Take two (2) capsules daily with 6 oz of water, or as directed by your healthcare professional.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Do not exceed the recommended dose. If you are pregnant, nursing, under 18, or have a known medical condition, consult a physician before use.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Keep out of reach of children. Do not use if the safety seal is damaged or missing. Store in a cool, dry place.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Made in the USA · 60 capsules · 30-day supply\"}]}]}",
+        "whatsInside": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"NAD+ 500mg\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nNicotinamide Adenine Dinucleotide — a coenzyme your cells use to turn food into energy. Levels decline with age, which is why it sits at the center of longevity research.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Quercetin 250mg\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nA plant flavonoid from Japanese Sophora flower buds, studied for its role in supporting a normal inflammatory response and healthy immune function.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"98% Resveratrol 150mg\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nFrom Japanese Knotweed root, at nearly double the concentration found in most formulas. Studied for cardiovascular and cognitive support.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"A 3-in-1 longevity stack.\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nThree compounds that work on the same problem from different angles — packed into one vegetarian capsule instead of three bottles.\"}]}]}"
+      },
+      "isBundle": false
+    },
+    {
+      "id": "gid://shopify/Product/15843634938142",
+      "numericId": "15843634938142",
+      "handle": "sleep-strips",
+      "title": "SLEEP",
+      "productType": "Quality Sleep",
+      "vendor": "Aurae",
+      "tags": [],
+      "description": "Whether you enjoy an active lifestyle or just need an extra boost during the day, Sleep oral strips will give you the energy to do anything. Imagine waking up refreshed every day without feeling groggy and exhausted anymore. This can be possible thanks to the combination of ingredients that effectively improves both the quality and quantity of sleep. Valerian extract, Lavender, Chamomile, Hibiscus Extract, and Melatonin all have properties that can help promote relaxation and improve sleep quality, which can work together to create a synergistic effect on the body and mind, leading to better overall health and well-being, making it the perfect non-addictive sleeping aid. Sleep oral strips are easy-to-take - have them anytime before bedtime for maximum results.* Ingredients: Valerian root extract, Lavender extract, Chamomile extract, Hibiscus extract, Melatonin, Pullulan, Cellulose, Raspberry Flavor, Malic acid, Xylitol, Lecithin, Erythritol, Sorbitol Syrup, Medium Chain Triglycerides, Steviol Glycosides Flavor: Raspberry Manufacturer Country: India Amount: 30 oral strips Gross Weight: 2.2 oz / 0.24 lb / 64 g Suggested Use: Place one oral strip on your tongue and allow it to dissolve. Take one oral strip anytime, up to a maximum of 1 strip a day. Caution: Do not exceed recommended dose. Pregnant or nursing mothers, children under the age of 18, and individuals with a known medical condition should consult a physician before using this or any dietary supplement. Warning: This product is not intended to diagnose, treat, cure or prevent any disease. Keep out of reach of children. Do not use if the safety seal is damaged or missing. Store in a cool, dry place. *These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.",
+      "descriptionHtml": "<p> </p>\n<p> </p>\n<p>Whether you enjoy an active lifestyle or just need an extra boost during the day, Sleep oral strips will give you the energy to do anything. Imagine waking up refreshed every day without feeling groggy and exhausted anymore. This can be possible thanks to the combination of ingredients that effectively improves both the quality and quantity of sleep.</p>\n<p>Valerian extract, Lavender, Chamomile, Hibiscus Extract, and Melatonin all have properties that can help promote relaxation and improve sleep quality, which can work together to create a synergistic effect on the body and mind, leading to better overall health and well-being, making it the perfect non-addictive sleeping aid. Sleep oral strips are easy-to-take - have them anytime before bedtime for maximum results.*</p>\n<p> </p>\n<p><strong>Ingredients: </strong>Valerian root extract, Lavender extract, Chamomile extract, Hibiscus extract, Melatonin, Pullulan, Cellulose, Raspberry Flavor, Malic acid, Xylitol, Lecithin, Erythritol, Sorbitol Syrup, Medium Chain Triglycerides, Steviol Glycosides</p>\n<p><strong>Flavor: </strong>Raspberry</p>\n<p><strong>Manufacturer Country:</strong> India</p>\n<p><strong>Amoun</strong>t: 30 oral strips</p>\n<p><strong>Gross Weight: </strong>2.2 oz / 0.24 lb / 64 g</p>\n<p><strong>Suggested Use:</strong> Place one oral strip on your tongue and allow it to dissolve. Take one oral strip anytime, up to a maximum of 1 strip a day.</p>\n<p><strong>Caution: </strong>Do not exceed recommended dose. Pregnant or nursing mothers, children under the age of 18, and individuals with a known medical condition should consult a physician before using this or any dietary supplement.</p>\n<p><strong>Warning: </strong>This product is not intended to diagnose, treat, cure or prevent any disease. Keep out of reach of children. Do not use if the safety seal is damaged or missing. Store in a cool, dry place.</p>\n<p> </p>\n<p><strong>*These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</strong></p>\n<p><img src=\"https://cdn.sanity.io/images/g0smbdlu/production/4c36cdfa54b26cb4291c359dc2cd7910d868f8ae-125x181.png\" alt=\"Gluten-free\" style=\"height: 6rem; width: auto;\"> <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/2390692fa16a1bad9ae4453609bcd8b61afbb0b2-149x180.png\" alt=\"Vegetarian\" style=\"height: 6rem; width: auto;\"> <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/cc4066d915d42e195ee9cf5bbce01a99f006af1e-126x181.png\" alt=\"Lactose-free\" style=\"height: 6rem; width: auto;\"> <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/f7e562d6bb212503da89f944a0d799171e6d48fe-125x181.png\" alt=\"Allergen-free\" style=\"height: 6rem; width: auto;\"> <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/e2132e2f64f15727e375c7aa509fedd7bdcf1ae8-126x182.png\" alt=\"Hormone-free\" style=\"height: 6rem; width: auto;\"> <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/fe4d1f72a2f00d88cbc7ee0a22f90149af479d98-125x181.png\" alt=\"No fillers\" style=\"height: 6rem; width: auto;\"> <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/0e9fc04e2f9353234d2b7794b96613f19c576efb-126x183.png\" alt=\"Non-GMO\" style=\"height: 6rem; width: auto;\"> <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/a007d72855c1d7a309b8b6dec5eadf939bb8a80d-125x181.png\" alt=\"Corn-free\" style=\"height: 6rem; width: auto;\"> <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/392fe7a0ceded284f4aeb9c2eeb40c638917d6be-149x180.png\" alt=\"Vegan friendly\" style=\"height: 6rem; width: auto;\"> <img src=\"https://cdn.sanity.io/images/g0smbdlu/production/5d63559a8d2977b109844a6f2e231d646d51c76d-520x641.png\" alt=\"Halal\" style=\"height: 6rem; width: auto;\"></p>",
+      "images": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/30E8BA19-C71E-4A43-A8DF-ABE25B46EFBE.png?v=1785740811",
+          "altText": null,
+          "width": 1024,
+          "height": 1024
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/F42749C6-B015-40C7-B59D-0676CB0F6407.png?v=1785740811",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/6348156C-B2BE-46D6-ABCA-FE23BCAF6DDD.png?v=1785740811",
+          "altText": null,
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/D1FCD7DD-BB1A-4CAC-AD6C-C217A5DD4695.png?v=1785740811",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/B8B2C5CF-2FAF-4828-9F8F-43C59B64BB56.png?v=1785740811",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/89392ED3-1C12-40B7-AFF8-2618E3B48CA6.png?v=1785740811",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/3E1ED094-DC8A-47D0-B56E-702C5E9F091A.png?v=1785740811",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/93bef8e58dd493f332554660db1077dedab297a9-629x320.png?v=1785469512",
+          "altText": null,
+          "width": 629,
+          "height": 320
+        }
+      ],
+      "currency": "USD",
+      "price": 29.8,
+      "compareAtPrice": null,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/59719428571422",
+          "numericId": "59719428571422",
+          "title": "Default Title",
+          "sku": "AAV9SLEE",
+          "price": 29.8,
+          "compareAtPrice": null,
+          "availableForSale": true
+        }
+      ],
+      "metafields": {
+        "cardIngredient": "SLEEP STRIPS · 5-INGREDIENT BLEND",
+        "cardDetail": "Valerian + Lavender + Chamomile + Hibiscus + Melatonin · raspberry",
+        "howToUse": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Place one oral strip on your tongue and let it dissolve. Take it any time before bed. Maximum one strip per day.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Do not exceed the recommended dose. If you are pregnant, nursing, under 18, or have a known medical condition, consult a physician before use.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Keep out of reach of children. Do not use if the safety seal is damaged or missing. Store in a cool, dry place.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"30 oral strips · 30-night supply\"}]}]}",
+        "whatsInside": "{\"type\":\"root\",\"children\":[{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"A 5-ingredient calming blend\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nValerian root, lavender, chamomile, hibiscus and melatonin — botanicals traditionally used to help the body wind down, paired with the hormone your body already uses to signal sleep.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Oral strips, not pills\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nDissolves on the tongue in seconds. No water, no swallowing, no capsule to time around dinner.\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Non-habit forming\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nFormulated for nights you need it, not a nightly dependency.*\"}]},{\"type\":\"paragraph\",\"children\":[{\"type\":\"text\",\"value\":\"Raspberry flavored\",\"bold\":true},{\"type\":\"text\",\"value\":\"\\n\\nSweetened with xylitol, erythritol and steviol glycosides — no sugar.\"}]}]}"
+      },
+      "isBundle": false
+    },
+    {
+      "id": "gid://shopify/Product/15846263030046",
+      "numericId": "15846263030046",
+      "handle": "the-calm-sleep-ritual",
+      "title": "The Calm & Sleep Ritual ✦",
+      "productType": "",
+      "vendor": "Aurae",
+      "tags": [],
+      "description": "Ashwagandha + Sleep Strips \"Stress down. Sleep deep.\"",
+      "descriptionHtml": "<p><span>Ashwagandha + Sleep Strips</span></p>\n<p><span>\"Stress down. Sleep deep.\"</span></p>",
+      "images": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/4DBC1616-8F76-4758-B55E-FF662E6875FF.png?v=1785741409",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "currency": "USD",
+      "price": 50.41,
+      "compareAtPrice": 59.3,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/59727620047134",
+          "numericId": "59727620047134",
+          "title": "Default Title",
+          "sku": null,
+          "price": 50.41,
+          "compareAtPrice": 59.3,
+          "availableForSale": true
+        }
+      ],
+      "metafields": {
+        "cardIngredient": null,
+        "cardDetail": null,
+        "howToUse": null,
+        "whatsInside": null
+      },
+      "isBundle": true
+    },
+    {
+      "id": "gid://shopify/Product/15846269190430",
+      "numericId": "15846269190430",
+      "handle": "the-full-aurae-ritual",
+      "title": "The Full Aurae Ritual ✦✦",
+      "productType": "",
+      "vendor": "Aurae",
+      "tags": [],
+      "description": "All 5 formulas · Complete longevity ritual \"Everything your glow needs.\"",
+      "descriptionHtml": "<div class=\"bundle-products\">All 5 formulas · Complete longevity ritual</div>\n<div class=\"bundle-tagline\">\"Everything your glow needs.\"</div>",
+      "images": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/C19EB94A-52EA-42F9-A238-C2CFB48409A1.png?v=1785741651",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "currency": "USD",
+      "price": 160.74,
+      "compareAtPrice": 189.1,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/59727631810846",
+          "numericId": "59727631810846",
+          "title": "Default Title",
+          "sku": null,
+          "price": 160.74,
+          "compareAtPrice": 189.1,
+          "availableForSale": true
+        }
+      ],
+      "metafields": {
+        "cardIngredient": null,
+        "cardDetail": null,
+        "howToUse": null,
+        "whatsInside": null
+      },
+      "isBundle": true
+    },
+    {
+      "id": "gid://shopify/Product/15844311826718",
+      "numericId": "15844311826718",
+      "handle": "the-glow-ritual",
+      "title": "The Glow Ritual ✦",
+      "productType": "",
+      "vendor": "Aurae",
+      "tags": [],
+      "description": "Hydrolyzed Collagen + Resveratrol \"Cellular beauty, from every angle.\"",
+      "descriptionHtml": "<p><span>Hydrolyzed Collagen + Resveratrol</span></p>\n<p><span>\"Cellular beauty, from every angle.\"</span></p>",
+      "images": [
+        {
+          "url": "https://cdn.shopify.com/s/files/1/0997/5719/5550/files/A03E40F6-1E0C-4B6E-B758-6C3F1F873C35.png?v=1785736260",
+          "altText": null,
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "currency": "USD",
+      "price": 59.33,
+      "compareAtPrice": 69.8,
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/59722828874014",
+          "numericId": "59722828874014",
+          "title": "Default Title",
+          "sku": null,
+          "price": 59.33,
+          "compareAtPrice": 69.8,
+          "availableForSale": true
+        }
+      ],
+      "metafields": {
+        "cardIngredient": null,
+        "cardDetail": null,
+        "howToUse": null,
+        "whatsInside": null
+      },
+      "isBundle": true
+    }
+  ]
+}

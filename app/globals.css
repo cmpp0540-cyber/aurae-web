@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Swap the display font brand-wide from here.
+     'Fraunces' = current Aurae heading face.
+     'Playfair Display' = the face used in the v4 HTML prototype. */
+  --font-display: 'Fraunces', 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-cream text-espresso font-sans;
+    line-height: 1.6;
+  }
+
+  ::selection {
+    background: #ff6f91;
+    color: #fffcf8;
+  }
+
+  /* Coral scrollbar to match the brand */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 111, 145, 0.45) transparent;
+  }
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: rgba(255, 111, 145, 0.4);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+}
+
+@layer components {
+  /* ── Type ────────────────────────────────────────────── */
+  .u-eyebrow {
+    @apply text-eyebrow font-semibold uppercase text-coral;
+  }
+  .u-italic {
+    font-family: var(--font-display);
+    @apply italic font-medium text-coral;
+  }
+
+  /* ── Buttons ─────────────────────────────────────────── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded font-semibold uppercase
+           tracking-[0.18em] text-[11px] transition-all duration-300 ease-aurae
+           disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-coral text-cream px-9 py-[17px] hover:bg-espresso;
+  }
+  .btn-dark {
+    @apply btn bg-espresso text-ivory px-9 py-[17px] hover:bg-coral;
+  }
+  .btn-sun {
+    @apply btn bg-sun text-espresso px-9 py-[17px] hover:bg-coral hover:text-cream;
+  }
+  .btn-outline {
+    @apply btn border border-espresso/20 bg-transparent px-9 py-[17px] text-espresso
+           hover:border-coral hover:text-coral;
+  }
+  .btn-underline {
+    @apply btn border-b-2 border-coral px-0 py-4 text-espresso hover:text-coral;
+  }
+
+  /* ── Layout ──────────────────────────────────────────── */
+  .shell {
+    @apply mx-auto w-full max-w-shell px-5 sm:px-8 lg:px-12;
+  }
+  .section-y {
+    @apply py-16 sm:py-20 lg:py-[100px];
+  }
+  .card {
+    @apply rounded-xl border border-espresso/[0.08] bg-cream transition-all duration-300 ease-aurae;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1.5 hover:shadow-card;
+  }
+
+  /* ── Rich text coming out of Shopify metafields ──────── */
+  .rich-text > p {
+    @apply mb-3 text-[15px] leading-relaxed text-espresso/75 last:mb-0;
+  }
+  .rich-text strong {
+    @apply font-semibold text-espresso;
+  }
+  .rich-text ul {
+    @apply mb-3 space-y-1.5 pl-0;
+  }
+  .rich-text li {
+    @apply relative pl-5 text-[15px] leading-relaxed text-espresso/75;
+  }
+  .rich-text li::before {
+    content: '✦';
+    @apply absolute left-0 top-0 text-coral;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .balance {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
