@@ -140,7 +140,7 @@ export const LANDING = {
       items: [
         { lead: 'CALM:', text: 'KSM-66 600mg + Vitamins D3, B6, B12 + Maca + Ginseng + Shatavari + L-Arginine' },
         { lead: 'RENEWAL:', text: 'NAD+ 500mg + Quercetin 250mg + Resveratrol 98% (3-in-1 longevity)' },
-        { lead: 'GLOW:', text: 'Grass-Fed Collagen Types 1 & 3 with full amino acid profile' },
+        { lead: 'GLOW:', text: 'Grass-Fed Collagen Types 1 & 3 with full amino acid profile, 20 g + 18 g protein - hydrolyzed = true absorption' },
         { lead: 'SLEEP:', text: '5 botanicals (Valerian, Lavender, Chamomile, Hibiscus, Melatonin)' },
         { lead: 'RADIANCE:', text: '50% Trans-Resveratrol from Japanese Knotweed' },
         { lead: 'All formulas:', text: 'Third-party tested, GMP-certified, no fillers' },
@@ -152,8 +152,8 @@ export const LANDING = {
       note: 'Single-ingredient formulas, under-dosed, fillers included.',
       items: [
         'Ashwagandha alone (no vitamins, no synergistic adaptogens)',
-        'NAD+ alone OR Resveratrol alone (you need separate bottles)',
-        'Generic collagen, single type, missing key amino acids',
+        'NAD+ with resveratrol, but under-dosed — too low for real results and does not contain quercetin',
+        'Generic collagen, single type, missing key amino acids, poor absorption',
         '1–2 sleep ingredients (often just melatonin)',
         'Low-purity resveratrol (25% or less trans-resveratrol)',
         'Magnesium stearate, artificial fillers, no testing transparency',
