@@ -1,8 +1,13 @@
 node_modules
 .next
 out
-.env.local
-.env*.local
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+
+.vercel
+
+# Secrets. `.env*` covers every variant; the example file carries no values and
+# is the one thing here that belongs in the repo.
+.env*
+!.env.example

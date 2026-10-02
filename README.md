@@ -194,6 +194,59 @@ install a Shopify subscriptions app, then read `sellingPlanGroups` in
 
 ---
 
+## Newsletter → Klaviyo
+
+The footer signup posts to `app/api/subscribe/route.ts`, which subscribes the address to a
+Klaviyo list with email marketing consent and `custom_source: "website_popup"`.
+
+The route exists so the credentials stay on the server. `KLAVIYO_PRIVATE_API_KEY` is a
+private key with write scopes — **never** give it the `NEXT_PUBLIC_` prefix, and never put
+it in the code. `lib/klaviyo.ts` imports `server-only`, so an accidental client import
+fails the build rather than shipping the key to a browser.
+
+### Setup
+
+```ini
+# .env.local — already covered by .gitignore
+KLAVIYO_PRIVATE_API_KEY=pk_...
+KLAVIYO_LIST_ID=XyZ123
+```
+
+- **API key**: Klaviyo → Settings → API keys → Create private key, with scopes
+  `lists:write`, `profiles:write`, `subscriptions:write`.
+- **List ID**: Klaviyo → Audience → Lists & Segments → your list → Settings → List ID.
+
+Restart the dev server after editing `.env.local` — Next reads env files at boot.
+
+### On Vercel
+
+Project → Settings → Environment Variables, both for Production, Preview and Development:
+
+| Name | Value | Notes |
+| --- | --- | --- |
+| `KLAVIYO_PRIVATE_API_KEY` | your `pk_...` key | Mark as **Sensitive** so it cannot be read back |
+| `KLAVIYO_LIST_ID` | your list id | |
+
+Redeploy after adding them; env vars are baked in at build/boot, not read live.
+
+### Behaviour
+
+| Situation | Route | What the visitor sees |
+| --- | --- | --- |
+| Subscribed | 200 `{ok:true}` | "You're on the list ✦" |
+| Malformed email | 400 | "Please enter a valid email address." |
+| Env vars missing | 503 | "Signups are temporarily unavailable." |
+| Klaviyo rate limit | 429 | "Too many signups right now." |
+| Klaviyo error / unreachable | 502 | "Something went wrong. Please try again." |
+
+The success message renders only on `{ok: true}` — never merely because a response came
+back. Failures are logged server-side with the status and Klaviyo's body; the key is never
+logged and the visitor never sees integration details.
+
+Worth knowing: this endpoint, like any newsletter form, lets anyone submit any address.
+Turning on double opt-in in Klaviyo (List → Settings → Opt-in process) is the real
+protection — only confirmed addresses become subscribers.
+
 ## Project structure
 
 ```
@@ -203,6 +256,7 @@ app/
   product/[productId]/       product detail route
   bundle/[bundleId]/         bundle route
   api/checkout/route.ts      cart → Shopify checkout URL
+  api/subscribe/route.ts     newsletter signup → Klaviyo
   not-found.tsx
   globals.css                design tokens + component classes
 
@@ -214,6 +268,7 @@ lib/
   classify.ts                product vs bundle
   rich-text.ts               Shopify rich_text_field parser + ingredient-row extractor
   accents.ts                 per-product colour palettes + blur stops
+  klaviyo.ts                 newsletter subscription (server-only)
   blur.ts                    inline SVG blur placeholders
   shopify-image-loader.ts    next/image loader -> Shopify CDN resizing
   format.ts                  prices, savings, subscribe price, short descriptions
@@ -316,8 +371,9 @@ npm run sync:shopify   # refresh data/shopify-snapshot.json from Shopify
   stock", those buttons will correctly show *Sold out*.
 - **"FDA-registered" was removed** from all site copy, per the brief. The science section
   says *GMP-certified* instead, and a standard supplement disclaimer sits in the footer.
-- **Newsletter** stores nothing yet — `components/landing/Newsletter.tsx` has one marked
-  place to POST to Klaviyo or the Shopify Customer API.
+- **Newsletter** is wired to Klaviyo (see above) but needs the two env vars before it can
+  subscribe anyone; until then the form reports that signups are unavailable rather than
+  claiming success.
 
 ---
 

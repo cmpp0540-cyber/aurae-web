@@ -175,10 +175,10 @@ export const LANDING = {
     eyebrow: 'Join the Aurae Letter',
     titleLead: 'Join the',
     titleItalic: 'ritual.',
-    body: 'Exclusive access to new launches, wellness guides, and our weekly letter on cellular beauty — plus 15% off your first order.',
+    body: 'Exclusive access to new launches, wellness guides, and our weekly letter on cellular beauty — plus 10% off your first order.',
     placeholder: 'your email',
-    cta: 'Get 15% Off',
-    success: 'You’re on the list ✦ Check your inbox for your 15% code.',
+    cta: 'Get 10% Off',
+    success: 'You’re on the list ✦ Check your inbox for your 10% code.',
   },
 } as const;
 
