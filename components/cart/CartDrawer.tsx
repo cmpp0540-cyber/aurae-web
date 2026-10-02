@@ -1,17 +1,21 @@
 'use client';
 
 import Link from 'next/link';
+import { FLAT_SHIPPING_RATE, FREE_SHIPPING_THRESHOLD } from '@/lib/config';
 import { formatPrice } from '@/lib/format';
 import SmartImage from '@/components/ui/SmartImage';
 import { useCart } from './CartProvider';
-
-const FREE_SHIPPING_THRESHOLD = 50;
 
 export default function CartDrawer() {
   const { lines, isOpen, close, subtotal, setQuantity, remove, checkout, isCheckingOut, count } =
     useCart();
 
   const toFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
+
+  // An estimate only — Shopify's checkout quotes the real rate and the tax.
+  const freeShipping = subtotal >= FREE_SHIPPING_THRESHOLD;
+  const shipping = freeShipping ? 0 : FLAT_SHIPPING_RATE;
+  const estimatedTotal = subtotal + shipping;
 
   return (
     <>
@@ -171,17 +175,44 @@ export default function CartDrawer() {
               </ul>
             </div>
 
+            {/* Only rendered when the cart has lines, so there is never a
+                shipping estimate or a total against an empty cart. */}
             <footer className="border-t border-espresso/10 px-6 py-5">
-              <div className="mb-1 flex items-baseline justify-between">
+              <div className="flex items-baseline justify-between">
                 <span className="text-[12px] uppercase tracking-[0.15em] text-espresso/60">
                   Subtotal
                 </span>
-                <span className="font-display text-[26px] font-bold text-coral">
+                <span className="text-[14px] font-semibold tabular-nums">
                   {formatPrice(subtotal)}
                 </span>
               </div>
-              <p className="mb-4 text-[11px] text-espresso/50">
-                Taxes and shipping calculated at checkout on Shopify.
+
+              <div className="mt-2 flex items-baseline justify-between">
+                <span className="text-[12px] uppercase tracking-[0.15em] text-espresso/60">
+                  Shipping
+                </span>
+                {freeShipping ? (
+                  <span className="text-[14px] font-semibold uppercase tracking-[0.08em] text-coral">
+                    Free
+                  </span>
+                ) : (
+                  <span className="text-[14px] font-semibold tabular-nums">
+                    {formatPrice(shipping)}
+                  </span>
+                )}
+              </div>
+
+              <div className="mt-3 flex items-baseline justify-between border-t border-espresso/10 pt-3">
+                <span className="text-[12px] uppercase tracking-[0.15em] text-espresso/60">
+                  Estimated total
+                </span>
+                <span className="font-display text-[26px] font-bold tabular-nums text-coral">
+                  {formatPrice(estimatedTotal)}
+                </span>
+              </div>
+
+              <p className="mb-4 mt-2 text-[11px] text-espresso/50">
+                Final shipping and taxes confirmed at checkout.
               </p>
               <button
                 type="button"

@@ -48,3 +48,13 @@ export const FEATURED_BUNDLE_HANDLE = 'the-calm-sleep-ritual';
 
 /** Which bundle card gets the dark "Best value" treatment. */
 export const PREMIUM_BUNDLE_HANDLE = 'the-full-aurae-ritual';
+
+/**
+ * Shipping, as quoted in the cart and the FAQ.
+ *
+ * These drive the estimate shown in the drawer only — Shopify's checkout is
+ * where the real rates are calculated, so keep them in step with the shipping
+ * profile configured there.
+ */
+export const FREE_SHIPPING_THRESHOLD = 50;
+export const FLAT_SHIPPING_RATE = 9.99;

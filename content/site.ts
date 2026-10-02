@@ -369,14 +369,14 @@ export const SITE_FAQS: Faq[] = [
     q: "What's your return policy?",
     a: [
       'We offer a 30-day money-back guarantee. If you’re not feeling your glow within 30 days, send the bottles back (even if empty) for a full refund — no questions asked.',
-      'Just email care@auraevital.com and we’ll process within 48 hours.',
+      'Just email hello@auraevital.com and we’ll process within 48 hours.',
     ],
   },
   {
     q: 'How long does shipping take?',
     a: [
-      'Free standard shipping (5–7 business days) on all orders over $50. Express shipping (2–3 business days) is available at checkout for $9.99.',
-      'We currently ship throughout the continental United States. International shipping coming soon.',
+      'Free standard shipping (5–7 business days) on all orders over $50. Orders under $50 ship standard for a flat $9.99.',
+      'We currently ship throughout the continental United States. International shipping will be available in Q3 2027.',
     ],
   },
   {
