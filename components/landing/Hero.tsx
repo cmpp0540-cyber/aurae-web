@@ -1,122 +1,133 @@
 import Link from 'next/link';
-import { SITE } from '@/content/site';
-import { HERO_BLUR_DATA_URL } from '@/lib/hero-blur';
-import { formatPrice } from '@/lib/format';
-import type { AuraeProduct } from '@/lib/types';
+import { HERO_PILLARS, SITE } from '@/content/site';
+import { HERO_BLUR_DATA_URL, HERO_CORAL } from '@/lib/hero-blur';
 import SmartImage from '@/components/ui/SmartImage';
 
 /**
- * The hero photograph. Local asset rather than Shopify imagery, so it is
- * pre-optimised on disk (1200px WebP) — the CDN loader passes local paths
- * through untouched. See README › Image loading.
+ * The hero photograph: all five products on the brand coral.
+ *
+ * Local asset, so it is pre-optimised on disk (1920px WebP) — the Shopify CDN
+ * loader passes local paths through untouched. See README › Image loading.
  */
 const HERO_IMAGE = {
-  src: '/images/aurae-hero-image.webp',
-  alt: 'Woman with Aurae GLOW collagen supplement - radiant, confident beauty',
-  width: 1200,
-  height: 1600,
+  src: '/images/aurae-hero-products.webp',
+  alt: 'Aurae GLOW, CALM, SLEEP, RADIANCE and RENEWAL supplements floating on a coral background with a flowing pink liquid ribbon',
 };
 
-type Props = {
-  /** The product the hero points at (GLOW) — drives the caption and the link. */
-  feature: AuraeProduct | undefined;
-};
+/** Pale pink that reads on the coral without washing out. */
+const INK = '#FFE3EA';
 
-export default function Hero({ feature }: Props) {
+function HeroActions({ className = '' }: { className?: string }) {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(135deg,#FFE5D9_0%,#FFF8F0_58%,#FFD66B_155%)]">
-      {/* Decorative sparkles from the original design */}
+    <div className={['flex-wrap items-center gap-5', className].join(' ')}>
+      <Link href="#shop" className="btn-cream">
+        {SITE.hero.primaryCta}
+      </Link>
+      <Link
+        href="#rituals"
+        className="btn u-hero-shadow border-b-2 px-0 py-4 transition-colors duration-300 hover:text-cream"
+        style={{ color: INK, borderColor: INK }}
+      >
+        {SITE.hero.secondaryCta} →
+      </Link>
+    </div>
+  );
+}
+
+export default function Hero() {
+  return (
+    <section
+      className="relative overflow-hidden"
+      style={{ backgroundColor: HERO_CORAL }}
+      aria-label="Aurae — the five rituals"
+    >
+      {/* Decorative sparkle, kept from the original design */}
       <span
         aria-hidden
-        className="pointer-events-none absolute right-[12%] top-[12%] animate-twinkle text-[26px] text-coral"
+        className="pointer-events-none absolute left-[2%] top-[6%] z-20 hidden animate-twinkle text-[22px] lg:block"
+        style={{ color: INK }}
       >
         ✦
       </span>
-      <span
-        aria-hidden
-        className="pointer-events-none absolute bottom-[18%] left-[7%] hidden animate-twinkle text-[20px] text-sun lg:block"
-      >
-        ✦
-      </span>
 
-      <div className="shell grid items-center gap-8 py-8 sm:py-14 lg:min-h-[86vh] lg:grid-cols-2 lg:gap-12 lg:py-24">
-        {/*
-          Mobile stacks the photograph above the copy; desktop puts the copy
-          back on the left. `order` handles it without duplicating markup, and
-          the DOM order stays image-then-text so the reading order matches what
-          is on screen at the narrow breakpoint.
-        */}
-        <div className="order-1 flex justify-center lg:order-2">
-          {/*
-            Held to 290px on phones on purpose. At full column width the 3:4
-            frame eats the entire first screen and the headline and CTA land
-            below the fold — the visitor sees a photograph and nothing to act
-            on. This keeps the photograph first, as intended, while the eyebrow
-            and headline still break the fold.
-          */}
-          <div className="group relative w-full max-w-[290px] sm:max-w-[400px] lg:max-w-[460px]">
-            {/* Coral bloom behind the photo, same treatment as before */}
-            <span
-              aria-hidden
-              className="absolute inset-x-6 bottom-4 top-10 rounded-[28px] bg-coral/25 blur-3xl transition-opacity duration-500 group-hover:opacity-80"
-            />
+      {/*
+        One headline for both layouts: in normal flow above the photograph on
+        mobile, absolutely positioned over it from `lg` up. The section is the
+        positioning context, and every mobile-only block below is display:none
+        at that breakpoint, so the section's box is exactly the photograph's —
+        which is what makes the percentages line up with the bottles.
+      */}
+      <div className="shell animate-fade-up pb-6 pt-10 text-center lg:absolute lg:left-[4%] lg:top-[7%] lg:z-10 lg:w-[40%] lg:p-0 lg:text-left">
+        <h1
+          className="u-hero-shadow font-display font-semibold leading-[1.08] tracking-[-0.01em]"
+          style={{ color: INK, fontSize: 'clamp(2rem, 4.2vw, 4.25rem)' }}
+        >
+          {SITE.hero.titleLead} <em className="italic">{SITE.hero.titleItalic}</em>
+        </h1>
 
-            <SmartImage
-              src={HERO_IMAGE.src}
-              alt={HERO_IMAGE.alt}
-              width={HERO_IMAGE.width}
-              height={HERO_IMAGE.height}
-              // This is the page's LCP element — see the note in the README on
-              // why it is preloaded rather than lazy.
-              priority
-              blurDataURL={HERO_BLUR_DATA_URL}
-              sizes="(max-width: 640px) 290px, (max-width: 1024px) 400px, 460px"
-              className="aspect-[3/4] rounded-[24px] shadow-bottle ring-1 ring-cream/60"
-              imgClassName="h-full w-full object-cover object-top transition-transform duration-700 ease-aurae group-hover:scale-[1.03]"
-            />
-
-            {feature ? (
-              <Link
-                href={`/product/${feature.handle}`}
-                className="absolute bottom-5 left-5 rounded-full bg-cream/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-espresso backdrop-blur transition-colors duration-300 hover:bg-coral hover:text-cream"
-              >
-                Shop {feature.title} →
-              </Link>
-            ) : null}
-          </div>
-        </div>
-
-        <div className="order-2 animate-fade-up lg:order-1">
-          <p className="u-eyebrow mb-4">{SITE.hero.eyebrow}</p>
-
-          <h1 className="font-display text-display-xl font-extrabold text-espresso">
-            {SITE.hero.titleLead} <span className="u-italic">{SITE.hero.titleItalic}</span>
-          </h1>
-
-          <p className="mt-3 font-display text-[20px] italic text-espresso/75 sm:text-[23px]">
-            {SITE.hero.tagline}
-          </p>
-
-          <p className="mt-6 max-w-[430px] text-[15px] leading-relaxed text-espresso/80 sm:text-[16px]">
-            {SITE.hero.body}
-          </p>
-
-          <div className="mt-9 flex flex-wrap items-center gap-5">
-            <Link href="#shop" className="btn-primary">
-              {SITE.hero.primaryCta}
-            </Link>
-            <Link href="#rituals" className="btn-underline">
-              {SITE.hero.secondaryCta} →
-            </Link>
-          </div>
-
-          {feature ? (
-            <p className="mt-8 text-[12px] uppercase tracking-[0.15em] text-espresso/50">
-              Start with {feature.title} · from {formatPrice(feature.price, feature.currency)}
-            </p>
-          ) : null}
-        </div>
+        <HeroActions className="mt-8 hidden lg:flex" />
       </div>
+
+      {/* ── The photograph ────────────────────────────────────────────── */}
+      <div className="relative aspect-[16/9] w-full">
+        <SmartImage
+          src={HERO_IMAGE.src}
+          alt={HERO_IMAGE.alt}
+          fill
+          // The LCP element on the landing page.
+          priority
+          blurDataURL={HERO_BLUR_DATA_URL}
+          sizes="100vw"
+          className="absolute inset-0 h-full w-full"
+          imgClassName="h-full w-full object-cover"
+        />
+
+        {/* One label per product, centred over it. Hidden on mobile. */}
+        <ul className="hidden lg:block">
+          {HERO_PILLARS.map((pillar, index) => (
+            <li
+              key={pillar.handle}
+              className="absolute z-10 -translate-x-1/2"
+              style={{ left: `${pillar.x}%`, top: `${pillar.y}%` }}
+            >
+              <Link
+                href={`/product/${pillar.handle}`}
+                // The float is staggered so the five never drift in unison.
+                // globals.css neutralises it under prefers-reduced-motion.
+                className="u-hero-shadow block animate-float whitespace-nowrap font-display text-[13px] font-medium uppercase tracking-[0.18em] transition-all duration-300 ease-aurae hover:-translate-y-0.5 hover:text-cream xl:text-[15px]"
+                style={{ color: INK, animationDelay: `${index * 0.9}s` }}
+              >
+                <span aria-hidden className="mr-2">
+                  ✦
+                </span>
+                {pillar.label}
+                <span className="sr-only"> — shop {pillar.product}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* ── Mobile: the same five benefits as pills ───────────────────── */}
+      <ul className="shell flex flex-wrap justify-center gap-2 pt-6 lg:hidden">
+        {HERO_PILLARS.map((pillar) => (
+          <li key={pillar.handle}>
+            <Link
+              href={`/product/${pillar.handle}`}
+              className="inline-block rounded-full bg-cream/20 px-3.5 py-2 font-display text-[11px] font-medium uppercase tracking-[0.14em] backdrop-blur-sm transition-colors duration-300 hover:bg-cream/35"
+              style={{ color: INK }}
+            >
+              <span aria-hidden className="mr-1.5">
+                ✦
+              </span>
+              {pillar.label}
+              <span className="sr-only"> — shop {pillar.product}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      <HeroActions className="shell flex justify-center pb-12 pt-8 lg:hidden" />
     </section>
   );
 }

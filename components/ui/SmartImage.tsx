@@ -137,10 +137,12 @@ export default function SmartImage({
         ' ',
       )}
     >
+      {/* `alt` is in `shared`, but passing it explicitly as well keeps the
+          jsx-a11y rule able to see it — it cannot look through a spread. */}
       {fill ? (
-        <Image {...shared} fill />
+        <Image {...shared} alt={alt} fill />
       ) : (
-        <Image {...shared} width={width!} height={height!} />
+        <Image {...shared} alt={alt} width={width!} height={height!} />
       )}
 
       <span

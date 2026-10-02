@@ -18,11 +18,9 @@ export const SITE = {
     { label: 'Reviews', href: '/#reviews' },
   ],
   hero: {
-    eyebrow: 'New from Aurae',
-    titleLead: 'Lit from',
-    titleItalic: 'within.',
-    tagline: 'Premium cellular beauty supplements for the modern woman.',
-    body: 'Clinically-backed formulas that make cellular wellness accessible, credible, and undeniably luxe. Because your glow is built from within.',
+    /** Rendered as two lines, with `titleItalic` set in italics. */
+    titleLead: 'Real beauty starts at the',
+    titleItalic: 'cellular level',
     primaryCta: 'Shop the Ritual',
     secondaryCta: 'Explore the Rituals',
   },
@@ -75,6 +73,35 @@ export const SITE = {
     legal: ['Privacy', 'Terms', 'Cookies'],
   },
 } as const;
+
+/**
+ * The five benefit labels that float over the hero photograph, one per product,
+ * left to right as they appear in the shot.
+ *
+ * `x` and `y` are percentages of the 16:9 frame: `x` is the centre of the
+ * product below the label, `y` is the top of the label itself. They are tied to
+ * `public/images/aurae-hero-products.webp` specifically — reshoot the hero and
+ * these need re-measuring.
+ */
+export const HERO_PILLARS: {
+  label: string;
+  product: string;
+  handle: string;
+  x: number;
+  y: number;
+}[] = [
+  { label: 'Quality sleep', product: 'SLEEP', handle: 'sleep-strips', x: 15.5, y: 39 },
+  { label: 'Longevity', product: 'RADIANCE', handle: 'resveratrol-50-600mg', x: 33.5, y: 35.5 },
+  {
+    label: 'Radiant skin',
+    product: 'GLOW',
+    handle: 'grass-fed-hydrolyzed-collagen-peptides',
+    x: 52,
+    y: 22,
+  },
+  { label: 'Mental clarity', product: 'CALM', handle: 'ashwagandha-plus', x: 71, y: 15 },
+  { label: 'Cellular energy', product: 'RENEWAL', handle: 'nad', x: 86, y: 8 },
+];
 
 /** Section intros for the landing page. */
 export const LANDING = {

@@ -73,6 +73,10 @@
     @apply btn border border-espresso/20 bg-transparent px-9 py-[17px] text-espresso
            hover:border-coral hover:text-coral;
   }
+  /* For use on the coral hero, where the usual coral fill would disappear. */
+  .btn-cream {
+    @apply btn bg-cream px-9 py-[17px] text-coral hover:bg-espresso hover:text-ivory;
+  }
   .btn-underline {
     @apply btn border-b-2 border-coral px-0 py-4 text-espresso hover:text-coral;
   }
@@ -120,6 +124,11 @@
   }
   .balance {
     text-wrap: balance;
+  }
+
+  /* Lifts pale type off the coral hero photograph without a scrim over it. */
+  .u-hero-shadow {
+    text-shadow: 0 2px 18px rgba(190, 50, 80, 0.35);
   }
 }
 

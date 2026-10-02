@@ -7,7 +7,6 @@ import Newsletter from '@/components/landing/Newsletter';
 import ProductsSection from '@/components/landing/ProductsSection';
 import ScienceSection from '@/components/landing/ScienceSection';
 import TestimonialsSection from '@/components/landing/TestimonialsSection';
-import { PRODUCT_ORDER } from '@/lib/config';
 import { getCatalog } from '@/lib/products';
 
 /** Revalidate the catalog every 30 minutes. */
@@ -15,11 +14,10 @@ export const revalidate = 1800;
 
 export default async function HomePage() {
   const { products, bundles, source } = await getCatalog();
-  const feature = products.find((product) => product.handle === PRODUCT_ORDER[0]) ?? products[0];
 
   return (
     <>
-      <Hero feature={feature} />
+      <Hero />
       <TrustBar />
       <ProductsSection products={products} />
       <BundlesSection bundles={bundles} />

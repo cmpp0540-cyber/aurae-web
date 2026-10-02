@@ -73,6 +73,11 @@ const config: Config = {
         shimmer: {
           '100%': { transform: 'translateX(100%)' },
         },
+        // Barely-there drift for the hero product labels.
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-4px)' },
+        },
       },
       animation: {
         'fade-up': 'fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both',
@@ -80,6 +85,7 @@ const config: Config = {
         'slide-in': 'slide-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both',
         twinkle: 'twinkle 4s ease-in-out infinite',
         shimmer: 'shimmer 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        float: 'float 5.5s ease-in-out infinite',
       },
       transitionTimingFunction: {
         aurae: 'cubic-bezier(0.22, 1, 0.36, 1)',

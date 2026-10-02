@@ -143,14 +143,19 @@ The CDN loader only has variants to offer for Shopify URLs; anything under `publ
 through untouched, and `SmartImage` marks those `unoptimized` so Next does not advertise a
 srcset of width variants that do not exist. Local imagery is therefore pre-optimised on disk.
 
-The hero photograph (`public/images/aurae-hero-image.webp`, 1200x1600) went from a 385 KB
-1500x2000 JPEG to **78 KB** of WebP. `public/images/aurae-hero-image.jpg` is the same frame
-as a 138 KB JPEG, kept for anywhere WebP is awkward — Open Graph tags, email. Its blur
-placeholder is a 118-byte WebP thumbnail of the photo itself, inlined in `lib/hero-blur.ts`
-(the accent-gradient default is right for packshots, less so for a face).
+The hero photograph (`public/images/aurae-hero-products.webp`, 1920x1080) went from a
+635 KB 2560x1440 JPEG to **127 KB** of WebP. The source JPEG stays alongside it for anywhere
+WebP is awkward — Open Graph tags, email. Its blur placeholder is an 86-byte WebP thumbnail
+of the photo itself, inlined in `lib/hero-blur.ts` together with `HERO_CORAL`, the exact
+background coral sampled from the shot so the mobile section blends into the image.
 
-To swap the photograph, resize the new source to 1200px wide, write both formats into
-`public/images/`, and regenerate the blur seed.
+`public/images/aurae-hero-image.*` is the previous hero (the portrait with GLOW). Nothing
+references it any more — delete it whenever you are sure you will not want it back.
+
+To swap the photograph: resize the new source to 1920px wide as WebP at quality ~82, write
+it into `public/images/`, regenerate `lib/hero-blur.ts` (blur seed + sampled coral), and
+re-measure the label positions in `HERO_PILLARS` — they are percentages of the specific
+shot, not of the viewport.
 
 ### Priorities
 
