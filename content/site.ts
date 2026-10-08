@@ -10,7 +10,7 @@ export const SITE = {
   name: 'Aurae',
   tagline: 'lit from within ✦',
   announcement: 'Free shipping over $50 · Subscribe & save 10%',
-  supportEmail: 'care@auraevital.com',
+  supportEmail: 'hello@auraevital.com',
   nav: [
     { label: 'Shop', href: '/#shop' },
     { label: 'Rituals', href: '/#rituals' },
@@ -66,7 +66,7 @@ export const SITE = {
         links: [
           { label: 'Shipping', href: '/#faq' },
           { label: 'Returns', href: '/#faq' },
-          { label: 'Contact', href: 'mailto:care@auraevital.com' },
+          { label: 'Contact', href: 'mailto:hello@auraevital.com' },
         ],
       },
     ],
