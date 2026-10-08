@@ -12,14 +12,14 @@ export const metadata: Metadata = {
     template: '%s · Aurae',
   },
   description:
-    'Premium cellular beauty supplements for the modern woman. Clinically-backed formulas — collagen, adaptogens, sleep botanicals, resveratrol and NAD+ — dosed at clinically-relevant levels.',
+    'Premium cellular beauty supplements for the modern woman. Science-backed formulas — collagen, adaptogens, sleep botanicals, resveratrol and NAD+ — dosed at clinically-relevant levels.',
   metadataBase: new URL('https://auraevital.com'),
   openGraph: {
     type: 'website',
     siteName: 'Aurae',
     title: 'Aurae — Lit from within ✦',
     description:
-      'Premium cellular beauty supplements for the modern woman. Five clinically-backed formulas, dosed properly.',
+      'Premium cellular beauty supplements for the modern woman. Five science-backed formulas, dosed properly.',
   },
   icons: {
     icon: [

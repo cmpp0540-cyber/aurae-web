@@ -111,7 +111,7 @@ export const LANDING = {
     titleItalic: 'One intention.',
     pillars: ['Radiant skin', 'Mental clarity', 'Quality sleep', 'Cellular energy', 'Longevity'],
     subtitle:
-      'Five clinically-backed formulas designed for women who believe that real beauty starts at the cellular level.',
+      'Five science-backed formulas designed for women who believe that real beauty starts at the cellular level.',
   },
   bundles: {
     eyebrow: 'Save More · Glow More',
@@ -255,7 +255,7 @@ export const SCIENCE_CARDS: {
   {
     glyph: '★',
     title: 'Third-Party Tested',
-    body: 'Every batch is independently tested for purity, potency, and contaminants. We publish certificates of analysis and meet GMP standards in certified facilities.',
+    body: 'Every batch is independently tested for purity, potency, and contaminants. We meet GMP standards in certified facilities.',
     stat: '100%',
     statLabel: 'Third-party verified',
   },
