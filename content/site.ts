@@ -375,7 +375,7 @@ export const SITE_FAQS: Faq[] = [
   {
     q: 'How long does shipping take?',
     a: [
-      'Free standard shipping (5–7 business days) on all orders over $50. Orders under $50 ship standard for a flat $9.99.',
+      'Free standard shipping (5–7 business days) on all orders over $50. Orders under $50 ship standard for a flat $4.99.',
       'We currently ship throughout the continental United States. International shipping will be available in Q3 2027.',
     ],
   },
