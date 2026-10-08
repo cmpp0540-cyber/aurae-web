@@ -20,14 +20,14 @@ const WARM_FALLBACK_MS = 1200;
 /**
  * Image carousel for the product hero.
  *
- * Supports any number of Shopify images: arrows, thumbnail strip, keyboard
- * arrows, swipe, and a counter. With a single image it renders as a plain
- * figure with no controls.
+ * Supports any number of Shopify images: thumbnail strip, keyboard arrows,
+ * swipe, and a counter. With a single image it renders as a plain figure with
+ * no controls.
  *
  * Loading strategy — the first frame is `priority`, so it is preloaded and gets
  * the high-priority fetch slot on its own. Once it lands (or after a short
  * fallback) every remaining frame mounts at once and streams in behind the
- * scenes, which is what makes arrow and thumbnail clicks instant afterwards.
+ * scenes, which is what makes thumbnail clicks instant afterwards.
  *
  * Mounting all of them is the preload: with the Shopify CDN loader each frame
  * is ~15-25 KB of WebP, so a full 8-image gallery costs less than a fifth of
@@ -93,7 +93,7 @@ export default function ProductGallery({ images, title, gradientClass, accent }:
     <div className="w-full min-w-0 max-w-full">
       <div
         className={[
-          'group relative aspect-square w-full overflow-hidden rounded-[22px]',
+          'relative aspect-square w-full overflow-hidden rounded-[22px]',
           gradientClass,
         ].join(' ')}
         onTouchStart={(event) => {
@@ -144,28 +144,9 @@ export default function ProductGallery({ images, title, gradientClass, accent }:
         })}
 
         {total > 1 ? (
-          <>
-            <button
-              type="button"
-              onClick={prev}
-              aria-label="Previous image"
-              className="absolute left-3 top-1/2 z-[2] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-cream/85 text-[18px] text-espresso shadow-soft backdrop-blur transition-all duration-300 ease-aurae hover:bg-coral hover:text-cream sm:left-4 lg:opacity-0 lg:group-hover:opacity-100"
-            >
-              ‹
-            </button>
-            <button
-              type="button"
-              onClick={next}
-              aria-label="Next image"
-              className="absolute right-3 top-1/2 z-[2] grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-cream/85 text-[18px] text-espresso shadow-soft backdrop-blur transition-all duration-300 ease-aurae hover:bg-coral hover:text-cream sm:right-4 lg:opacity-0 lg:group-hover:opacity-100"
-            >
-              ›
-            </button>
-
-            <span className="absolute bottom-4 right-4 z-[2] rounded-full bg-espresso/70 px-3 py-1 text-[11px] font-semibold tabular-nums text-ivory backdrop-blur">
-              {active + 1} / {total}
-            </span>
-          </>
+          <span className="absolute bottom-4 right-4 z-[2] rounded-full bg-espresso/70 px-3 py-1 text-[11px] font-semibold tabular-nums text-ivory backdrop-blur">
+            {active + 1} / {total}
+          </span>
         ) : null}
       </div>
 
