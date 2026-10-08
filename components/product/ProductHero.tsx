@@ -16,9 +16,9 @@ export default function ProductHero({ product, content }: Props) {
 
   return (
     <section className={['relative', accent.sectionGradient].join(' ')}>
-      <div className="shell grid gap-10 py-10 lg:grid-cols-2 lg:gap-16 lg:py-16">
+      <div className="shell grid grid-cols-1 gap-10 overflow-x-clip py-10 lg:grid-cols-2 lg:gap-16 lg:py-16">
         {/* Gallery — every Shopify image for this product */}
-        <div className="lg:sticky lg:top-28 lg:self-start">
+        <div className="min-w-0 lg:sticky lg:top-28 lg:self-start">
           <ProductGallery
             images={product.images}
             title={product.title}
@@ -28,8 +28,8 @@ export default function ProductHero({ product, content }: Props) {
         </div>
 
         {/* Buy box */}
-        <div>
-          <nav aria-label="Breadcrumb" className="mb-6 text-[11px] uppercase tracking-[0.15em] text-espresso/45">
+        <div className="min-w-0">
+          <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center text-[11px] uppercase tracking-[0.15em] text-espresso/45">
             <Link href="/" className="transition-colors hover:text-coral">
               Aurae
             </Link>
@@ -47,7 +47,7 @@ export default function ProductHero({ product, content }: Props) {
 
           <p className="u-eyebrow">{content?.eyebrow ?? product.productType}</p>
 
-          <h1 className="mt-3 font-display text-display-lg font-extrabold uppercase tracking-[0.02em]">
+          <h1 className="mt-3 break-words font-display text-display-lg font-extrabold uppercase tracking-[0.02em]">
             {product.title}
           </h1>
 

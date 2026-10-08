@@ -90,7 +90,7 @@ export default function ProductGallery({ images, title, gradientClass, accent }:
   const current = images[active];
 
   return (
-    <div className="w-full">
+    <div className="w-full min-w-0 max-w-full">
       <div
         className={[
           'group relative aspect-square w-full overflow-hidden rounded-[22px]',
