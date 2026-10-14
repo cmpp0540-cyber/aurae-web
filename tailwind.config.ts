@@ -73,6 +73,11 @@ const config: Config = {
         shimmer: {
           '100%': { transform: 'translateX(100%)' },
         },
+        // Endless horizontal loop for the trust strip (two identical halves).
+        marquee: {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-50%)' },
+        },
         // Barely-there drift for the hero product labels.
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -86,6 +91,7 @@ const config: Config = {
         twinkle: 'twinkle 4s ease-in-out infinite',
         shimmer: 'shimmer 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         float: 'float 5.5s ease-in-out infinite',
+        marquee: 'marquee 38s linear infinite',
       },
       transitionTimingFunction: {
         aurae: 'cubic-bezier(0.22, 1, 0.36, 1)',

@@ -9,7 +9,7 @@ import type { Faq, Testimonial } from './products';
 export const SITE = {
   name: 'Aurae',
   tagline: 'lit from within ✦',
-  announcement: 'Free shipping over $50 · Subscribe & save 10%',
+  announcement: 'Free shipping over $50',
   supportEmail: 'hello@auraevital.com',
   nav: [
     { label: 'Shop', href: '/#shop' },

@@ -36,12 +36,27 @@ export default function ProductsSection({ products }: { products: AuraeProduct[]
                   );
                 })}
               </span>
-              <span className="mt-4 block">{LANDING.products.subtitle}</span>
             </>
           }
         />
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        {/* "Lit from within": a short brand statement on espresso */}
+        <div className="mx-auto mt-10 max-w-[900px] rounded-2xl bg-espresso px-7 py-10 text-left sm:px-12 sm:py-12">
+          <p className="text-eyebrow font-semibold uppercase tracking-[0.22em] text-sun">
+            The Aurae Glow
+          </p>
+          <h3
+            className="mt-3 font-display font-bold leading-[1.08] text-cream"
+            style={{ fontSize: 'clamp(2rem, 5vw, 3.25rem)' }}
+          >
+            Lit from <em className="italic text-coral">within.</em>
+          </h3>
+          <p className="mt-5 max-w-[640px] font-display text-[19px] italic leading-[1.6] text-cream/90 sm:text-[22px]">
+            {LANDING.products.subtitle}
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {products.map((product, index) => (
             <ProductCard key={product.id} product={product} index={index} />
           ))}

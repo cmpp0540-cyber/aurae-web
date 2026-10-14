@@ -6,6 +6,7 @@ import InsideSection from '@/components/landing/InsideSection';
 import Newsletter from '@/components/landing/Newsletter';
 import ProductsSection from '@/components/landing/ProductsSection';
 import ScienceSection from '@/components/landing/ScienceSection';
+import StorySection from '@/components/landing/StorySection';
 import TestimonialsSection from '@/components/landing/TestimonialsSection';
 import { getCatalog } from '@/lib/products';
 
@@ -24,6 +25,7 @@ export default async function HomePage() {
       <InsideSection />
       <ScienceSection />
       <TestimonialsSection />
+      <StorySection />
       <FaqSection />
       <Newsletter />
 
