@@ -3,6 +3,18 @@ import Accordion from '@/components/ui/Accordion';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
 
+/** The four questions shown on the home page, in this order. */
+const FEATURED = [
+  'How do I take each Aurae product?',
+  'How does Subscribe & Save work?',
+  'How long does shipping take?',
+  "What's your return policy?",
+];
+
+const FAQS = FEATURED.map((q) => SITE_FAQS.find((faq) => faq.q === q)).filter(
+  (faq): faq is (typeof SITE_FAQS)[number] => Boolean(faq),
+);
+
 export default function FaqSection() {
   return (
     <section id="faq" className="section-y scroll-mt-24 bg-cream">
@@ -14,7 +26,7 @@ export default function FaqSection() {
           subtitle={LANDING.faq.subtitle}
         />
 
-        <Accordion items={SITE_FAQS} className="mt-12" />
+        <Accordion items={FAQS} className="mt-12" />
 
         <Reveal className="mt-12 text-center">
           <p className="text-[15px] text-espresso/65">{LANDING.faq.ctaLead}</p>

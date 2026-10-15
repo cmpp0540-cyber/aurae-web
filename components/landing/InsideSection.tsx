@@ -4,6 +4,9 @@ import SectionHeading from '@/components/ui/SectionHeading';
 
 const { inside } = LANDING;
 
+const CALLOUT_REST =
+  'We don’t believe in sprinkles. Compare our formulas to typical drugstore brands and you’ll see why our women feel the difference.';
+
 export default function InsideSection() {
   return (
     <section
@@ -15,7 +18,6 @@ export default function InsideSection() {
           eyebrow={inside.eyebrow}
           lead={inside.titleLead}
           italic={inside.titleItalic}
-          subtitle={inside.subtitle}
         />
 
         {/* Pull quote */}
@@ -30,7 +32,8 @@ export default function InsideSection() {
             {inside.callout.leadIn}{' '}
             <strong className="font-bold not-italic text-coral">{inside.callout.emphasis}</strong>{' '}
             {inside.callout.middle}{' '}
-            <strong className="font-bold not-italic text-coral">{inside.callout.emphasis2}</strong>
+            <strong className="font-bold not-italic text-coral">{inside.callout.emphasis2}</strong>{' '}
+            {CALLOUT_REST}
           </p>
           <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-coral">
             {inside.callout.signature}
