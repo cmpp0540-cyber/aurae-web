@@ -140,7 +140,7 @@ export const LANDING = {
       items: [
         { lead: 'CALM:', text: 'KSM-66 600mg + Vitamins D3, B6, B12 + Maca + Ginseng + Shatavari + L-Arginine' },
         { lead: 'RENEWAL:', text: 'NAD+ 500mg + Quercetin 250mg + Resveratrol 98% (3-in-1 longevity)' },
-        { lead: 'GLOW:', text: 'Grass-Fed Collagen Types 1 & 3 with full amino acid profile, 20 g + 18 g protein - hydrolyzed = true absorption' },
+        { lead: 'GLOW:', text: 'Grass-fed hydrolyzed collagen peptides, Types 1 & 3, with a full amino acid profile. 20 g of collagen and 18 g of protein per serving, hydrolyzed for easy absorption' },
         { lead: 'SLEEP:', text: '5 botanicals (Valerian, Lavender, Chamomile, Hibiscus, Melatonin)' },
         { lead: 'RADIANCE:', text: '50% Trans-Resveratrol from Japanese Knotweed' },
         { lead: 'All formulas:', text: 'Third-party tested, GMP-certified, no fillers' },
