@@ -26,7 +26,7 @@ export const SITE = {
   },
   trustBar: [
     'Third-Party Tested',
-    'Grass-Fed & Clinically Studied',
+    'Grass-Fed & Science-Backed',
     'Clean Ingredients',
     'Subscribe & Save 10%',
     'Free Shipping $50+',

@@ -61,6 +61,11 @@ export default function ProductsSection({ products }: { products: AuraeProduct[]
             <ProductCard key={product.id} product={product} index={index} />
           ))}
         </div>
+
+        <p className="mx-auto mt-8 max-w-[760px] text-center text-[12px] leading-relaxed text-espresso/50">
+          *These statements have not been evaluated by the Food and Drug Administration. This
+          product is not intended to diagnose, treat, cure, or prevent any disease.
+        </p>
       </div>
     </section>
   );

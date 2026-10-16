@@ -34,12 +34,17 @@ export default function BenefitsSection({ benefits, accent, productTitle }: Prop
             >
               <Glyph name={benefit.icon} color={palette.hex} />
               <h3 className="mt-5 font-display text-[18px] font-semibold leading-snug">
-                {benefit.title}
+                {benefit.title}*
               </h3>
               <p className="mt-3 text-[14px] leading-relaxed text-espresso/70">{benefit.text}</p>
             </Reveal>
           ))}
         </div>
+
+        <p className="mx-auto mt-8 max-w-[760px] text-center text-[12px] leading-relaxed text-espresso/50">
+          *These statements have not been evaluated by the Food and Drug Administration. This
+          product is not intended to diagnose, treat, cure, or prevent any disease.
+        </p>
       </div>
     </section>
   );

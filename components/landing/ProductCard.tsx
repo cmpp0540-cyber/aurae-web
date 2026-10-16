@@ -63,7 +63,7 @@ export default function ProductCard({ product, index = 0 }: Props) {
                   <span aria-hidden className="mt-[2px] flex-shrink-0 text-[11px] text-coral">
                     ✦
                   </span>
-                  {benefit}
+                  {benefit}*
                 </li>
               ))}
             </ul>
