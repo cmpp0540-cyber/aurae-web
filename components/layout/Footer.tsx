@@ -44,7 +44,7 @@ export default function Footer() {
 
       <div className="border-t border-ivory/10">
         <div className="shell flex flex-col gap-4 py-6 text-[12px] text-ivory/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Aurae Wellness, Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Aurae All rights reserved.</p>
           <ul className="flex gap-6">
             {LEGAL_LINKS.map((item) => (
               <li key={item.label}>

@@ -21,7 +21,7 @@ export type LegalDoc = {
 };
 
 const EMAIL = 'hello@auraevital.com';
-const COMPANY = 'Aurae Wellness, Inc.';
+const COMPANY = 'Aurae';
 const UPDATED = 'October 15, 2026';
 
 export const PRIVACY: LegalDoc = {
@@ -29,7 +29,7 @@ export const PRIVACY: LegalDoc = {
   italic: 'Policy.',
   updated: UPDATED,
   intro: [
-    `${COMPANY} (“Aurae”, “we”, “us”) runs auraevital.com. This policy explains what personal information we collect, how we use it and the choices you have. It applies to people who visit our website, sign up for our emails or buy from us in the United States.`,
+    `${COMPANY} (“we”, “us”) runs auraevital.com. This policy explains what personal information we collect, how we use it and the choices you have. It applies to people who visit our website, sign up for our emails or buy from us in the United States.`,
   ],
   sections: [
     {
@@ -153,7 +153,7 @@ export const TERMS: LegalDoc = {
   italic: 'Service.',
   updated: UPDATED,
   intro: [
-    `These Terms of Service (“Terms”) govern your use of auraevital.com and your purchases from ${COMPANY} (“Aurae”, “we”, “us”). By using the site or placing an order, you agree to these Terms. If you do not agree, please do not use the site.`,
+    `These Terms of Service (“Terms”) govern your use of auraevital.com and your purchases from ${COMPANY} (“we”, “us”). By using the site or placing an order, you agree to these Terms. If you do not agree, please do not use the site.`,
   ],
   sections: [
     {
@@ -200,7 +200,7 @@ export const TERMS: LegalDoc = {
       heading: 'Subscribe & Save',
       body: [
         'If you choose Subscribe & Save, you get a discount on each order and free shipping, and your order is delivered automatically every month. By subscribing, you authorize us to charge your payment method on file for each shipment until you cancel.',
-        `You can pause, skip or cancel at any time, with no commitment. We send you an email a few days before each shipment so you can make changes. To cancel or change a subscription, email ${EMAIL} before your next shipment date.`,
+        `You can pause, skip or cancel at any time, with no commitment. To cancel or change a subscription, email ${EMAIL} before your next shipment date.`,
       ],
     },
     {
@@ -235,7 +235,7 @@ export const TERMS: LegalDoc = {
       id: 'law',
       heading: 'Governing law',
       body: [
-        `These Terms are governed by the laws of the United States and of the state in which ${COMPANY} is organized, without regard to conflict-of-law rules.`,
+        'These Terms are governed by the laws of the United States and the state in which Aurae is based, without regard to conflict-of-law rules.',
       ],
     },
     {
