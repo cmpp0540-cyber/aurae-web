@@ -1,6 +1,13 @@
 import Link from 'next/link';
 import { SITE } from '@/content/site';
 
+/** Legal pages linked from the bottom bar. */
+const LEGAL_LINKS = [
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Terms', href: '/terms' },
+  { label: 'Cookies', href: '/privacy#cookies' },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-espresso text-ivory">
@@ -39,8 +46,12 @@ export default function Footer() {
         <div className="shell flex flex-col gap-4 py-6 text-[12px] text-ivory/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Aurae Wellness, Inc. All rights reserved.</p>
           <ul className="flex gap-6">
-            {SITE.footer.legal.map((item) => (
-              <li key={item}>{item}</li>
+            {LEGAL_LINKS.map((item) => (
+              <li key={item.label}>
+                <Link href={item.href} className="transition-colors duration-300 hover:text-coral">
+                  {item.label}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>
