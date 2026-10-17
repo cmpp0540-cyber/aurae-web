@@ -7,6 +7,7 @@ import BundleHero from '@/components/bundle/BundleHero';
 import BundleIncludes from '@/components/bundle/BundleIncludes';
 import RitualTimeline from '@/components/bundle/RitualTimeline';
 import SynergySection from '@/components/bundle/SynergySection';
+import FdaNote from '@/components/ui/FdaNote';
 import FinalCta from '@/components/product/FinalCta';
 import ReviewsSection from '@/components/product/ReviewsSection';
 
@@ -71,6 +72,10 @@ export default async function BundlePage({ params }: Params) {
           />
         </>
       ) : null}
+
+      <div className="bg-cream px-6 pb-10 pt-4">
+        <FdaNote />
+      </div>
 
       <FinalCta
         product={bundle}

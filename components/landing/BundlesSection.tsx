@@ -1,6 +1,7 @@
 import { LANDING } from '@/content/site';
 import type { AuraeProduct } from '@/lib/types';
 import SectionHeading from '@/components/ui/SectionHeading';
+import FdaNote from '@/components/ui/FdaNote';
 import BundleCard from './BundleCard';
 
 export default function BundlesSection({ bundles }: { bundles: AuraeProduct[] }) {
@@ -24,6 +25,8 @@ export default function BundlesSection({ bundles }: { bundles: AuraeProduct[] })
             <BundleCard key={bundle.id} bundle={bundle} index={index} />
           ))}
         </div>
+
+        <FdaNote className="mt-10" />
       </div>
     </section>
   );

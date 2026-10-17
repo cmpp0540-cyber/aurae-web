@@ -227,7 +227,7 @@ export const SCIENCE_CARDS: {
   {
     glyph: '⊛',
     title: 'NAD+ 3-in-1 Longevity Stack',
-    body: '500mg NAD+ for cellular energy + Quercetin for inflammatory response + 98% Resveratrol from Japanese Knotweed for cardiovascular and cognitive support. Three powerhouse molecules, one capsule.',
+    body: '500mg NAD+ for cellular energy + Quercetin for inflammatory response + 98% Resveratrol from Japanese Knotweed for antioxidant support. Three powerhouse molecules, one capsule.',
     stat: '500mg',
     statLabel: 'NAD+ + senolytic cofactors',
   },
@@ -241,7 +241,7 @@ export const SCIENCE_CARDS: {
   {
     glyph: '✧',
     title: '50% Trans-Resveratrol',
-    body: 'Sourced from Polygonum cuspidatum (Japanese Knotweed) — the most concentrated natural source. Activates SIRT1 longevity genes, supports normal cholesterol, brain health, and powerful antioxidant protection.',
+    body: 'Sourced from Polygonum cuspidatum (Japanese Knotweed) — the most concentrated natural source. Activates SIRT1 longevity genes and provides powerful antioxidant protection.',
     stat: '600mg',
     statLabel: '50% trans-resveratrol',
   },
