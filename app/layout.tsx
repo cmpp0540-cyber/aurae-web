@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import CartDrawer from '@/components/cart/CartDrawer';
 import SubscribePopup from '@/components/layout/SubscribePopup';
+import MetaPixel from '@/components/analytics/MetaPixel';
 import { CartProvider } from '@/components/cart/CartProvider';
 
 export const metadata: Metadata = {
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       <body>
+        <MetaPixel />
         <CartProvider>
           <AnnouncementBar />
           <Header />

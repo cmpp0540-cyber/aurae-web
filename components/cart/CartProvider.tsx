@@ -10,6 +10,7 @@ import {
   type ReactNode,
 } from 'react';
 import type { CartLine } from '@/lib/types';
+import { track } from '@/lib/meta-pixel';
 
 const STORAGE_KEY = 'aurae.cart.v1';
 const DISCOUNT_KEY = 'aurae.discount.v1';
@@ -125,6 +126,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
       }
       return [...current, { ...line, quantity }];
     });
+    track('AddToCart', {
+      content_ids: [line.numericVariantId],
+      content_name: line.title,
+      content_type: 'product',
+      value: line.price * quantity,
+      currency: 'USD',
+    });
     setIsOpen(true);
   }, []);
 
@@ -227,6 +235,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const checkout = useCallback(async () => {
     if (!lines.length) return;
     setIsCheckingOut(true);
+    track('InitiateCheckout', {
+      content_ids: lines.map((line) => line.numericVariantId),
+      content_type: 'product',
+      num_items: lines.reduce((total, line) => total + line.quantity, 0),
+      value: lines.reduce((total, line) => total + line.price * line.quantity, 0),
+      currency: 'USD',
+    });
     try {
       const res = await fetch('/api/checkout', {
         method: 'POST',

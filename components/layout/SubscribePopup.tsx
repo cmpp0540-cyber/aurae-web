@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
+import { track } from '@/lib/meta-pixel';
 
 type Status = 'idle' | 'pending' | 'done' | 'error';
 
@@ -85,6 +86,7 @@ export default function SubscribePopup() {
 
       if (response.ok && data?.ok) {
         setStatus('done');
+        track('Lead', { content_name: 'Welcome popup' });
         stayQuiet();
         return;
       }

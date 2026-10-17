@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 import { bundleContent } from '@/content/bundles';
 import { getBundleContents, getBundleParams, getProduct } from '@/lib/products';
+import TrackViewContent from '@/components/analytics/TrackViewContent';
 import TrustBar from '@/components/layout/TrustBar';
 import BundleHero from '@/components/bundle/BundleHero';
 import BundleIncludes from '@/components/bundle/BundleIncludes';
@@ -52,6 +53,12 @@ export default async function BundlePage({ params }: Params) {
 
   return (
     <>
+      <TrackViewContent
+        contentId={bundle.variants[0]?.numericId ?? bundle.numericId}
+        name={bundle.title}
+        value={bundle.price}
+        currency={bundle.currency}
+      />
       <BundleHero bundle={bundle} content={content} />
       <TrustBar />
 

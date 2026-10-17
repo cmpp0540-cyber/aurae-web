@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { LANDING } from '@/content/site';
+import { track } from '@/lib/meta-pixel';
 
 type Status = 'idle' | 'pending' | 'done' | 'error';
 
@@ -32,6 +33,7 @@ export default function Newsletter() {
       // came back". A 400 or 502 still parses as JSON.
       if (response.ok && data?.ok) {
         setStatus('done');
+        track('Lead', { content_name: 'Newsletter' });
         return;
       }
 

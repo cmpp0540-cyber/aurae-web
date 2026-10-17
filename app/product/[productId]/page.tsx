@@ -3,6 +3,7 @@ import { notFound, redirect } from 'next/navigation';
 import { productContent } from '@/content/products';
 import { getCrossSell, getProduct, getProductParams } from '@/lib/products';
 import { shortDescription } from '@/lib/format';
+import TrackViewContent from '@/components/analytics/TrackViewContent';
 import TrustBar from '@/components/layout/TrustBar';
 import BenefitsSection from '@/components/product/BenefitsSection';
 import CrossSellSection from '@/components/product/CrossSellSection';
@@ -56,6 +57,12 @@ export default async function ProductPage({ params }: Params) {
 
   return (
     <>
+      <TrackViewContent
+        contentId={product.variants[0]?.numericId ?? product.numericId}
+        name={product.title}
+        value={product.price}
+        currency={product.currency}
+      />
       <ProductHero product={product} content={content} />
       <TrustBar />
 
