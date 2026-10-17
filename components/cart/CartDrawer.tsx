@@ -1,21 +1,44 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { FLAT_SHIPPING_RATE, FREE_SHIPPING_THRESHOLD } from '@/lib/config';
 import { formatPrice } from '@/lib/format';
 import SmartImage from '@/components/ui/SmartImage';
 import { useCart } from './CartProvider';
 
 export default function CartDrawer() {
-  const { lines, isOpen, close, subtotal, setQuantity, remove, checkout, isCheckingOut, count } =
-    useCart();
+  const {
+    lines,
+    isOpen,
+    close,
+    subtotal,
+    setQuantity,
+    remove,
+    checkout,
+    isCheckingOut,
+    count,
+    discountCode,
+    discountAmount,
+    discountPending,
+    discountError,
+    applyDiscount,
+    removeDiscount,
+  } = useCart();
+  const [codeInput, setCodeInput] = useState('');
+
+  async function handleApply(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const ok = await applyDiscount(codeInput);
+    if (ok) setCodeInput('');
+  }
 
   const toFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
 
   // An estimate only — Shopify's checkout quotes the real rate and the tax.
   const freeShipping = subtotal >= FREE_SHIPPING_THRESHOLD;
   const shipping = freeShipping ? 0 : FLAT_SHIPPING_RATE;
-  const estimatedTotal = subtotal + shipping;
+  const estimatedTotal = Math.max(0, subtotal - discountAmount) + shipping;
 
   return (
     <>
@@ -178,6 +201,55 @@ export default function CartDrawer() {
             {/* Only rendered when the cart has lines, so there is never a
                 shipping estimate or a total against an empty cart. */}
             <footer className="border-t border-espresso/10 px-6 py-5">
+              {/* Discount code */}
+              {discountCode ? (
+                <div className="mb-4 flex items-center justify-between rounded-lg bg-blush px-4 py-3">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-coral">
+                    ✦ {discountCode} applied
+                  </p>
+                  <button
+                    type="button"
+                    onClick={removeDiscount}
+                    className="text-[11px] uppercase tracking-[0.12em] text-espresso/50 transition-colors hover:text-coral"
+                  >
+                    Remove
+                  </button>
+                </div>
+              ) : (
+                <div className="mb-4">
+                  <form onSubmit={handleApply} className="flex gap-2">
+                    <label className="flex-1">
+                      <span className="sr-only">Discount code</span>
+                      <input
+                        type="text"
+                        value={codeInput}
+                        onChange={(event) => setCodeInput(event.target.value)}
+                        autoCapitalize="characters"
+                        autoComplete="off"
+                        spellCheck={false}
+                        disabled={discountPending}
+                        aria-invalid={Boolean(discountError)}
+                        aria-describedby={discountError ? 'discount-error' : undefined}
+                        placeholder="Discount code"
+                        className="w-full rounded border border-espresso/15 bg-transparent px-4 py-3 text-[13px] uppercase placeholder:normal-case placeholder:text-espresso/40 focus:border-coral focus:outline-none disabled:opacity-60"
+                      />
+                    </label>
+                    <button
+                      type="submit"
+                      disabled={discountPending || !codeInput.trim()}
+                      className="rounded border border-espresso/20 px-4 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors hover:border-coral hover:text-coral disabled:opacity-50"
+                    >
+                      {discountPending ? '…' : 'Apply'}
+                    </button>
+                  </form>
+                  {discountError ? (
+                    <p id="discount-error" role="alert" className="mt-2 text-[12px] text-coral">
+                      {discountError}
+                    </p>
+                  ) : null}
+                </div>
+              )}
+
               <div className="flex items-baseline justify-between">
                 <span className="text-[12px] uppercase tracking-[0.15em] text-espresso/60">
                   Subtotal
@@ -186,6 +258,17 @@ export default function CartDrawer() {
                   {formatPrice(subtotal)}
                 </span>
               </div>
+
+              {discountCode && discountAmount > 0 ? (
+                <div className="mt-2 flex items-baseline justify-between">
+                  <span className="text-[12px] uppercase tracking-[0.15em] text-espresso/60">
+                    Discount
+                  </span>
+                  <span className="text-[14px] font-semibold tabular-nums text-coral">
+                    −{formatPrice(discountAmount)}
+                  </span>
+                </div>
+              ) : null}
 
               <div className="mt-2 flex items-baseline justify-between">
                 <span className="text-[12px] uppercase tracking-[0.15em] text-espresso/60">

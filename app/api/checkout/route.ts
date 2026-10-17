@@ -3,6 +3,9 @@ import { cartPermalink, createCheckout } from '@/lib/shopify';
 
 type Line = { variantId: string; numericVariantId: string; quantity: number };
 
+/** Same shape the discount route accepts. */
+const CODE_PATTERN = /^[A-Za-z0-9_-]{1,40}$/;
+
 /**
  * Turns the client cart into a Shopify checkout URL.
  *
@@ -13,9 +16,13 @@ type Line = { variantId: string; numericVariantId: string; quantity: number };
  */
 export async function POST(request: Request) {
   let lines: Line[] = [];
+  let discountCode: string | null = null;
 
   try {
-    const body = (await request.json()) as { lines?: Line[] };
+    const body = (await request.json()) as { lines?: Line[]; discountCode?: unknown };
+    if (typeof body.discountCode === 'string' && CODE_PATTERN.test(body.discountCode.trim())) {
+      discountCode = body.discountCode.trim();
+    }
     lines = (body.lines ?? []).filter(
       (line) => line?.numericVariantId && Number(line.quantity) > 0,
     );
@@ -29,6 +36,7 @@ export async function POST(request: Request) {
 
   const checkoutUrl = await createCheckout(
     lines.map((line) => ({ variantId: line.variantId, quantity: line.quantity })),
+    discountCode,
   );
 
   if (checkoutUrl) {
@@ -41,6 +49,7 @@ export async function POST(request: Request) {
         numericVariantId: line.numericVariantId,
         quantity: line.quantity,
       })),
+      discountCode,
     ),
     via: 'cart-permalink',
   });

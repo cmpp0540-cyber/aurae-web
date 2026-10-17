@@ -12,6 +12,7 @@ import {
 import type { CartLine } from '@/lib/types';
 
 const STORAGE_KEY = 'aurae.cart.v1';
+const DISCOUNT_KEY = 'aurae.discount.v1';
 
 type CartContextValue = {
   lines: CartLine[];
@@ -20,6 +21,13 @@ type CartContextValue = {
   isOpen: boolean;
   isCheckingOut: boolean;
   hydrated: boolean;
+  /** The discount code currently applied, if any, and what it takes off. */
+  discountCode: string | null;
+  discountAmount: number;
+  discountPending: boolean;
+  discountError: string;
+  applyDiscount: (code: string) => Promise<boolean>;
+  removeDiscount: () => void;
   open: () => void;
   close: () => void;
   add: (line: Omit<CartLine, 'quantity'>, quantity?: number) => void;
@@ -48,12 +56,33 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [hydrated, setHydrated] = useState(false);
+  const [discountCode, setDiscountCode] = useState<string | null>(null);
+  const [discountAmount, setDiscountAmount] = useState(0);
+  const [discountPending, setDiscountPending] = useState(false);
+  const [discountError, setDiscountError] = useState('');
 
   // Hydrate from localStorage after mount so SSR markup stays stable.
   useEffect(() => {
     setLines(readStorage());
+    try {
+      const saved = window.localStorage.getItem(DISCOUNT_KEY);
+      if (saved) setDiscountCode(saved);
+    } catch {
+      /* ignore */
+    }
     setHydrated(true);
   }, []);
+
+  // Remember the code between visits.
+  useEffect(() => {
+    if (!hydrated) return;
+    try {
+      if (discountCode) window.localStorage.setItem(DISCOUNT_KEY, discountCode);
+      else window.localStorage.removeItem(DISCOUNT_KEY);
+    } catch {
+      /* ignore */
+    }
+  }, [discountCode, hydrated]);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -113,6 +142,88 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const clear = useCallback(() => setLines([]), []);
 
+  /** Asks the server what a code takes off these lines. */
+  const priceDiscount = useCallback(
+    async (code: string, current: CartLine[]) => {
+      const res = await fetch('/api/discount', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          code,
+          lines: current.map((line) => ({
+            variantId: line.variantId,
+            quantity: line.quantity,
+          })),
+        }),
+      });
+      return (await res.json().catch(() => null)) as
+        | { ok: true; code: string; amount: number }
+        | { ok: false; error: string }
+        | null;
+    },
+    [],
+  );
+
+  const applyDiscount = useCallback(
+    async (rawCode: string) => {
+      const code = rawCode.trim();
+      if (!code || !lines.length) return false;
+      setDiscountPending(true);
+      setDiscountError('');
+      try {
+        const data = await priceDiscount(code, lines);
+        if (data?.ok) {
+          setDiscountCode(data.code);
+          setDiscountAmount(data.amount);
+          return true;
+        }
+        setDiscountError(data && !data.ok ? data.error : 'Something went wrong. Please try again.');
+        return false;
+      } catch {
+        setDiscountError('Could not reach the server. Please try again.');
+        return false;
+      } finally {
+        setDiscountPending(false);
+      }
+    },
+    [lines, priceDiscount],
+  );
+
+  const removeDiscount = useCallback(() => {
+    setDiscountCode(null);
+    setDiscountAmount(0);
+    setDiscountError('');
+  }, []);
+
+  // Re-price the code whenever the cart changes (and when a saved code loads).
+  useEffect(() => {
+    if (!hydrated || !discountCode) return;
+    if (!lines.length) {
+      setDiscountAmount(0);
+      return;
+    }
+    let cancelled = false;
+    const timer = window.setTimeout(async () => {
+      try {
+        const data = await priceDiscount(discountCode, lines);
+        if (cancelled) return;
+        if (data?.ok) {
+          setDiscountAmount(data.amount);
+        } else if (data && !data.ok && data.error.includes('isn’t valid')) {
+          // The code stopped applying (e.g. the cart changed): drop it quietly.
+          setDiscountCode(null);
+          setDiscountAmount(0);
+        }
+      } catch {
+        /* keep what we had; checkout still applies the code */
+      }
+    }, 400);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
+  }, [lines, discountCode, hydrated, priceDiscount]);
+
   const checkout = useCallback(async () => {
     if (!lines.length) return;
     setIsCheckingOut(true);
@@ -126,6 +237,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
             numericVariantId: line.numericVariantId,
             quantity: line.quantity,
           })),
+          discountCode,
         }),
       });
       const data = (await res.json()) as { url?: string; error?: string };
@@ -139,7 +251,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       console.error('[cart] checkout failed:', error);
       setIsCheckingOut(false);
     }
-  }, [lines]);
+  }, [lines, discountCode]);
 
   const value = useMemo<CartContextValue>(
     () => ({
@@ -149,6 +261,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
       isOpen,
       isCheckingOut,
       hydrated,
+      discountCode,
+      discountAmount,
+      discountPending,
+      discountError,
+      applyDiscount,
+      removeDiscount,
       open: () => setIsOpen(true),
       close: () => setIsOpen(false),
       add,
@@ -157,7 +275,23 @@ export function CartProvider({ children }: { children: ReactNode }) {
       clear,
       checkout,
     }),
-    [lines, isOpen, isCheckingOut, hydrated, add, setQuantity, remove, clear, checkout],
+    [
+      lines,
+      isOpen,
+      isCheckingOut,
+      hydrated,
+      discountCode,
+      discountAmount,
+      discountPending,
+      discountError,
+      applyDiscount,
+      removeDiscount,
+      add,
+      setQuantity,
+      remove,
+      clear,
+      checkout,
+    ],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

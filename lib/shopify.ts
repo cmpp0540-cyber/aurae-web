@@ -282,13 +282,14 @@ type CartCreateResponse = {
  */
 export async function createCheckout(
   lines: { variantId: string; quantity: number }[],
+  discountCode?: string | null,
 ): Promise<string | null> {
   if (!lines.length) return null;
 
   const data = await storefrontMutation<CartCreateResponse>(
     /* GraphQL */ `
-      mutation CartCreate($lines: [CartLineInput!]!) {
-        cartCreate(input: { lines: $lines }) {
+      mutation CartCreate($lines: [CartLineInput!]!, $discountCodes: [String!]) {
+        cartCreate(input: { lines: $lines, discountCodes: $discountCodes }) {
           cart {
             id
             checkoutUrl
@@ -305,6 +306,7 @@ export async function createCheckout(
         merchandiseId: line.variantId,
         quantity: line.quantity,
       })),
+      discountCodes: discountCode ? [discountCode] : [],
     },
   );
 
@@ -318,14 +320,102 @@ export async function createCheckout(
   return data?.cartCreate?.cart?.checkoutUrl ?? null;
 }
 
+type DiscountPreviewResponse = {
+  cartCreate: {
+    cart: {
+      discountCodes: { code: string; applicable: boolean }[];
+      discountAllocations: { discountedAmount: { amount: string } }[];
+      lines: {
+        edges: {
+          node: { discountAllocations: { discountedAmount: { amount: string } }[] };
+        }[];
+      };
+    } | null;
+    userErrors: { message: string }[];
+  };
+};
+
+export type DiscountPreview =
+  | { status: 'applied'; amount: number }
+  | { status: 'invalid' }
+  | { status: 'unavailable' };
+
+/**
+ * Ask Shopify whether a code works on these lines and how much it takes off.
+ * Builds a throwaway cart, so nothing is saved or charged.
+ */
+export async function previewDiscount(
+  lines: { variantId: string; quantity: number }[],
+  code: string,
+): Promise<DiscountPreview> {
+  if (!lines.length) return { status: 'unavailable' };
+
+  const data = await storefrontMutation<DiscountPreviewResponse>(
+    /* GraphQL */ `
+      mutation DiscountPreview($lines: [CartLineInput!]!, $discountCodes: [String!]) {
+        cartCreate(input: { lines: $lines, discountCodes: $discountCodes }) {
+          cart {
+            discountCodes {
+              code
+              applicable
+            }
+            discountAllocations {
+              discountedAmount {
+                amount
+              }
+            }
+            lines(first: 50) {
+              edges {
+                node {
+                  discountAllocations {
+                    discountedAmount {
+                      amount
+                    }
+                  }
+                }
+              }
+            }
+          }
+          userErrors {
+            message
+          }
+        }
+      }
+    `,
+    {
+      lines: lines.map((line) => ({ merchandiseId: line.variantId, quantity: line.quantity })),
+      discountCodes: [code],
+    },
+  );
+
+  const cart = data?.cartCreate?.cart;
+  if (!cart) return { status: 'unavailable' };
+
+  const match = cart.discountCodes.find((item) => item.code.toLowerCase() === code.toLowerCase());
+  if (!match?.applicable) return { status: 'invalid' };
+
+  const sum = (items: { discountedAmount: { amount: string } }[]) =>
+    items.reduce((total, item) => total + Number(item.discountedAmount.amount), 0);
+
+  const amount =
+    sum(cart.discountAllocations) +
+    cart.lines.edges.reduce((total, edge) => total + sum(edge.node.discountAllocations), 0);
+
+  return { status: 'applied', amount };
+}
+
 /**
  * Checkout URL that works with zero API credentials.
  * https://shop.com/cart/{variantId}:{qty},{variantId}:{qty}
  */
-export function cartPermalink(lines: { numericVariantId: string; quantity: number }[]): string {
+export function cartPermalink(
+  lines: { numericVariantId: string; quantity: number }[],
+  discountCode?: string | null,
+): string {
   const path = lines
     .filter((line) => line.quantity > 0)
     .map((line) => `${line.numericVariantId}:${line.quantity}`)
     .join(',');
-  return `https://${SHOPIFY_DOMAIN}/cart/${path}`;
+  const query = discountCode ? `?discount=${encodeURIComponent(discountCode)}` : '';
+  return `https://${SHOPIFY_DOMAIN}/cart/${path}${query}`;
 }
