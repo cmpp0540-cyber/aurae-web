@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   description:
     'Premium cellular beauty supplements for the modern woman. Science-backed formulas — collagen, adaptogens, sleep botanicals, resveratrol and NAD+ — dosed at clinically-relevant levels.',
   metadataBase: new URL('https://auraevital.com'),
+  // Meta (Facebook) domain verification — renders <meta name="facebook-domain-verification" ...> in <head>.
+  other: {
+    'facebook-domain-verification': 'dqs1k7i6njpr7xtux19t5e7f7fsfpq',
+  },
   openGraph: {
     type: 'website',
     siteName: 'Aurae',
