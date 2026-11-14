@@ -184,7 +184,7 @@ export const TERMS: LegalDoc = {
       id: 'shipping',
       heading: 'Shipping',
       body: [
-        'Standard shipping (typically 5–7 business days) is free on orders of $50 or more and a flat $4.99 on orders under $50. We ship to addresses in the continental United States. Delivery times are estimates and are not guaranteed, and they can be affected by carriers and weather. Please check that your address is correct, because we cannot always change it after you order.',
+        'Standard shipping (typically 5–7 business days) is free on orders of $40 or more (after discounts) and a flat $4.99 on orders under $40. We ship to addresses in the continental United States. Delivery times are estimates and are not guaranteed, and they can be affected by carriers and weather. Please check that your address is correct, because we cannot always change it after you order.',
       ],
     },
     {

@@ -140,7 +140,7 @@ export default function PurchasePanel({ product, subtitle }: Props) {
       </div>
 
       <p className="mt-4 text-[11px] uppercase tracking-[0.12em] text-espresso/50">
-        ✦ Free shipping over $50 · 30-day money-back guarantee
+        ✦ Free shipping over $40 · 30-day money-back guarantee
       </p>
     </div>
   );

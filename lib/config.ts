@@ -56,5 +56,5 @@ export const PREMIUM_BUNDLE_HANDLE = 'the-full-aurae-ritual';
  * where the real rates are calculated, so keep them in step with the shipping
  * profile configured there.
  */
-export const FREE_SHIPPING_THRESHOLD = 50;
+export const FREE_SHIPPING_THRESHOLD = 40;
 export const FLAT_SHIPPING_RATE = 4.99;

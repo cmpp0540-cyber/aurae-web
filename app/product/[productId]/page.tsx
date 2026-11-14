@@ -107,7 +107,7 @@ export default async function ProductPage({ params }: Params) {
       <FinalCta
         product={product}
         headline={content?.finalCta.headline ?? `Ready to start with ${product.title}?`}
-        sub={content?.finalCta.sub ?? 'Free shipping over $50. Cancel anytime.'}
+        sub={content?.finalCta.sub ?? 'Free shipping over $40. Cancel anytime.'}
       />
     </>
   );

@@ -33,12 +33,15 @@ export default function CartDrawer() {
     if (ok) setCodeInput('');
   }
 
-  const toFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
+  // Shopify applies the free-shipping threshold to the total AFTER discounts,
+  // so the cart does the same.
+  const afterDiscount = Math.max(0, subtotal - discountAmount);
+  const toFreeShipping = Math.max(0, FREE_SHIPPING_THRESHOLD - afterDiscount);
 
   // An estimate only — Shopify's checkout quotes the real rate and the tax.
-  const freeShipping = subtotal >= FREE_SHIPPING_THRESHOLD;
+  const freeShipping = afterDiscount >= FREE_SHIPPING_THRESHOLD;
   const shipping = freeShipping ? 0 : FLAT_SHIPPING_RATE;
-  const estimatedTotal = Math.max(0, subtotal - discountAmount) + shipping;
+  const estimatedTotal = afterDiscount + shipping;
 
   return (
     <>
@@ -114,7 +117,7 @@ export default function CartDrawer() {
                   <div
                     className="h-full rounded-full bg-coral transition-all duration-500 ease-aurae"
                     style={{
-                      width: `${Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD) * 100)}%`,
+                      width: `${Math.min(100, (afterDiscount / FREE_SHIPPING_THRESHOLD) * 100)}%`,
                     }}
                   />
                 </div>
