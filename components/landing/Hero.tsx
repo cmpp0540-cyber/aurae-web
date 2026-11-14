@@ -1,24 +1,28 @@
 import Link from 'next/link';
-import { HERO_PILLARS, SITE } from '@/content/site';
+import { HERO_PILLARS, HERO_PILLARS_MOBILE, SITE } from '@/content/site';
+import type { HeroPillar } from '@/content/site';
 import { HERO_BLUR_DATA_URL, HERO_CORAL } from '@/lib/hero-blur';
 import SmartImage from '@/components/ui/SmartImage';
 
 /**
- * Desktop: the wide photograph, all five products on the brand coral.
- * Phones: a tall version of the same shot, so the five products stack
+ * Desktop: the wide photograph, seven products on the brand coral.
+ * Phones: a tall shot of the full line of eight, so the products stack
  * vertically and fill the screen width instead of shrinking to a thin strip.
+ *
+ * The two shots hold different products in a different order, so each has its
+ * own pillar list in `content/site.ts`.
  *
  * Both are local assets, pre-optimised on disk (the Shopify CDN loader passes
  * local paths through untouched). See README › Image loading.
  */
 const HERO_IMAGE = {
   src: '/images/aurae-hero-products.webp',
-  alt: 'Aurae GLOW, CALM, SLEEP, RADIANCE and RENEWAL supplements floating on a coral background with a flowing pink liquid ribbon',
+  alt: 'Aurae GLOW, RENEWAL, CALM, FLORA, RADIANCE, VITAL and RELEASE supplements floating on a coral background, threaded by an iridescent glass ribbon',
 };
 
 const HERO_IMAGE_MOBILE = {
   src: '/images/aurae-hero-vertical.webp',
-  alt: 'Aurae SLEEP, RADIANCE, GLOW, CALM and RENEWAL supplements stacked vertically on a champagne background with a flowing iridescent glass ribbon',
+  alt: 'The full Aurae line — RADIANCE, RENEWAL, CALM, GLOW, FLORA, RELEASE, VITAL and STILL — spiralling up a coral background around an iridescent glass ribbon',
 };
 
 /**
@@ -27,37 +31,44 @@ const HERO_IMAGE_MOBILE = {
  * right; the colour blocks above and below the photo continue them.
  */
 const MOBILE_TOP =
-  'linear-gradient(90deg,#c5a992,#caaf9a,#d3b9a4,#dec4b3,#e2c4ad,#e3bcab,#eadacc,#f2e5da,#f1e7dd)';
+  'linear-gradient(90deg,#C14844,#C14744,#C14744,#C04744,#C04844,#BF6C6B,#C89495,#B84440,#B7413F)';
 const MOBILE_BOTTOM =
-  'linear-gradient(90deg,#a47e71,#ac867d,#b18b82,#bb958d,#ca9e8b,#b58479,#b18980,#af877d,#b89289)';
-
-/**
- * A benefit label beside each product in the tall image, alternating sides.
- * `y` is the vertical centre of the product, as % of the image height.
- * Same order as HERO_PILLARS (sleep, radiance, glow, calm, renewal).
- */
-const MOBILE_LABELS: { side: 'l' | 'r'; y: number }[] = [
-  { side: 'l', y: 15 },
-  { side: 'r', y: 31 },
-  { side: 'l', y: 49 },
-  { side: 'r', y: 69 },
-  { side: 'l', y: 88 },
-];
-
-/**
- * Tap areas over each product in the tall image, top to bottom, as % of its
- * height. Same order as HERO_PILLARS (sleep, radiance, glow, calm, renewal).
- */
-const MOBILE_HOTSPOTS: { top: number; height: number }[] = [
-  { top: 6, height: 16 },
-  { top: 22, height: 17 },
-  { top: 39, height: 21 },
-  { top: 60, height: 18 },
-  { top: 78, height: 20 },
-];
+  'linear-gradient(90deg,#F6B8B2,#F7BFB8,#FAC6BF,#FBC6BF,#FBC8C1,#FAC7C0,#FAC7C0,#F7C4BD,#F4BFB9)';
 
 /** Pale pink that reads on the coral without washing out. */
 const INK = '#FFE3EA';
+
+/**
+ * A pillar links to its product page once that page exists; until then the
+ * label is plain text. Same markup either way, so nothing shifts when a
+ * handle is filled in.
+ */
+function PillarLabel({
+  pillar,
+  className,
+  style,
+  children,
+}: {
+  pillar: HeroPillar;
+  className?: string;
+  style?: React.CSSProperties;
+  children: React.ReactNode;
+}) {
+  if (!pillar.handle) {
+    return (
+      <span className={className} style={style}>
+        {children}
+      </span>
+    );
+  }
+
+  return (
+    <Link href={`/product/${pillar.handle}`} className={className} style={style}>
+      {children}
+      <span className="sr-only"> — shop {pillar.product}</span>
+    </Link>
+  );
+}
 
 function DesktopActions() {
   return (
@@ -79,14 +90,13 @@ function DesktopActions() {
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden bg-[#e3d0c0] lg:bg-[var(--hero-coral)]"
+      className="relative overflow-hidden bg-[#C14744] lg:bg-[var(--hero-coral)]"
       style={
         {
           '--hero-coral': HERO_CORAL,
-          '--m-top': MOBILE_TOP,
         } as React.CSSProperties
       }
-      aria-label="Aurae — the five rituals"
+      aria-label="Aurae — the full ritual"
     >
       {/* Decorative sparkle, kept from the original design */}
       <span
@@ -97,14 +107,15 @@ export default function Hero() {
         ✦
       </span>
 
-      {/* Headline: in flow above the photograph on phones, over it from `lg` up. */}
-      <div className="shell animate-fade-up bg-[image:var(--m-top)] pb-5 pt-9 text-center lg:absolute lg:left-[4%] lg:top-[7%] lg:z-10 lg:w-[40%] lg:bg-none lg:p-0 lg:text-left">
+      {/* Headline: over the photograph at every width — the top of both shots
+          is empty coral, so it sits on the image rather than in a band. */}
+      <div className="animate-fade-up absolute inset-x-0 top-0 z-10 px-6 pt-8 text-center lg:left-[4%] lg:right-auto lg:top-[7%] lg:w-[40%] lg:px-0 lg:pt-0 lg:text-left">
         <h1
-          className="font-display font-semibold leading-[1.08] tracking-[-0.01em] text-espresso lg:u-hero-shadow lg:text-[#FFE3EA]"
-          style={{ fontSize: 'clamp(2rem, 4.2vw, 4.25rem)' }}
+          className="u-hero-shadow font-display font-semibold leading-[1.08] tracking-[-0.01em] text-[#FFE3EA]"
+          style={{ fontSize: 'clamp(1.75rem, 4.2vw, 4.25rem)' }}
         >
           {SITE.hero.titleLead}{' '}
-          <em className="italic text-coral lg:text-[#FFE3EA]">{SITE.hero.titleItalic}</em>
+          <em className="italic text-[#FFE3EA]">{SITE.hero.titleItalic}</em>
         </h1>
 
         <DesktopActions />
@@ -127,27 +138,31 @@ export default function Hero() {
         <ul>
           {HERO_PILLARS.map((pillar, index) => (
             <li
-              key={pillar.handle}
+              key={pillar.product}
               className="absolute z-10 -translate-x-1/2"
               style={{ left: `${pillar.x}%`, top: `${pillar.y}%` }}
             >
-              <Link
-                href={`/product/${pillar.handle}`}
-                className="u-hero-shadow block animate-float whitespace-nowrap font-display text-[13px] font-medium uppercase tracking-[0.18em] transition-all duration-300 ease-aurae hover:-translate-y-0.5 hover:text-cream xl:text-[15px]"
+              <PillarLabel
+                pillar={pillar}
+                className={[
+                  'u-hero-shadow block animate-float whitespace-nowrap font-display text-[13px] font-medium uppercase tracking-[0.18em] xl:text-[15px]',
+                  pillar.handle
+                    ? 'transition-all duration-300 ease-aurae hover:-translate-y-0.5 hover:text-cream'
+                    : '',
+                ].join(' ')}
                 style={{ color: INK, animationDelay: `${index * 0.9}s` }}
               >
                 <span aria-hidden className="mr-2">
                   ✦
                 </span>
                 {pillar.label}
-                <span className="sr-only"> — shop {pillar.product}</span>
-              </Link>
+              </PillarLabel>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* ── Phone photograph: tall, the five products stacked ────────── */}
+      {/* ── Phone photograph: tall, the full line spiralling up ───────── */}
       <div className="relative aspect-[1/2] w-full lg:hidden">
         <SmartImage
           src={HERO_IMAGE_MOBILE.src}
@@ -157,6 +172,16 @@ export default function Hero() {
           sizes="100vw"
           className="absolute inset-0 h-full w-full"
           imgClassName="h-full w-full object-cover"
+        />
+
+        {/* Keeps the headline legible where the ribbon crosses the top */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-[20%]"
+          style={{
+            backgroundImage:
+              'linear-gradient(to bottom, rgba(150,45,45,0.60), rgba(150,45,45,0.28) 55%, transparent)',
+          }}
         />
 
         {/* Soft seams into the colour blocks above and below */}
@@ -179,44 +204,53 @@ export default function Hero() {
           }}
         />
 
-        {/* Tap a bottle to open it */}
-        {HERO_PILLARS.map((pillar, index) => {
-          const spot = MOBILE_HOTSPOTS[index];
-          return (
+        {/* Tap a bottle to open it — only the half of the frame it sits in. */}
+        {HERO_PILLARS_MOBILE.map((pillar) =>
+          pillar.handle ? (
             <Link
-              key={pillar.handle}
+              key={pillar.product}
               href={`/product/${pillar.handle}`}
-              className="absolute inset-x-[12%] z-10"
-              style={{ top: `${spot.top}%`, height: `${spot.height}%` }}
+              className={[
+                'absolute z-10',
+                pillar.side === 'l' ? 'left-[6%] right-[50%]' : 'left-[50%] right-[6%]',
+              ].join(' ')}
+              style={{ top: `${pillar.top}%`, height: `${pillar.height}%` }}
             >
               <span className="sr-only">
                 {pillar.label} — shop {pillar.product}
               </span>
             </Link>
-          );
-        })}
+          ) : null,
+        )}
 
-        {/* Benefit labels, alternating sides */}
+        {/* Benefit labels, in the margin on the product's own side */}
         <ul aria-hidden className="pointer-events-none">
-          {HERO_PILLARS.map((pillar, index) => {
-            const { side, y } = MOBILE_LABELS[index];
-            const left = side === 'l';
+          {HERO_PILLARS_MOBILE.map((pillar) => {
+            const left = pillar.side === 'l';
             return (
               <li
-                key={pillar.handle}
-                className={['absolute z-20 -translate-y-1/2', left ? 'right-[70%]' : 'left-[72%]'].join(' ')}
-                style={{ top: `${y}%` }}
+                key={pillar.product}
+                className={[
+                  'absolute z-20 -translate-y-1/2',
+                  left ? 'right-[77%]' : 'left-[77%]',
+                ].join(' ')}
+                style={{ top: `${pillar.y}%` }}
               >
-                <span className={['flex items-center gap-1.5', left ? 'flex-row' : 'flex-row-reverse'].join(' ')}>
+                <span
+                  className={[
+                    'flex items-center gap-1',
+                    left ? 'flex-row' : 'flex-row-reverse',
+                  ].join(' ')}
+                >
                   <span
                     className={[
-                      'block max-w-[82px] font-display text-[11px] font-medium uppercase leading-tight tracking-[0.14em] text-espresso',
+                      'block max-w-[68px] break-words font-display text-[9px] font-medium uppercase leading-tight tracking-[0.06em] text-cream drop-shadow-[0_1px_2px_rgba(90,30,30,0.45)]',
                       left ? 'text-right' : 'text-left',
                     ].join(' ')}
                   >
                     {pillar.label}
                   </span>
-                  <span className="block h-px w-4 flex-shrink-0 bg-coral/70" />
+                  <span className="block h-px w-3 flex-shrink-0 bg-cream/70" />
                 </span>
               </li>
             );

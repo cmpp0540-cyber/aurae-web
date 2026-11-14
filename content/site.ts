@@ -9,7 +9,7 @@ import type { Faq, Testimonial } from './products';
 export const SITE = {
   name: 'Aurae',
   tagline: 'lit from within ✦',
-  announcement: 'Free shipping over $50',
+  announcement: 'Free shipping over $40',
   supportEmail: 'hello@auraevital.com',
   nav: [
     { label: 'Shop', href: '/#shop' },
@@ -29,7 +29,7 @@ export const SITE = {
     'Grass-Fed & Science-Backed',
     'Clean Ingredients',
     'Subscribe & Save 10%',
-    'Free Shipping $50+',
+    'Free Shipping $40+',
   ],
   footer: {
     columns: [
@@ -75,32 +75,88 @@ export const SITE = {
 } as const;
 
 /**
- * The five benefit labels that float over the hero photograph, one per product,
- * left to right as they appear in the shot.
+ * A benefit label per product in the hero photographs.
  *
- * `x` and `y` are percentages of the 16:9 frame: `x` is the centre of the
- * product below the label, `y` is the top of the label itself. They are tied to
- * `public/images/aurae-hero-products.webp` specifically — reshoot the hero and
- * these need re-measuring.
+ * `handle` is the product page the label links to. `null` means the product is
+ * in the shot but has no page yet — the label renders as plain text instead of
+ * a link, so nobody lands on a 404. Fill the handle in once the product is
+ * live in Shopify and the link turns on by itself.
+ *
+ * The two shots hold different products in a different order, so each has its
+ * own list. Both sets of coordinates are measured against their specific image
+ * — reshoot a hero and these need re-measuring.
  */
-export const HERO_PILLARS: {
+export type HeroPillar = {
   label: string;
   product: string;
-  handle: string;
-  x: number;
-  y: number;
-}[] = [
-  { label: 'Quality sleep', product: 'SLEEP', handle: 'sleep-strips', x: 15.5, y: 39 },
-  { label: 'Longevity', product: 'RADIANCE', handle: 'resveratrol-50-600mg', x: 33.5, y: 35.5 },
+  handle: string | null;
+};
+
+/**
+ * Wide shot, `public/images/aurae-hero-products.webp`, left to right.
+ * `x` is the centre of the product below the label, `y` the top of the label,
+ * both as percentages of the 16:9 frame. STILL is not in this shot.
+ */
+export const HERO_PILLARS: (HeroPillar & { x: number; y: number })[] = [
   {
-    label: 'Radiant skin',
+    label: 'Radiant skin*',
     product: 'GLOW',
     handle: 'grass-fed-hydrolyzed-collagen-peptides',
-    x: 52,
-    y: 22,
+    x: 33,
+    y: 58,
   },
-  { label: 'Mental clarity', product: 'CALM', handle: 'ashwagandha-plus', x: 71, y: 15 },
-  { label: 'Cellular energy', product: 'RENEWAL', handle: 'nad', x: 86, y: 8 },
+  { label: 'Cellular energy*', product: 'RENEWAL', handle: 'nad', x: 45, y: 44.5 },
+  { label: 'Mental clarity*', product: 'CALM', handle: 'ashwagandha-plus', x: 52.5, y: 36 },
+  { label: 'Gut balance*', product: 'FLORA', handle: null, x: 63, y: 25.5 },
+  { label: 'Longevity*', product: 'RADIANCE', handle: 'resveratrol-50-600mg', x: 70, y: 33.5 },
+  { label: 'Sharper focus*', product: 'VITAL', handle: null, x: 81.5, y: 13.5 },
+  { label: 'Easy digestion*', product: 'RELEASE', handle: null, x: 89, y: 4.5 },
+];
+
+/**
+ * Tall shot, `public/images/aurae-hero-vertical.webp`, top to bottom.
+ * The products alternate sides as the ribbon spirals, so `side` says which
+ * margin the label sits in and which half of the frame is tappable. `y` is the
+ * vertical centre of the product, `top`/`height` its band, all as percentages.
+ */
+export const HERO_PILLARS_MOBILE: (HeroPillar & {
+  side: 'l' | 'r';
+  y: number;
+  top: number;
+  height: number;
+})[] = [
+  {
+    label: 'Longevity*',
+    product: 'RADIANCE',
+    handle: 'resveratrol-50-600mg',
+    side: 'l',
+    y: 24.5,
+    top: 17,
+    height: 15,
+  },
+  { label: 'Cellular energy*', product: 'RENEWAL', handle: 'nad', side: 'r', y: 31, top: 24, height: 14 },
+  {
+    label: 'Mental clarity*',
+    product: 'CALM',
+    handle: 'ashwagandha-plus',
+    side: 'l',
+    y: 43,
+    top: 35,
+    height: 16,
+  },
+  {
+    label: 'Radiant skin*',
+    product: 'GLOW',
+    handle: 'grass-fed-hydrolyzed-collagen-peptides',
+    side: 'r',
+    y: 51,
+    top: 42,
+    height: 18,
+  },
+  { label: 'Gut balance*', product: 'FLORA', handle: null, side: 'l', y: 61, top: 53, height: 16 },
+  { label: 'Easy digestion*', product: 'RELEASE', handle: null, side: 'r', y: 70, top: 63, height: 14 },
+  { label: 'Sharper focus*', product: 'VITAL', handle: null, side: 'l', y: 79, top: 71, height: 16 },
+  { label: 'Deep rest*', product: 'STILL', handle: null, side: 'r', y: 85, top: 77, height: 15 },
 ];
 
 /** Section intros for the landing page. */
@@ -375,7 +431,7 @@ export const SITE_FAQS: Faq[] = [
   {
     q: 'How long does shipping take?',
     a: [
-      'Free standard shipping (5–7 business days) on all orders over $50. Orders under $50 ship standard for a flat $4.99.',
+      'Free standard shipping (5–7 business days) on all orders of $40 or more. Orders under $40 ship standard for a flat $4.99.',
       'We currently ship throughout the continental United States. International shipping will be available in Q3 2027.',
     ],
   },
