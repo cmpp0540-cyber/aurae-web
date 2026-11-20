@@ -3,9 +3,15 @@ import Accordion from '@/components/ui/Accordion';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
 
-/** The four questions shown on the home page, in this order. */
+/**
+ * The four questions shown on the home page, in this order.
+ *
+ * These are matched against SITE_FAQS by their exact wording, so renaming or
+ * removing a question there drops it from the home page without warning —
+ * keep the two in step.
+ */
 const FEATURED = [
-  'How do I take each Aurae product?',
+  'Can I take the Aurae products together?',
   'How does Subscribe & Save work?',
   'How long does shipping take?',
   "What's your return policy?",

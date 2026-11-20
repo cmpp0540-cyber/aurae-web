@@ -25,7 +25,7 @@ export const SITE = {
     secondaryCta: 'Explore the Rituals',
   },
   trustBar: [
-    'Third-Party Tested',
+    'FDA-Registered Facility',
     'Grass-Fed & Science-Backed',
     'Clean Ingredients',
     'Subscribe & Save 10%',
@@ -156,18 +156,30 @@ export const HERO_PILLARS_MOBILE: (HeroPillar & {
   { label: 'Gut balance*', product: 'FLORA', handle: null, side: 'l', y: 61, top: 53, height: 16 },
   { label: 'Easy digestion*', product: 'RELEASE', handle: null, side: 'r', y: 70, top: 63, height: 14 },
   { label: 'Sharper focus*', product: 'VITAL', handle: null, side: 'l', y: 79, top: 71, height: 16 },
-  { label: 'Deep rest*', product: 'STILL', handle: null, side: 'r', y: 85, top: 77, height: 15 },
+  { label: 'Relaxed focus*', product: 'STILL', handle: null, side: 'r', y: 85, top: 77, height: 15 },
 ];
 
 /** Section intros for the landing page. */
 export const LANDING = {
   products: {
     eyebrow: 'The Ritual',
-    titleLead: 'Five rituals.',
+    titleLead: 'Your rituals.',
     titleItalic: 'One intention.',
-    pillars: ['Radiant skin', 'Mental clarity', 'Quality sleep', 'Cellular energy', 'Longevity'],
+    // Ordered the way the day runs, morning to night, so the list reads as a
+    // routine rather than a catalogue. No count in the copy here or in the
+    // subtitle — the line stays true as products are added.
+    pillars: [
+      'Gut balance',
+      'Radiant skin',
+      'Cellular energy',
+      'Easy digestion',
+      'Sharper focus',
+      'Mental clarity',
+      'Longevity',
+      'Relaxed focus',
+    ],
     subtitle:
-      'Five science-backed formulas designed for women who believe that real beauty starts at the cellular level.',
+      'Science-backed formulas designed for women who believe that real beauty starts at the cellular level.',
   },
   bundles: {
     eyebrow: 'Save More · Glow More',
@@ -197,9 +209,11 @@ export const LANDING = {
         { lead: 'CALM:', text: 'KSM-66 600mg + Vitamins D3, B6, B12 + Maca + Ginseng + Shatavari + L-Arginine' },
         { lead: 'RENEWAL:', text: 'NAD+ 500mg + Quercetin 250mg + Resveratrol 98% (3-in-1 longevity)' },
         { lead: 'GLOW:', text: 'Grass-fed hydrolyzed collagen peptides, Types 1 & 3, with a full amino acid profile. 20 g of collagen and 18 g of protein per serving, hydrolyzed for easy absorption' },
-        { lead: 'SLEEP:', text: '5 botanicals (Valerian, Lavender, Chamomile, Hibiscus, Melatonin)' },
+        { lead: 'FLORA:', text: '40 billion CFU across 4 clinically studied strains + MAKTREK Bi-Pass delivery + prebiotic fiber' },
+        { lead: 'RELEASE:', text: 'Makzyme-Pro 6-enzyme blend with 2,500 HUT of declared activity' },
+        { lead: 'STILL:', text: 'Reishi 200mg + L-Theanine + Lemon Balm + Passion Flower + Valerian — calm focus, not sedation' },
         { lead: 'RADIANCE:', text: '50% Trans-Resveratrol from Japanese Knotweed' },
-        { lead: 'All formulas:', text: 'Third-party tested, GMP-certified, no fillers' },
+        { lead: 'All formulas:', text: 'Made in an FDA-registered, cGMP-certified facility in the USA, no fillers' },
       ],
     },
     them: {
@@ -210,9 +224,11 @@ export const LANDING = {
         'Ashwagandha alone (no vitamins, no synergistic adaptogens)',
         'NAD+ with resveratrol, but under-dosed — too low for real results and does not contain quercetin',
         'Generic collagen, single type, missing key amino acids, poor absorption',
-        '1–2 sleep ingredients (often just melatonin)',
+        'Probiotics with no delivery protection — most cultures die in stomach acid, and nothing to feed the ones that survive',
+        'Enzyme blends that never declare their activity units, so the real dose is unknowable',
+        'Single-herb calm pills, or focus blends built on caffeine that trade a short peak for a crash',
         'Low-purity resveratrol (25% or less trans-resveratrol)',
-        'Magnesium stearate, artificial fillers, no testing transparency',
+        'Magnesium stearate, artificial fillers, and no word on where they are actually made',
       ],
     },
     summary: {
@@ -228,7 +244,7 @@ export const LANDING = {
       'We don’t believe in pseudoscience. Every formula is built on clinical research, sourced from premium ingredients, and dosed at clinically-relevant levels.',
     research: {
       title: 'The Aurae standard: multi-ingredient synergy.',
-      body: 'Where competitors sell single-ingredient bottles at under-dosed levels, we formulate complete stacks. CALM has 8 active compounds. RENEWAL is a 3-in-1 longevity formula. SLEEP combines 5 sleep botanicals. Every formula is backed by peer-reviewed research and tested for purity.',
+      body: 'Where competitors sell single-ingredient bottles at under-dosed levels, we formulate complete stacks. CALM has 8 active compounds. RENEWAL is a 3-in-1 longevity formula. STILL pairs reishi with L-theanine for calm, unsedated focus. Every formula is backed by peer-reviewed research.',
       badges: ['GMP Certified', 'Non-GMO', 'Gluten-Free', 'No Fillers'],
     },
   },
@@ -244,6 +260,14 @@ export const LANDING = {
       { value: '94%', label: 'Would Recommend' },
       { value: '87%', label: 'Repeat Buyers' },
     ],
+    /**
+     * Several reviewers are friends of the founder who were among Aurae's
+     * first supporters. A personal connection to the brand has to be
+     * disclosed wherever the review appears — it is what lets a reader weigh
+     * the review for themselves.
+     */
+    disclosure:
+      'Some reviews are from friends of the founder who were among the first to try Aurae. Reviews are published as written, edited only for length.',
   },
   faq: {
     eyebrow: 'Questions Answered',
@@ -302,22 +326,79 @@ export const SCIENCE_CARDS: {
     statLabel: '50% trans-resveratrol',
   },
   {
+    glyph: '❖',
+    title: 'MAKTREK Bi-Pass Delivery',
+    body: '40 billion CFU across four clinically studied strains — L. acidophilus La-14, B. lactis Bl-04, L. plantarum Lp-115 and L. paracasei Lpc-37 — carried intact past stomach acid, with marine polysaccharide and fructooligosaccharide as prebiotic fuel.',
+    stat: '40B',
+    statLabel: 'CFU delivered past stomach acid',
+  },
+  {
+    glyph: '◉',
+    title: 'Makzyme-Pro Enzyme Blend',
+    body: 'Six digestive enzymes at a declared 2,500 HUT of activity — a figure most brands never publish at all. Breaks down proteins, fats, lactose and carbohydrates so a meal is absorbed rather than sitting. One vegetable capsule per serving.',
+    stat: '2,500 HUT',
+    statLabel: 'Declared enzyme activity',
+  },
+  {
+    glyph: '✤',
+    title: 'Wild-Caught Omega-3',
+    body: '1,000mg of fish oil concentrate from sardines and anchovies, delivering 180mg EPA and 120mg DHA — fats the body cannot make on its own. Stabilised with vitamin E, 100 softgels to a bottle.',
+    stat: '100',
+    statLabel: 'Softgels, one a day',
+  },
+  {
     glyph: '◐',
-    title: '5-Ingredient Sleep Formula',
-    body: 'Valerian root + Lavender + Chamomile + Hibiscus + Melatonin work synergistically for deeper rest. Oral strip delivery for faster sublingual absorption — non-addictive, raspberry-flavored, no water needed.',
-    stat: '5',
-    statLabel: 'Synergistic sleep botanicals',
+    title: 'Reishi + L-Theanine',
+    body: '200mg reishi extract with L-theanine, lemon balm, passion flower and valerian root. L-theanine is the amino acid behind calm alertness — it settles a racing mind without dulling it, which is why it suits focused work rather than winding down. Non-drowsy, caffeine-free, in a blackberry gummy coloured with real blackberries.',
+    stat: '200mg',
+    statLabel: 'Reishi extract, non-drowsy',
   },
   {
     glyph: '★',
-    title: 'Third-Party Tested',
-    body: 'Every batch is independently tested for purity, potency, and contaminants. We meet GMP standards in certified facilities.',
-    stat: '100%',
-    statLabel: 'Third-party verified',
+    title: 'FDA-Registered, cGMP Facility',
+    body: 'Every Aurae formula is made in the United States, in a facility registered with the FDA and operating to current Good Manufacturing Practice standards — the rules covering sourcing, hygiene, traceability and process control from raw ingredient to sealed bottle.',
+    stat: 'cGMP',
+    statLabel: 'Made in the USA',
   },
 ];
 
 export const LANDING_TESTIMONIALS: (Testimonial & { tag: string; accent: AccentKey })[] = [
+  {
+    tag: 'FLORA',
+    accent: 'flora',
+    stars: 5,
+    headline: 'I finally feel balanced again.',
+    body: 'My digestion had been completely off-track for a while. FLORA helped me feel balanced again so quickly. I love that it is 40 billion CFU — you can genuinely feel the quality within the first few days.',
+    author: 'Hannah G.',
+    location: 'Austin, TX',
+  },
+  {
+    tag: 'RELEASE',
+    accent: 'release',
+    stars: 5,
+    headline: 'My absolute lifesaver for eating out.',
+    body: 'RELEASE has become my go-to handbag essential. Whenever I go out for dinner or eat a heavier meal than usual, I take one capsule and completely forget about that heavy feeling afterwards. It delivers exactly what it promises.',
+    author: 'Chloe T.',
+    location: 'Miami, FL',
+  },
+  {
+    tag: 'VITAL',
+    accent: 'vital',
+    stars: 5,
+    headline: 'Clearer at work, and my joints feel great.',
+    body: 'I started taking VITAL to support my daily focus at work, and I am in love. I feel so much clearer throughout the day, and my joints have felt great during my workouts.',
+    author: 'Lucia V.',
+    location: 'San Diego, CA',
+  },
+  {
+    tag: 'CALM',
+    accent: 'calm',
+    stars: 5,
+    headline: 'Fewer cravings, and finally relaxed.',
+    body: 'I noticed my cravings dropped way down, and I feel noticeably less bloated. With ashwagandha plus vitamins D3, B6 and B12, I finally feel genuinely relaxed.',
+    author: 'Maya R.',
+    location: 'Denver, CO',
+  },
   {
     tag: 'GLOW',
     accent: 'glow',
@@ -326,15 +407,6 @@ export const LANDING_TESTIMONIALS: (Testimonial & { tag: string; accent: AccentK
     body: 'After 8 weeks of GLOW every morning in my coffee, my skin is visibly plumper and that tired girl face is gone. Worth every penny.',
     author: 'Sofia M.',
     location: 'New York, NY',
-  },
-  {
-    tag: 'CALM + SLEEP',
-    accent: 'calm',
-    stars: 5,
-    headline: 'Calm during the day. Out cold at night.',
-    body: 'I was skeptical about sleep strips but they work in like 20 minutes. Combined with CALM, my anxiety has dropped massively. Game changer.',
-    author: 'Emma R.',
-    location: 'Los Angeles, CA',
   },
   {
     tag: 'RENEWAL',
@@ -355,21 +427,12 @@ export const LANDING_TESTIMONIALS: (Testimonial & { tag: string; accent: AccentK
     location: 'Chicago, IL',
   },
   {
-    tag: 'SLEEP',
-    accent: 'sleep',
-    stars: 5,
-    headline: 'Better than melatonin gummies, promise.',
-    body: 'The strips are genius. No sticky gummies, no chalky pills. They melt under your tongue and 20 mins later, I am dreaming. Deep, restorative sleep.',
-    author: 'Ava L.',
-    location: 'Austin, TX',
-  },
-  {
     tag: 'FULL RITUAL',
     accent: 'ritual',
     stars: 5,
     headline: 'I feel 28 again, and I am 38.',
     body: 'After 4 months on the Full Ritual, my friends keep asking what I am doing differently. The answer is Aurae. This is my forever wellness stack.',
-    author: 'Maya P.',
+    author: 'Anne L.',
     location: 'San Francisco, CA',
   },
 ];
@@ -383,17 +446,20 @@ export const SITE_FAQS: Faq[] = [
     ],
   },
   {
-    q: 'Are Aurae supplements third-party tested?',
+    q: 'Where are Aurae supplements made?',
     a: [
-      'Yes — every batch. We test for purity, potency, heavy metals, and contaminants through independent labs. Certificates of Analysis are available upon request.',
-      'Our products are manufactured in GMP-certified facilities in the United States.',
+      'In the United States, in a facility registered with the FDA and operating to current Good Manufacturing Practice (cGMP) standards. That covers ingredient sourcing, hygiene, traceability and process control from raw material to sealed bottle.',
+      'Registration is not an FDA endorsement — the FDA does not approve dietary supplements, and no brand that says otherwise is telling you the truth.',
     ],
   },
   {
-    q: 'Can I take all five products together?',
+    q: 'Can I take the Aurae products together?',
     a: [
-      'Absolutely. The Five Rituals are designed to work synergistically — beauty, calm, sleep, anti-aging, and cellular energy support different aspects of wellness without overlap or interaction.',
-      'For best results: GLOW + RENEWAL in the morning, RADIANCE midday, CALM early evening, and SLEEP 30 minutes before bed.',
+      'Yes. The formulas are built to complement each other rather than overlap — gut balance, skin, cellular energy, digestion, essential fats, stress, longevity and focus each support a different part of your day.',
+      'A full-line day looks like this. Morning: FLORA first thing, GLOW stirred into your coffee or smoothie, and RENEWAL with water before you head out.',
+      'With meals: RELEASE as you sit down to a heavier meal, and VITAL alongside food, since a little fat helps it absorb. RADIANCE is taken twice daily, 20–30 minutes before meals. CALM goes with a meal, morning or early evening.',
+      'STILL is for the moments you need to settle and concentrate — the afternoon slump, or before anything that calls for a clear head. It’s non-drowsy, so it isn’t a bedtime product.',
+      'You don’t need the whole line to feel a difference. Most women start with one or two and build from there. If you’re pregnant, nursing, or taking medication, talk to your doctor before combining supplements.',
     ],
   },
   {
@@ -402,16 +468,6 @@ export const SITE_FAQS: Faq[] = [
       'Three things: dosage, multi-ingredient synergy, and intention. Most drugstore brands use single-ingredient, under-dosed formulas to cut costs.',
       'Compare CALM: most ashwagandha supplements are just ashwagandha. Ours combines KSM-66 600mg with Vitamins D3, B6, B12, plus L-Arginine, Maca, Ginseng, and Shatavari — eight active compounds working synergistically.',
       'Or RENEWAL: instead of buying NAD+ and Resveratrol separately, our 3-in-1 stack delivers NAD+ 500mg + Quercetin + 98% Resveratrol in one capsule. Plus our direct-to-consumer model means premium quality at honest prices.',
-    ],
-  },
-  {
-    q: 'How do I take each Aurae product?',
-    a: [
-      'GLOW (Collagen): mix one serving into your morning coffee, smoothie, or water.',
-      'CALM (Ashwagandha+): take 2 capsules daily with a meal, ideally morning or early evening.',
-      'SLEEP: place one oral strip on your tongue 20–30 minutes before bed. Maximum 1 strip per day.',
-      'RADIANCE (Resveratrol): take 1 veggie capsule twice daily, 20–30 minutes before meals.',
-      'RENEWAL (NAD+): take 2 capsules daily with water, with or without food.',
     ],
   },
   {

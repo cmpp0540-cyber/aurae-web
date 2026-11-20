@@ -16,8 +16,8 @@ export default function Footer() {
           <p className="font-display text-[32px] font-bold leading-none text-coral">aurae</p>
           <p className="mt-2 font-display text-[14px] italic text-ivory/60">{SITE.tagline}</p>
           <p className="mt-6 max-w-[240px] text-[13px] leading-relaxed text-ivory/50">
-            Premium cellular beauty supplements, dosed at clinically-relevant levels and tested
-            every batch.
+            Premium cellular beauty supplements, dosed at science-backed levels and made in
+            GMP-certified facilities.
           </p>
         </div>
 

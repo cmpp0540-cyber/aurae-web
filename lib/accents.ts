@@ -6,7 +6,16 @@
 
 import { gradientBlurDataUrl } from './blur';
 
-export type AccentKey = 'glow' | 'calm' | 'sleep' | 'radiance' | 'renewal' | 'ritual';
+export type AccentKey =
+  | 'glow'
+  | 'calm'
+  | 'sleep'
+  | 'radiance'
+  | 'renewal'
+  | 'flora'
+  | 'release'
+  | 'vital'
+  | 'ritual';
 
 export type Accent = {
   key: AccentKey;
@@ -69,6 +78,33 @@ export const ACCENTS: Record<AccentKey, Accent> = {
     dot: 'bg-[#B8D4C8]',
     hex: '#8FBCA6',
     blur: ['#D5E8DD', '#B8D4C8'],
+  },
+  flora: {
+    key: 'flora',
+    imageGradient: 'bg-[linear-gradient(135deg,#F7EBD2,#C9A3CE)]',
+    sectionGradient: 'bg-[linear-gradient(180deg,#FFF8F0_0%,#F3E8EF_100%)]',
+    chip: 'bg-[#F6EDDC] text-[#8A6A8E]',
+    dot: 'bg-[#C9A3CE]',
+    hex: '#C9A3CE',
+    blur: ['#F7EBD2', '#C9A3CE'],
+  },
+  release: {
+    key: 'release',
+    imageGradient: 'bg-[linear-gradient(135deg,#FBD9C4,#B98BC9)]',
+    sectionGradient: 'bg-[linear-gradient(180deg,#FFF8F0_0%,#F4E7F0_100%)]',
+    chip: 'bg-[#F6E6EE] text-[#8E4F7A]',
+    dot: 'bg-[#C98BB8]',
+    hex: '#C98BB8',
+    blur: ['#FBD9C4', '#B98BC9'],
+  },
+  vital: {
+    key: 'vital',
+    imageGradient: 'bg-[linear-gradient(135deg,#D7E9F4,#6FA8C9)]',
+    sectionGradient: 'bg-[linear-gradient(180deg,#FFF8F0_0%,#E2F0F7_100%)]',
+    chip: 'bg-[#E2F0F7] text-[#2F6A8C]',
+    dot: 'bg-[#6FA8C9]',
+    hex: '#6FA8C9',
+    blur: ['#D7E9F4', '#6FA8C9'],
   },
   ritual: {
     key: 'ritual',

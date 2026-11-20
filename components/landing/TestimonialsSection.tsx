@@ -87,6 +87,11 @@ export default function TestimonialsSection() {
             );
           })}
         </div>
+
+        {/* Required wherever the reviews appear, not buried in a policy page. */}
+        <p className="mx-auto mt-8 max-w-[760px] text-center text-[12px] leading-relaxed text-espresso/50">
+          {testimonials.disclosure}
+        </p>
       </div>
     </section>
   );
