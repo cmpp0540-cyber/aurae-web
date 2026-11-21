@@ -4,9 +4,10 @@
 
 :root {
   /* Swap the display font brand-wide from here.
-     'Fraunces' = current Aurae heading face.
-     'Playfair Display' = the face used in the v4 HTML prototype. */
-  --font-display: 'Fraunces', 'Playfair Display', Georgia, serif;
+     'Playfair Display' = current Aurae heading face. Its high contrast holds
+     up over the hero photograph, where lighter serifs wash out.
+     'Fraunces' is kept loaded as the previous face, for an easy revert. */
+  --font-display: 'Playfair Display', 'Fraunces', Georgia, serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
@@ -85,8 +86,11 @@
   .shell {
     @apply mx-auto w-full max-w-shell px-5 sm:px-8 lg:px-12;
   }
+  /* The single dial for how tall the page is. Every section uses it, so a
+     change here is multiplied by sixteen edges. Two sections meeting adds
+     these up: 96px on a phone, 144px on a desktop. */
   .section-y {
-    @apply py-16 sm:py-20 lg:py-[100px];
+    @apply py-10 sm:py-12 lg:py-[60px];
   }
   .card {
     @apply rounded-xl border border-espresso/[0.08] bg-cream transition-all duration-300 ease-aurae;

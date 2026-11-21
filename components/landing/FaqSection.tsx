@@ -29,12 +29,21 @@ export default function FaqSection() {
           eyebrow={LANDING.faq.eyebrow}
           lead={LANDING.faq.titleLead}
           italic={LANDING.faq.titleItalic}
-          subtitle={LANDING.faq.subtitle}
+          subtitle={
+            // Smaller than the shared default, matching the reviews section:
+            // the questions below are the content, this is just a lead-in.
+            <span className="block text-[13px] sm:text-[14px]">{LANDING.faq.subtitle}</span>
+          }
         />
 
-        <Accordion items={FAQS} className="mt-12" />
+        {/*
+          `defaultOpen={-1}` leaves every question closed. The first one used
+          to start expanded, which pushed the rest of the page down for a
+          reader who had not asked anything yet.
+        */}
+        <Accordion items={FAQS} defaultOpen={-1} className="mt-9" />
 
-        <Reveal className="mt-12 text-center">
+        <Reveal className="mt-10 text-center">
           <p className="text-[15px] text-espresso/65">{LANDING.faq.ctaLead}</p>
           <a
             href={`mailto:${SITE.supportEmail}`}

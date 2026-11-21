@@ -21,10 +21,20 @@ export default async function HomePage() {
       <Hero />
       <TrustBar />
       <ProductsSection products={products} />
+      {/*
+        Reviews come before the bundles: other women's results are what make
+        someone willing to look at a $100+ bundle price, so the proof lands
+        first and the offer answers it.
+
+        The warm gradients run as one continuous wash down the page —
+        reviews end on blush, bundles carry it back to ivory, inside runs to
+        blush again. Moving a section here means checking those endpoints
+        still meet.
+      */}
+      <TestimonialsSection />
       <BundlesSection bundles={bundles} />
       <InsideSection />
       <ScienceSection />
-      <TestimonialsSection />
       <StorySection />
       <FaqSection />
       <Newsletter />

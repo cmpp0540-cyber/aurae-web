@@ -1,8 +1,7 @@
-import { LANDING, LANDING_TESTIMONIALS } from '@/content/site';
-import { accentFor } from '@/lib/accents';
-import Reveal from '@/components/ui/Reveal';
+import Link from 'next/link';
+import { LANDING, SITE } from '@/content/site';
 import SectionHeading from '@/components/ui/SectionHeading';
-import Stars from '@/components/ui/Stars';
+import TestimonialCarousel from './TestimonialCarousel';
 
 export default function TestimonialsSection() {
   const { testimonials } = LANDING;
@@ -10,86 +9,58 @@ export default function TestimonialsSection() {
   return (
     <section
       id="reviews"
-      className="section-y scroll-mt-24 bg-[linear-gradient(180deg,#FFF8F0_0%,#FFE5D9_100%)]"
+      className="section-y scroll-mt-24 bg-[linear-gradient(180deg,#FFFCF8_0%,#FFF1E8_100%)]"
     >
       <div className="shell">
         <SectionHeading
           eyebrow={testimonials.eyebrow}
           lead={testimonials.titleLead}
           italic={testimonials.titleItalic}
-          subtitle={testimonials.subtitle}
+          subtitle={
+            // Smaller than the shared default: here the reviews carry the
+            // section, and the line is just a lead-in to them.
+            <span className="block text-[13px] sm:text-[14px]">{testimonials.subtitle}</span>
+          }
         />
 
-        {/* Rating summary */}
-        <Reveal className="mx-auto mt-12 flex max-w-[860px] flex-col items-center gap-8 rounded-2xl bg-cream p-8 sm:flex-row sm:justify-center sm:gap-12 sm:p-10">
-          <div className="text-center">
-            <p className="font-display text-[56px] font-bold leading-none text-coral">
-              {testimonials.rating.score}
-            </p>
-            <Stars size="lg" className="mt-2 block" />
-            <p className="mt-2 text-[11px] uppercase tracking-[0.15em] text-espresso/55">
-              {testimonials.rating.label}
-            </p>
-          </div>
+        <TestimonialCarousel />
 
-          <span aria-hidden className="hidden h-20 w-px bg-espresso/10 sm:block" />
+        {/*
+          The close: having just read the reviews, this is where someone is
+          most ready to act — so the guarantee sits right under the button,
+          answering the objection at the moment it comes up.
+        */}
+        <div className="mt-9 flex flex-col items-center">
+          <Link href="#products" className="btn-dark">
+            {SITE.hero.primaryCta}
+          </Link>
 
-          <ul className="grid flex-1 grid-cols-3 gap-6 text-center">
-            {testimonials.stats.map((stat) => (
-              <li key={stat.label}>
-                <p className="font-display text-[22px] font-bold sm:text-[26px]">{stat.value}</p>
-                <p className="mt-1 text-[11px] uppercase tracking-[0.1em] text-espresso/55">
-                  {stat.label}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {LANDING_TESTIMONIALS.map((item, index) => {
-            const accent = accentFor(item.accent);
-            return (
-              <Reveal
-                key={item.author}
-                as="article"
-                delay={index * 70}
-                className="flex flex-col rounded-2xl bg-cream p-7"
-              >
-                <span
-                  className={[
-                    'inline-block self-start rounded-full px-3 py-1 text-[9px] font-bold uppercase tracking-[0.15em]',
-                    accent.chip,
-                  ].join(' ')}
-                >
-                  {item.tag}
-                </span>
-                <Stars count={item.stars} className="mt-4 block" />
-                <p className="mt-3 font-display text-[18px] font-semibold leading-snug">
-                  &ldquo;{item.headline}&rdquo;
-                </p>
-                <p className="mt-3 flex-1 text-[14px] leading-relaxed text-espresso/70">
-                  {item.body}
-                </p>
-                <div className="mt-6 flex items-center gap-3 border-t border-espresso/10 pt-4">
-                  <span className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-full bg-blush font-display text-[15px] font-bold text-coral">
-                    {item.author.charAt(0)}
-                  </span>
-                  <span className="flex-1">
-                    <span className="block text-[13px] font-semibold">{item.author}</span>
-                    <span className="block text-[11px] text-espresso/50">{item.location}</span>
-                  </span>
-                  <span className="text-[9px] font-bold uppercase tracking-[0.1em] text-coral">
-                    Verified
-                  </span>
-                </div>
-              </Reveal>
-            );
-          })}
+          <p className="mt-5 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-espresso/60">
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+              className="flex-shrink-0"
+            >
+              <path d="M8 1.7 3 3.8v3.5c0 3.1 2 5.9 5 6.9 3-1 5-3.8 5-6.9V3.8L8 1.7Z" />
+              <path d="m5.9 7.9 1.5 1.5 2.8-3" />
+            </svg>
+            {testimonials.ctaNote}
+          </p>
         </div>
 
-        {/* Required wherever the reviews appear, not buried in a policy page. */}
-        <p className="mx-auto mt-8 max-w-[760px] text-center text-[12px] leading-relaxed text-espresso/50">
+        {/*
+          Required wherever the reviews appear, not buried in a policy page.
+          Kept quiet and set apart by a hairline so it reads as a footnote to
+          the reviews rather than as part of the sales close above it.
+        */}
+        <p className="mx-auto mt-9 max-w-[620px] border-t border-espresso/10 pt-5 text-center text-[11px] leading-relaxed text-espresso/40">
           {testimonials.disclosure}
         </p>
       </div>

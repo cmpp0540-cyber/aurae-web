@@ -10,7 +10,7 @@ export default function BundlesSection({ bundles }: { bundles: AuraeProduct[] })
   return (
     <section
       id="rituals"
-      className="section-y scroll-mt-24 bg-[linear-gradient(180deg,#FFE5D9_0%,#FFF8F0_100%)]"
+      className="section-y scroll-mt-24 bg-[linear-gradient(180deg,#FFF1E8_0%,#FFE5D9_100%)]"
     >
       <div className="shell">
         <SectionHeading
@@ -20,13 +20,13 @@ export default function BundlesSection({ bundles }: { bundles: AuraeProduct[] })
           subtitle={LANDING.bundles.subtitle}
         />
 
-        <div className="mx-auto mt-14 grid max-w-[1200px] grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-9 grid max-w-[1200px] grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
           {bundles.map((bundle, index) => (
             <BundleCard key={bundle.id} bundle={bundle} index={index} />
           ))}
         </div>
 
-        <FdaNote className="mt-10" />
+        <FdaNote className="mt-8" />
       </div>
     </section>
   );

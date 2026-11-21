@@ -13,7 +13,7 @@ export default function ScienceSection() {
           subtitle={LANDING.science.subtitle}
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {SCIENCE_CARDS.map((card, index) => (
             <Reveal
               key={card.title}
@@ -38,7 +38,7 @@ export default function ScienceSection() {
           ))}
         </div>
 
-        <Reveal className="mx-auto mt-12 max-w-[900px] rounded-2xl bg-[linear-gradient(135deg,#FFE5D9,#FFF8F0)] p-8 text-center sm:p-11">
+        <Reveal className="mx-auto mt-10 max-w-[900px] rounded-2xl bg-[linear-gradient(135deg,#FFE5D9,#FFF8F0)] p-8 text-center sm:p-11">
           <h3 className="font-display text-display-md font-bold balance">
             {LANDING.science.research.title}
           </h3>

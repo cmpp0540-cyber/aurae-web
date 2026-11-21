@@ -21,7 +21,7 @@ const HERO_IMAGE = {
 };
 
 const HERO_IMAGE_MOBILE = {
-  src: '/images/aurae-hero-vertical.webp',
+  src: '/images/aurae-hero-mobile.webp',
   alt: 'The full Aurae line — RADIANCE, RENEWAL, CALM, GLOW, FLORA, RELEASE, VITAL and STILL — spiralling up a coral background around an iridescent glass ribbon',
 };
 
@@ -31,9 +31,9 @@ const HERO_IMAGE_MOBILE = {
  * right; the colour blocks above and below the photo continue them.
  */
 const MOBILE_TOP =
-  'linear-gradient(90deg,#C14844,#C14744,#C14744,#C04744,#C04844,#BF6C6B,#C89495,#B84440,#B7413F)';
+  'linear-gradient(90deg,#FCEEE5,#FEEDE3,#FBEBE3,#FBEBE3,#F9E8DE,#F5E2D8,#F2DED4,#F0DBCE,#ECD6CC)';
 const MOBILE_BOTTOM =
-  'linear-gradient(90deg,#F6B8B2,#F7BFB8,#FAC6BF,#FBC6BF,#FBC8C1,#FAC7C0,#FAC7C0,#F7C4BD,#F4BFB9)';
+  'linear-gradient(90deg,#EDD4C8,#EFD7CB,#F1DACE,#F2DCD2,#F2DDD2,#F0DBCF,#F0D7CC,#EED6CB,#ECD4CA)';
 
 /** Pale pink that reads on the coral without washing out. */
 const INK = '#FFE3EA';
@@ -70,19 +70,79 @@ function PillarLabel({
   );
 }
 
+/** The glyphs named by `SITE.hero.reassurance[].icon`. */
+const REASSURANCE_ICONS: Record<string, React.ReactNode> = {
+  shield: (
+    <>
+      <path d="M8 1.7 3 3.8v3.5c0 3.1 2 5.9 5 6.9 3-1 5-3.8 5-6.9V3.8L8 1.7Z" />
+      <path d="m5.9 7.9 1.5 1.5 2.8-3" />
+    </>
+  ),
+  flask: (
+    <>
+      <path d="M6.3 1.9v3.4L3.1 11.3a1.6 1.6 0 0 0 1.4 2.4h7a1.6 1.6 0 0 0 1.4-2.4L9.7 5.3V1.9" />
+      <path d="M5.4 1.9h5.2" />
+      <path d="M4.6 9.6h6.8" />
+    </>
+  ),
+};
+
+/**
+ * The two reassurances under the buttons. Colour comes from the parent, so
+ * the same row works on the coral hero and on the pale strip below it.
+ */
+function Reassurance({
+  className = '',
+  style,
+}: {
+  className?: string;
+  style?: React.CSSProperties;
+}) {
+  return (
+    <ul className={`flex flex-wrap items-center gap-x-6 gap-y-2 ${className}`} style={style}>
+      {SITE.hero.reassurance.map((item) => (
+        <li
+          key={item.text}
+          className="flex items-center gap-2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.12em]"
+        >
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+            className="flex-shrink-0"
+          >
+            {REASSURANCE_ICONS[item.icon]}
+          </svg>
+          {item.text}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function DesktopActions() {
   return (
-    <div className="mt-8 hidden flex-wrap items-center gap-5 lg:flex">
-      <Link href="#shop" className="btn-cream">
-        {SITE.hero.primaryCta}
-      </Link>
-      <Link
-        href="#rituals"
-        className="btn u-hero-shadow border-b-2 px-0 py-4 transition-colors duration-300 hover:text-cream"
-        style={{ color: INK, borderColor: INK }}
-      >
-        {SITE.hero.secondaryCta} →
-      </Link>
+    <div className="mt-8 hidden lg:block">
+      <div className="flex flex-wrap items-center gap-5">
+        <Link href="#shop" className="btn-cream">
+          {SITE.hero.primaryCta}
+        </Link>
+        <Link
+          href="#rituals"
+          className="btn u-hero-shadow border-b-2 px-0 py-4 transition-colors duration-300 hover:text-cream"
+          style={{ color: INK, borderColor: INK }}
+        >
+          {SITE.hero.secondaryCta} →
+        </Link>
+      </div>
+
+      <Reassurance className="u-hero-shadow mt-5" style={{ color: INK }} />
     </div>
   );
 }
@@ -90,10 +150,11 @@ function DesktopActions() {
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden bg-[#C14744] lg:bg-[var(--hero-coral)]"
+      className="relative overflow-hidden bg-[#FCEEE5] lg:bg-[var(--hero-coral)]"
       style={
         {
           '--hero-coral': HERO_CORAL,
+          '--m-top': MOBILE_TOP,
         } as React.CSSProperties
       }
       aria-label="Aurae — the full ritual"
@@ -107,16 +168,33 @@ export default function Hero() {
         ✦
       </span>
 
-      {/* Headline: over the photograph at every width — the top of both shots
-          is empty coral, so it sits on the image rather than in a band. */}
-      <div className="animate-fade-up absolute inset-x-0 top-0 z-10 px-6 pt-8 text-center lg:left-[4%] lg:right-auto lg:top-[7%] lg:w-[40%] lg:px-0 lg:pt-0 lg:text-left">
+      {/*
+        The copy block.
+
+        On a phone it sits in its own band above the photograph, painted with
+        the image's own top edge so the seam is invisible — three paragraphs
+        laid over the picture would cover the bottles. From `lg` up it floats
+        over the empty left side of the wide shot.
+
+        Ink flips with the backdrop: espresso on the pale phone band, blush on
+        the coral desktop photograph.
+      */}
+      <div className="animate-fade-up bg-[image:var(--m-top)] px-6 pb-2 pt-9 text-center lg:absolute lg:left-[4%] lg:top-[7%] lg:z-10 lg:w-[40%] lg:bg-none lg:px-0 lg:pb-0 lg:pt-0 lg:text-left">
         <h1
-          className="u-hero-shadow font-display font-semibold leading-[1.08] tracking-[-0.01em] text-[#FFE3EA]"
-          style={{ fontSize: 'clamp(1.75rem, 4.2vw, 4.25rem)' }}
+          className="font-display font-semibold leading-[1.08] tracking-[-0.01em] text-espresso lg:u-hero-shadow lg:text-[#FFE3EA]"
+          style={{ fontSize: 'clamp(2.5rem, 4.6vw, 4.25rem)' }}
         >
           {SITE.hero.titleLead}{' '}
-          <em className="italic text-[#FFE3EA]">{SITE.hero.titleItalic}</em>
+          <em className="italic text-coral lg:text-[#FFE3EA]">{SITE.hero.titleItalic}</em>
         </h1>
+
+        <p className="mx-auto mt-4 max-w-[22ch] font-display text-[19px] italic leading-[1.45] text-espresso/80 lg:mx-0 lg:u-hero-shadow lg:max-w-none lg:text-[22px] lg:text-[#FFE3EA]/90">
+          {SITE.hero.tagline}
+        </p>
+
+        <p className="mx-auto mt-4 max-w-[36ch] text-[12.5px] leading-relaxed text-espresso/70 lg:mx-0 lg:u-hero-shadow lg:max-w-[44ch] lg:text-[14px] lg:text-[#FFE3EA]/85">
+          {SITE.hero.body}
+        </p>
 
         <DesktopActions />
       </div>
@@ -163,7 +241,7 @@ export default function Hero() {
       </div>
 
       {/* ── Phone photograph: tall, the full line spiralling up ───────── */}
-      <div className="relative aspect-[1/2] w-full lg:hidden">
+      <div className="relative aspect-[4/5] w-full lg:hidden">
         <SmartImage
           src={HERO_IMAGE_MOBILE.src}
           alt={HERO_IMAGE_MOBILE.alt}
@@ -172,16 +250,6 @@ export default function Hero() {
           sizes="100vw"
           className="absolute inset-0 h-full w-full"
           imgClassName="h-full w-full object-cover"
-        />
-
-        {/* Keeps the headline legible where the ribbon crosses the top */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-[20%]"
-          style={{
-            backgroundImage:
-              'linear-gradient(to bottom, rgba(150,45,45,0.60), rgba(150,45,45,0.28) 55%, transparent)',
-          }}
         />
 
         {/* Soft seams into the colour blocks above and below */}
@@ -232,7 +300,17 @@ export default function Hero() {
                 key={pillar.product}
                 className={[
                   'absolute z-20 -translate-y-1/2',
-                  left ? 'right-[77%]' : 'left-[77%]',
+                  // The centred bottles get a tighter inset: 64% leaves the
+                  // label a hair clear of the bottle instead of stranded in
+                  // the margin. The rule points inward from the label, so it
+                  // is the inset — not the rule's length — that closes the gap.
+                  left
+                    ? pillar.centred
+                      ? 'right-[64%]'
+                      : 'right-[77%]'
+                    : pillar.centred
+                      ? 'left-[64%]'
+                      : 'left-[77%]',
                 ].join(' ')}
                 style={{ top: `${pillar.y}%` }}
               >
@@ -244,13 +322,13 @@ export default function Hero() {
                 >
                   <span
                     className={[
-                      'block max-w-[68px] break-words font-display text-[9px] font-medium uppercase leading-tight tracking-[0.06em] text-cream drop-shadow-[0_1px_2px_rgba(90,30,30,0.45)]',
+                      'block max-w-[68px] break-words font-display text-[9px] font-medium uppercase leading-tight tracking-[0.06em] text-espresso/80',
                       left ? 'text-right' : 'text-left',
                     ].join(' ')}
                   >
                     {pillar.label}
                   </span>
-                  <span className="block h-px w-3 flex-shrink-0 bg-cream/70" />
+                  <span className="block h-px w-3 flex-shrink-0 bg-espresso/40" />
                 </span>
               </li>
             );
@@ -272,6 +350,8 @@ export default function Hero() {
         >
           {SITE.hero.secondaryCta} →
         </Link>
+
+        <Reassurance className="mt-3 justify-center text-espresso/75" />
       </div>
     </section>
   );

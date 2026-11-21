@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { LOOP_MIN, railCopies, useRail } from '@/lib/use-rail';
 import type { AuraeProduct } from '@/lib/types';
 import ProductCard from './ProductCard';
 
@@ -20,40 +20,9 @@ import ProductCard from './ProductCard';
  * That sliver matters — it is what tells someone there is more to the right.
  */
 export default function ProductCarousel({ products }: { products: AuraeProduct[] }) {
-  const trackRef = useRef<HTMLUListElement | null>(null);
-  const [atStart, setAtStart] = useState(true);
-  const [atEnd, setAtEnd] = useState(false);
-
-  const sync = useCallback(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    const max = el.scrollWidth - el.clientWidth;
-    // 1px of slack: sub-pixel layout means scrollLeft rarely hits max exactly.
-    setAtStart(el.scrollLeft <= 1);
-    setAtEnd(el.scrollLeft >= max - 1);
-  }, []);
-
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    sync();
-    el.addEventListener('scroll', sync, { passive: true });
-    window.addEventListener('resize', sync);
-    return () => {
-      el.removeEventListener('scroll', sync);
-      window.removeEventListener('resize', sync);
-    };
-  }, [sync]);
-
-  const step = (direction: 1 | -1) => {
-    const el = trackRef.current;
-    if (!el) return;
-    const first = el.firstElementChild as HTMLElement | null;
-    const gap = Number.parseFloat(getComputedStyle(el).columnGap) || 0;
-    // One card at a time, so nothing is ever skipped past unseen.
-    const amount = first ? first.offsetWidth + gap : el.clientWidth * 0.9;
-    el.scrollBy({ left: amount * direction, behavior: 'smooth' });
-  };
+  const loop = products.length >= LOOP_MIN;
+  const cards = railCopies(products, loop);
+  const { trackRef, step, atStart, atEnd } = useRail({ count: products.length, loop });
 
   const arrow =
     'absolute top-[28%] z-10 hidden h-11 w-11 -translate-y-1/2 place-items-center rounded-full ' +
@@ -62,7 +31,10 @@ export default function ProductCarousel({ products }: { products: AuraeProduct[]
     'disabled:pointer-events-none disabled:opacity-0 lg:grid';
 
   return (
-    <div className="relative mt-12">
+    // `id` is the anchor the review section's button jumps to, so it lands on
+    // the products themselves rather than the top of the section. scroll-mt
+    // keeps the first row clear of the sticky header.
+    <div id="products" className="relative mt-9 scroll-mt-28">
       <button
         type="button"
         onClick={() => step(-1)}
@@ -84,18 +56,32 @@ export default function ProductCarousel({ products }: { products: AuraeProduct[]
       <ul
         ref={trackRef}
         // py/-my so a card's hover lift and shadow are not clipped by overflow.
-        className="flex snap-x snap-mandatory gap-6 overflow-x-auto overscroll-x-contain py-3 -my-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain px-[10%] py-3 -my-3 [scrollbar-width:none] sm:gap-6 sm:px-0 [&::-webkit-scrollbar]:hidden"
         tabIndex={0}
         aria-label="Aurae products"
       >
-        {products.map((product, index) => (
+        {cards.map(({ item, copy }, index) => (
           <li
-            key={product.id}
+            key={`${item.id}-${copy}`}
+            // Centred on a phone, with the neighbours peeking.
+            //
+            // The width is `w-full` and the padding lives on the track:
+            // percentage padding shrinks the flex container's content box, so
+            // 10% either side leaves the card at 80% of the scrollport and
+            // lets the first and last cards reach the centre — wider than the
+            // other two rails, because a product card carries an image, a
+            // name, a price and a button. Setting the card
+            // to a percentage AND padding the track would compound the two and
+            // shrink it twice.
+            //
+            // From `sm` up the cards fill the row, so the padding and the
+            // centre snap both come off.
+            //
             // `[&>*]:h-full` stretches the card to the tallest in the row.
             // A grid cell did this on its own; a flex child does not.
-            className="w-[82%] flex-[0_0_auto] snap-start [&>*]:h-full sm:w-[calc((100%-24px)/2)] lg:w-[calc((100%-48px)/3)] xl:w-[calc((100%-72px)/4)]"
+            className="w-full flex-[0_0_auto] snap-center [&>*]:h-full sm:w-[calc((100%-24px)/2)] sm:snap-start lg:w-[calc((100%-48px)/3)] xl:w-[calc((100%-72px)/4)]"
           >
-            <ProductCard product={product} index={index} />
+            <ProductCard product={item} index={index % products.length} />
           </li>
         ))}
       </ul>

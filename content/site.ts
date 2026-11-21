@@ -19,10 +19,23 @@ export const SITE = {
   ],
   hero: {
     /** Rendered as two lines, with `titleItalic` set in italics. */
-    titleLead: 'Real beauty starts at the',
-    titleItalic: 'cellular level',
-    primaryCta: 'Shop the Ritual',
+    titleLead: 'Lit from',
+    titleItalic: 'within.',
+    /** The line that says what Aurae actually sells, in the display serif. */
+    tagline: 'Premium cellular beauty supplements for the modern woman.',
+    /** The supporting paragraph, in the body sans. */
+    body:
+      'Science-backed formulas that make cellular wellness accessible, credible, and undeniably luxe. Because your glow is built from within.',
+    primaryCta: 'Try Aurae Vital Risk-Free',
     secondaryCta: 'Explore the Rituals',
+    /**
+     * Shown under the hero buttons. `icon` names the glyph drawn in Hero.tsx
+     * — keep the two in step if you add an item.
+     */
+    reassurance: [
+      { icon: 'shield', text: '30-Day Guarantee' },
+      { icon: 'flask', text: 'Science-Backed Formulas' },
+    ],
   },
   trustBar: [
     'FDA-Registered Facility',
@@ -124,39 +137,71 @@ export const HERO_PILLARS_MOBILE: (HeroPillar & {
   y: number;
   top: number;
   height: number;
+  /** RELEASE, CALM and VITAL run down the middle of the frame, far from
+   *  either margin. Their labels sit further in than the rest so the eye
+   *  does not have to cross an empty third of the photograph to reach the
+   *  bottle. */
+  centred?: boolean;
 })[] = [
+  {
+    label: 'Radiant skin*',
+    product: 'GLOW',
+    handle: 'grass-fed-hydrolyzed-collagen-peptides',
+    side: 'l',
+    y: 13.8,
+    top: 3.1,
+    height: 22.4,
+  },
+  {
+    label: 'Easy digestion*',
+    product: 'RELEASE',
+    handle: null,
+    side: 'r',
+    y: 20,
+    top: 13.8,
+    height: 11.7,
+    centred: true,
+  },
+  {
+    label: 'Cellular energy*',
+    product: 'RENEWAL',
+    handle: 'nad',
+    side: 'r',
+    y: 36.2,
+    top: 25.5,
+    height: 19.2,
+  },
   {
     label: 'Longevity*',
     product: 'RADIANCE',
     handle: 'resveratrol-50-600mg',
     side: 'l',
-    y: 24.5,
-    top: 17,
-    height: 15,
+    y: 39.4,
+    top: 28.7,
+    height: 16,
   },
-  { label: 'Cellular energy*', product: 'RENEWAL', handle: 'nad', side: 'r', y: 31, top: 24, height: 14 },
   {
     label: 'Mental clarity*',
     product: 'CALM',
     handle: 'ashwagandha-plus',
-    side: 'l',
-    y: 43,
-    top: 35,
-    height: 16,
-  },
-  {
-    label: 'Radiant skin*',
-    product: 'GLOW',
-    handle: 'grass-fed-hydrolyzed-collagen-peptides',
     side: 'r',
-    y: 51,
-    top: 42,
-    height: 18,
+    y: 50,
+    top: 44.7,
+    height: 12.3,
+    centred: true,
   },
-  { label: 'Gut balance*', product: 'FLORA', handle: null, side: 'l', y: 61, top: 53, height: 16 },
-  { label: 'Easy digestion*', product: 'RELEASE', handle: null, side: 'r', y: 70, top: 63, height: 14 },
-  { label: 'Sharper focus*', product: 'VITAL', handle: null, side: 'l', y: 79, top: 71, height: 16 },
-  { label: 'Relaxed focus*', product: 'STILL', handle: null, side: 'r', y: 85, top: 77, height: 15 },
+  { label: 'Relaxed focus*', product: 'STILL', handle: null, side: 'r', y: 63, top: 57, height: 13.3 },
+  { label: 'Gut balance*', product: 'FLORA', handle: null, side: 'l', y: 66, top: 61.8, height: 9.2 },
+  {
+    label: 'Sharper focus*',
+    product: 'VITAL',
+    handle: null,
+    side: 'r',
+    y: 82,
+    top: 71.4,
+    height: 22.4,
+    centred: true,
+  },
 ];
 
 /** Section intros for the landing page. */
@@ -201,35 +246,9 @@ export const LANDING = {
       emphasis2: 'far below clinical doses.',
       signature: '— The Aurae Standard',
     },
-    us: {
-      label: 'Aurae Formulas',
-      title: 'The complete stack.',
-      note: 'Premium dosages, multi-ingredient synergy, no fillers.',
-      items: [
-        { lead: 'CALM:', text: 'KSM-66 600mg + Vitamins D3, B6, B12 + Maca + Ginseng + Shatavari + L-Arginine' },
-        { lead: 'RENEWAL:', text: 'NAD+ 500mg + Quercetin 250mg + Resveratrol 98% (3-in-1 longevity)' },
-        { lead: 'GLOW:', text: 'Grass-fed hydrolyzed collagen peptides, Types 1 & 3, with a full amino acid profile. 20 g of collagen and 18 g of protein per serving, hydrolyzed for easy absorption' },
-        { lead: 'FLORA:', text: '40 billion CFU across 4 clinically studied strains + MAKTREK Bi-Pass delivery + prebiotic fiber' },
-        { lead: 'RELEASE:', text: 'Makzyme-Pro 6-enzyme blend with 2,500 HUT of declared activity' },
-        { lead: 'STILL:', text: 'Reishi 200mg + L-Theanine + Lemon Balm + Passion Flower + Valerian — calm focus, not sedation' },
-        { lead: 'RADIANCE:', text: '50% Trans-Resveratrol from Japanese Knotweed' },
-        { lead: 'All formulas:', text: 'Made in an FDA-registered, cGMP-certified facility in the USA, no fillers' },
-      ],
-    },
-    them: {
-      label: 'Typical Drugstore Brands',
-      title: 'The half-dose.',
-      note: 'Single-ingredient formulas, under-dosed, fillers included.',
-      items: [
-        'Ashwagandha alone (no vitamins, no synergistic adaptogens)',
-        'NAD+ with resveratrol, but under-dosed — too low for real results and does not contain quercetin',
-        'Generic collagen, single type, missing key amino acids, poor absorption',
-        'Probiotics with no delivery protection — most cultures die in stomach acid, and nothing to feed the ones that survive',
-        'Enzyme blends that never declare their activity units, so the real dose is unknowable',
-        'Single-herb calm pills, or focus blends built on caffeine that trade a short peak for a crash',
-        'Low-purity resveratrol (25% or less trans-resveratrol)',
-        'Magnesium stearate, artificial fillers, and no word on where they are actually made',
-      ],
+    labels: {
+      us: 'Aurae',
+      them: 'Typical drugstore brand',
     },
     summary: {
       lead: "You're not paying for marketing —",
@@ -253,13 +272,7 @@ export const LANDING = {
     titleLead: "She's",
     titleItalic: 'lit from within.',
     subtitle:
-      'Over 1,200 women have made Aurae part of their daily ritual. Here’s what they’re saying.',
-    rating: { score: '4.9', label: 'Average Rating' },
-    stats: [
-      { value: '1,200+', label: 'Verified Reviews' },
-      { value: '94%', label: 'Would Recommend' },
-      { value: '87%', label: 'Repeat Buyers' },
-    ],
+      'The first women to make Aurae part of their ritual. Here’s what they told us.',
     /**
      * Several reviewers are friends of the founder who were among Aurae's
      * first supporters. A personal connection to the brand has to be
@@ -268,6 +281,8 @@ export const LANDING = {
      */
     disclosure:
       'Some reviews are from friends of the founder who were among the first to try Aurae. Reviews are published as written, edited only for length.',
+    /** Sits under the closing button, where the guarantee answers the risk. */
+    ctaNote: '30-Day Money-Back Guarantee',
   },
   faq: {
     eyebrow: 'Questions Answered',
@@ -290,6 +305,82 @@ export const LANDING = {
 } as const;
 
 /** The science grid on the landing page. */
+/**
+ * The ingredient-by-ingredient comparison, one card per product.
+ *
+ * `accent` keys into lib/accents.ts and colours the rule at the top of each
+ * card. The order follows the one the rail reads best in, not the catalogue
+ * — reorder freely, the component takes the array as given.
+ *
+ * Every `them` line describes a practice (under-dosing, not declaring a
+ * figure, a single ingredient) rather than naming a competitor, and says
+ * only what a label would show. Keep it that way.
+ */
+export const INSIDE_COMPARISONS: {
+  product: string;
+  accent: AccentKey;
+  subject: string;
+  us: string;
+  them: string;
+}[] = [
+  {
+    product: 'CALM',
+    accent: 'calm',
+    subject: 'Stress & vitality',
+    us: 'KSM-66 Ashwagandha 600mg at 5% withanolides, with Vitamins D3, B6 and B12, Maca, Panax Ginseng, Shatavari and L-Arginine — eight actives working together.',
+    them: 'Ashwagandha on its own, with no vitamins and no supporting adaptogens.',
+  },
+  {
+    product: 'RENEWAL',
+    accent: 'renewal',
+    subject: 'Cellular energy',
+    us: 'NAD+ 500mg with Quercetin 250mg and 98% Trans-Resveratrol — three longevity molecules in one capsule.',
+    them: 'NAD+ and resveratrol at a fraction of the dose, and no quercetin at all.',
+  },
+  {
+    product: 'GLOW',
+    accent: 'glow',
+    subject: 'Skin, hair & nails',
+    us: 'Grass-fed hydrolyzed collagen peptides, Types 1 and 3, with the full amino acid profile — 20g of collagen and 18g of protein per serving.',
+    them: 'Generic single-type collagen, missing key amino acids and not hydrolyzed for absorption.',
+  },
+  {
+    product: 'FLORA',
+    accent: 'flora',
+    subject: 'Gut balance',
+    us: '40 billion CFU across four clinically studied strains, carried past stomach acid by MAKTREK Bi-Pass delivery, with prebiotic fiber to feed them.',
+    them: 'Probiotics with no delivery protection, and nothing to feed the cultures that make it through.',
+  },
+  {
+    product: 'RELEASE',
+    accent: 'release',
+    subject: 'Easy digestion',
+    us: 'Makzyme-Pro six-enzyme blend at a declared 2,500 HUT of activity — the number most brands never publish.',
+    them: 'Enzyme blends that list ingredients but never declare activity units, so the real dose is unknowable.',
+  },
+  {
+    product: 'VITAL',
+    accent: 'vital',
+    subject: 'Omega-3',
+    us: '1,000mg of wild-caught fish oil from sardines and anchovies, declaring 180mg EPA and 120mg DHA, stabilised with vitamin E.',
+    them: 'Fish oil sold by total milligrams, with the EPA and DHA actually delivered left off the front of the label.',
+  },
+  {
+    product: 'STILL',
+    accent: 'sleep',
+    subject: 'Relaxed focus',
+    us: 'Reishi 200mg with L-Theanine, Lemon Balm, Passion Flower and Valerian — calm alertness, not sedation, and caffeine-free.',
+    them: 'Single-herb calm pills, or focus blends built on caffeine that trade a short peak for a crash.',
+  },
+  {
+    product: 'RADIANCE',
+    accent: 'radiance',
+    subject: 'Longevity',
+    us: '50% Trans-Resveratrol from Japanese Knotweed, the most concentrated natural source.',
+    them: 'Low-purity resveratrol, commonly 25% trans-resveratrol or less.',
+  },
+];
+
 export const SCIENCE_CARDS: {
   glyph: string;
   title: string;

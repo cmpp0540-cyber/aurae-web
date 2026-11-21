@@ -1,44 +1,63 @@
-import { SITE } from '@/content/site';
-
 /**
- * The yellow strip under the hero: a slow, endless marquee.
+ * The strip under the hero: the four manufacturing marks, held still.
  *
- * The list is repeated so the loop never shows a gap, and the second copy is
- * hidden from screen readers. It pauses on hover/touch, fades at the edges, and
- * the global `prefers-reduced-motion` rule in globals.css stops the movement.
+ * This replaced a scrolling marquee of claims. Certification marks are read,
+ * not skimmed — moving them undercuts the one thing they are there to do.
+ *
+ * The art is traced from the certificates in the brand's own supplier pack and
+ * tinted to espresso rather than pure black, so the row sits in the page
+ * instead of punching a hole in it. Intrinsic sizes are declared on each image
+ * so nothing shifts while they load.
  */
-export default function TrustBar() {
-  // Two copies per half so even a wide desktop never runs out of items.
-  const half = [...SITE.trustBar, ...SITE.trustBar];
+const BADGES = [
+  {
+    src: '/images/badges/fda-registered.png',
+    alt: 'FDA Registered Facility',
+    width: 206,
+    height: 115,
+  },
+  {
+    src: '/images/badges/cgmp.png',
+    alt: 'Current Good Manufacturing Practice certified',
+    width: 166,
+    height: 165,
+  },
+  {
+    src: '/images/badges/us-based.png',
+    alt: 'US-based fulfilment and operations',
+    width: 167,
+    height: 171,
+  },
+  {
+    src: '/images/badges/formulated-usa.png',
+    alt: 'Formulated in the USA',
+    width: 207,
+    height: 90,
+  },
+];
 
+export default function TrustBar() {
   return (
-    <div
-      className="group overflow-hidden bg-sun"
-      style={{
-        maskImage: 'linear-gradient(90deg, transparent, black 6%, black 94%, transparent)',
-        WebkitMaskImage: 'linear-gradient(90deg, transparent, black 6%, black 94%, transparent)',
-      }}
-    >
-      <div className="flex w-max animate-marquee py-4 will-change-transform group-hover:[animation-play-state:paused] group-active:[animation-play-state:paused]">
-        {[0, 1].map((copy) => (
-          <ul
-            key={copy}
-            aria-hidden={copy === 1}
-            className="flex flex-shrink-0 items-center gap-10 pr-10 md:gap-16 md:pr-16"
-          >
-            {half.map((item, index) => (
-              <li
-                key={`${item}-${index}`}
-                className="flex flex-shrink-0 items-center gap-3 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.15em] text-espresso sm:text-[11px]"
-              >
-                <span aria-hidden className="text-coral">
-                  ✦
-                </span>
-                {item}
-              </li>
-            ))}
-          </ul>
-        ))}
+    <div className="bg-cream">
+      <div className="shell">
+        <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 py-8 sm:gap-x-16 sm:py-9">
+          {BADGES.map((badge) => (
+            <li key={badge.src}>
+              {/* A plain img: these are small fixed-size PNGs, so the image
+                  pipeline would add indirection without buying anything. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={badge.src}
+                alt={badge.alt}
+                width={badge.width}
+                height={badge.height}
+                loading="lazy"
+                decoding="async"
+                className="h-9 w-auto opacity-85 sm:h-11"
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
