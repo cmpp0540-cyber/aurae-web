@@ -188,11 +188,24 @@ export default function Hero() {
           <em className="italic text-coral lg:text-[#FFE3EA]">{SITE.hero.titleItalic}</em>
         </h1>
 
-        <p className="mx-auto mt-4 max-w-[22ch] font-display text-[19px] italic leading-[1.45] text-espresso/80 lg:mx-0 lg:u-hero-shadow lg:max-w-none lg:text-[22px] lg:text-[#FFE3EA]/90">
-          {SITE.hero.tagline}
+        {/* The break is explicit, so there is no max-width here: a `ch`
+            cap would add a second, unwanted wrap on top of it. */}
+        <p className="mt-4 font-display text-[19px] italic leading-[1.45] text-espresso/80 lg:u-hero-shadow lg:text-[22px] lg:text-[#FFE3EA]/90">
+          {SITE.hero.taglineLead}
+          <br />
+          {SITE.hero.taglineTail}
         </p>
 
-        <p className="mx-auto mt-4 max-w-[36ch] text-[12.5px] leading-relaxed text-espresso/70 lg:mx-0 lg:u-hero-shadow lg:max-w-[44ch] lg:text-[14px] lg:text-[#FFE3EA]/85">
+        {/*
+            No width cap on a phone: 36ch is about 270px, narrower than the
+            342px the band actually offers, which was forcing a third and
+            fourth line. The band's own padding sets the measure instead.
+
+            `text-balance` evens the two lines out rather than leaving one
+            long and one short — the tidy look of justified text without the
+            ragged gaps real justification would open in a line this short.
+          */}
+          <p className="mt-4 text-balance text-[12.5px] leading-relaxed text-espresso/70 lg:mx-0 lg:u-hero-shadow lg:max-w-[44ch] lg:text-[14px] lg:text-[#FFE3EA]/85">
           {SITE.hero.body}
         </p>
 

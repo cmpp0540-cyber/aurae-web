@@ -21,9 +21,23 @@ export const SITE = {
     /** Rendered as two lines, with `titleItalic` set in italics. */
     titleLead: 'Lit from',
     titleItalic: 'within.',
-    /** The line that says what Aurae actually sells, in the display serif. */
-    tagline: 'Premium cellular beauty supplements for the modern woman.',
-    /** The supporting paragraph, in the body sans. */
+    /**
+     * The line that says what Aurae actually sells, in the display serif.
+     * Broken deliberately into two, so it never wraps at an arbitrary word:
+     * what Aurae is on the first line, who it is for on the second. The
+     * break is hard, so keep the lead short enough to fit a 360px phone —
+     * at 19px it measures 287px against 312px of room.
+     */
+    taglineLead: 'Premium cellular beauty supplements',
+    taglineTail: 'for the modern woman.',
+    /**
+     * The supporting paragraph, in the body sans.
+     *
+     * Three lines on a phone, and that is deliberate. Two lines would need
+     * the type down at 9.5px — below the legible minimum, and this sits at
+     * 70% opacity over a tinted band. The full sentence is worth the line.
+     * `text-balance` in Hero.tsx keeps the three lines even.
+     */
     body:
       'Science-backed formulas that make cellular wellness accessible, credible, and undeniably luxe. Because your glow is built from within.',
     primaryCta: 'Try Aurae Vital Risk-Free',

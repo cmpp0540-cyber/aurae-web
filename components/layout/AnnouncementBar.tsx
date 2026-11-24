@@ -15,18 +15,23 @@ import { SITE } from '@/content/site';
  *
  * It links to the products, because an offer with nowhere to go wastes the
  * impulse it just created.
+ *
+ * Coral is the wordmark's own pink (`coral`, #FF6F91). The copy stays
+ * espresso rather than cream: on this coral, espresso reads at 4.95:1 and
+ * passes AA, while white only reaches 2.65:1. Hover goes a shade LIGHTER
+ * for the same reason — darkening the coral drops the text under 4.5:1.
  */
 export default function AnnouncementBar() {
   return (
     <Link
       href="/#products"
-      className="block bg-[#FCE4EA] px-5 py-[11px] text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-espresso transition-colors duration-300 hover:bg-[#FBD9E2] sm:text-[12px]"
+      className="block bg-coral px-5 py-[11px] text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-espresso transition-colors duration-300 hover:bg-[#FF86A3] sm:text-[12px]"
     >
-      <span aria-hidden className="mr-2.5 text-coral">
+      <span aria-hidden className="mr-2.5 text-cream">
         ✦
       </span>
       {SITE.announcement}
-      <span aria-hidden className="ml-2.5 text-coral">
+      <span aria-hidden className="ml-2.5 text-cream">
         ✦
       </span>
     </Link>
