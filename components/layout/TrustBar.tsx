@@ -8,6 +8,11 @@
  * tinted to espresso rather than pure black, so the row sits in the page
  * instead of punching a hole in it. Intrinsic sizes are declared on each image
  * so nothing shifts while they load.
+ *
+ * On `sun`, the brand yellow. It is the only place the yellow runs full
+ * width, which is what makes the strip register as its own statement rather
+ * than a footnote to the hero — and espresso marks on yellow are the
+ * highest-contrast pairing in the palette.
  */
 const BADGES = [
   {
@@ -38,7 +43,7 @@ const BADGES = [
 
 export default function TrustBar() {
   return (
-    <div className="bg-cream">
+    <div className="bg-sun">
       <div className="shell">
         <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 py-8 sm:gap-x-16 sm:py-9">
           {BADGES.map((badge) => (
@@ -53,7 +58,7 @@ export default function TrustBar() {
                 height={badge.height}
                 loading="lazy"
                 decoding="async"
-                className="h-9 w-auto opacity-85 sm:h-11"
+                className="h-9 w-auto opacity-90 sm:h-11"
               />
             </li>
           ))}
