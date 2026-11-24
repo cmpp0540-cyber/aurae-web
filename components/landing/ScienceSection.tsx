@@ -1,6 +1,7 @@
-import { LANDING, SCIENCE_CARDS } from '@/content/site';
+import { LANDING } from '@/content/site';
 import Reveal from '@/components/ui/Reveal';
 import SectionHeading from '@/components/ui/SectionHeading';
+import ScienceAccordion from './ScienceAccordion';
 
 export default function ScienceSection() {
   return (
@@ -10,33 +11,15 @@ export default function ScienceSection() {
           eyebrow={LANDING.science.eyebrow}
           lead={LANDING.science.titleLead}
           italic={LANDING.science.titleItalic}
-          subtitle={LANDING.science.subtitle}
+          subtitle={
+            // Smaller than the shared default, to match Real Women and
+            // Transparency: the cards carry this section, and the line is
+            // only a lead-in to them.
+            <span className="block text-[13px] sm:text-[14px]">{LANDING.science.subtitle}</span>
+          }
         />
 
-        <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {SCIENCE_CARDS.map((card, index) => (
-            <Reveal
-              key={card.title}
-              as="article"
-              delay={index * 70}
-              className="card card-hover flex flex-col p-7"
-            >
-              <span aria-hidden className="text-[26px] leading-none text-coral">
-                {card.glyph}
-              </span>
-              <h3 className="mt-4 font-display text-[19px] font-semibold leading-snug">
-                {card.title}
-              </h3>
-              <p className="mt-3 flex-1 text-[14px] leading-relaxed text-espresso/70">{card.body}</p>
-              <div className="mt-6 border-t border-espresso/10 pt-4">
-                <p className="font-display text-[26px] font-bold text-coral">{card.stat}</p>
-                <p className="mt-0.5 text-[11px] uppercase tracking-[0.12em] text-espresso/50">
-                  {card.statLabel}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <ScienceAccordion />
 
         <Reveal className="mx-auto mt-10 max-w-[900px] rounded-2xl bg-[linear-gradient(135deg,#FFE5D9,#FFF8F0)] p-8 text-center sm:p-11">
           <h3 className="font-display text-display-md font-bold balance">

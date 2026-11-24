@@ -62,14 +62,11 @@ export const SITE = {
     columns: [
       {
         title: 'Shop',
-        links: [
-          { label: 'All Products', href: '/#shop' },
-          { label: 'Glow', href: '/product/grass-fed-hydrolyzed-collagen-peptides' },
-          { label: 'Calm', href: '/product/ashwagandha-plus' },
-          { label: 'Sleep', href: '/product/sleep-strips' },
-          { label: 'Radiance', href: '/product/resveratrol-50-600mg' },
-          { label: 'Renewal', href: '/product/nad' },
-        ],
+        // One link, not one per product. The carousel up the page already
+        // lists all eight, and naming five of them here meant the footer
+        // had to be edited every time the range changed — which is how the
+        // link to the discontinued SLEEP survived as long as it did.
+        links: [{ label: 'All Products', href: '/#shop' }],
       },
       {
         title: 'Rituals',
@@ -403,11 +400,18 @@ export const SCIENCE_CARDS: {
   statLabel: string;
 }[] = [
   {
-    glyph: '✦',
-    title: 'Hydrolyzed Collagen Types 1 & 3',
-    body: 'Grass-fed bovine peptides rich in glycine, proline, hydroxyproline, and alanine — the amino acids that boost collagen synthesis. Type 1 supports skin elasticity. Type 3 supports tendons, joints, and structure.',
-    stat: 'Types 1 & 3',
-    statLabel: 'Full amino acid profile',
+    glyph: '❖',
+    title: 'MAKTREK Bi-Pass Delivery',
+    body: '40 billion CFU across four clinically studied strains — L. acidophilus La-14, B. lactis Bl-04, L. plantarum Lp-115 and L. paracasei Lpc-37 — carried intact past stomach acid, with marine polysaccharide and fructooligosaccharide as prebiotic fuel.',
+    stat: '40B',
+    statLabel: 'CFU delivered past stomach acid',
+  },
+  {
+    glyph: '◉',
+    title: 'Makzyme-Pro Enzyme Blend',
+    body: 'Six digestive enzymes at a declared 2,500 HUT of activity — a figure most brands never publish at all. Breaks down proteins, fats, lactose and carbohydrates so a meal is absorbed rather than sitting. One vegetable capsule per serving.',
+    stat: '2,500 HUT',
+    statLabel: 'Declared enzyme activity',
   },
   {
     glyph: '⊛',
@@ -415,6 +419,13 @@ export const SCIENCE_CARDS: {
     body: '500mg NAD+ for cellular energy + Quercetin for inflammatory response + 98% Resveratrol from Japanese Knotweed for antioxidant support. Three powerhouse molecules, one capsule.',
     stat: '500mg',
     statLabel: 'NAD+ + senolytic cofactors',
+  },
+  {
+    glyph: '✦',
+    title: 'Hydrolyzed Collagen Types 1 & 3',
+    body: 'Grass-fed bovine peptides rich in glycine, proline, hydroxyproline, and alanine — the amino acids that boost collagen synthesis. Type 1 supports skin elasticity. Type 3 supports tendons, joints, and structure.',
+    stat: 'Types 1 & 3',
+    statLabel: 'Full amino acid profile',
   },
   {
     glyph: '◈',
@@ -431,20 +442,6 @@ export const SCIENCE_CARDS: {
     statLabel: '50% trans-resveratrol',
   },
   {
-    glyph: '❖',
-    title: 'MAKTREK Bi-Pass Delivery',
-    body: '40 billion CFU across four clinically studied strains — L. acidophilus La-14, B. lactis Bl-04, L. plantarum Lp-115 and L. paracasei Lpc-37 — carried intact past stomach acid, with marine polysaccharide and fructooligosaccharide as prebiotic fuel.',
-    stat: '40B',
-    statLabel: 'CFU delivered past stomach acid',
-  },
-  {
-    glyph: '◉',
-    title: 'Makzyme-Pro Enzyme Blend',
-    body: 'Six digestive enzymes at a declared 2,500 HUT of activity — a figure most brands never publish at all. Breaks down proteins, fats, lactose and carbohydrates so a meal is absorbed rather than sitting. One vegetable capsule per serving.',
-    stat: '2,500 HUT',
-    statLabel: 'Declared enzyme activity',
-  },
-  {
     glyph: '✤',
     title: 'Wild-Caught Omega-3',
     body: '1,000mg of fish oil concentrate from sardines and anchovies, delivering 180mg EPA and 120mg DHA — fats the body cannot make on its own. Stabilised with vitamin E, 100 softgels to a bottle.',
@@ -458,13 +455,6 @@ export const SCIENCE_CARDS: {
     stat: '200mg',
     statLabel: 'Reishi extract, non-drowsy',
   },
-  {
-    glyph: '★',
-    title: 'FDA-Registered, cGMP Facility',
-    body: 'Every Aurae formula is made in the United States, in a facility registered with the FDA and operating to current Good Manufacturing Practice standards — the rules covering sourcing, hygiene, traceability and process control from raw ingredient to sealed bottle.',
-    stat: 'cGMP',
-    statLabel: 'Made in the USA',
-  },
 ];
 
 export const LANDING_TESTIMONIALS: (Testimonial & { tag: string; accent: AccentKey })[] = [
@@ -473,7 +463,7 @@ export const LANDING_TESTIMONIALS: (Testimonial & { tag: string; accent: AccentK
     accent: 'flora',
     stars: 5,
     headline: 'I finally feel balanced again.',
-    body: 'My digestion had been completely off-track for a while. FLORA helped me feel balanced again so quickly. I love that it is 40 billion CFU — you can genuinely feel the quality within the first few days.',
+    body: 'My digestion had been off-track for a while. FLORA helped me feel balanced again so quickly, and at 40 billion CFU you can feel the quality within the first few days.',
     author: 'Hannah G.',
     location: 'Austin, TX',
   },
@@ -482,7 +472,7 @@ export const LANDING_TESTIMONIALS: (Testimonial & { tag: string; accent: AccentK
     accent: 'release',
     stars: 5,
     headline: 'My absolute lifesaver for eating out.',
-    body: 'RELEASE has become my go-to handbag essential. Whenever I go out for dinner or eat a heavier meal than usual, I take one capsule and completely forget about that heavy feeling afterwards. It delivers exactly what it promises.',
+    body: 'RELEASE has become my go-to handbag essential. Whenever I eat out or have a heavier meal, I take one capsule and completely forget that heavy feeling afterwards.',
     author: 'Chloe T.',
     location: 'Miami, FL',
   },

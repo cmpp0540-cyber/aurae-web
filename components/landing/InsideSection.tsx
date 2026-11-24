@@ -21,8 +21,21 @@ export default function InsideSection() {
           italic={inside.titleItalic}
         />
 
-        {/* Pull quote */}
-        <Reveal className="relative mx-auto mt-10 max-w-[900px] rounded-r-2xl border-l-[5px] border-coral bg-cream px-8 py-9 shadow-soft sm:px-11">
+        <InsideCarousel />
+
+        <Reveal className="mx-auto mt-9 max-w-[760px] text-center">
+          <p className="font-display text-[19px] italic leading-relaxed sm:text-[22px]">
+            {inside.summary.lead}{' '}
+            <strong className="font-bold not-italic text-coral">{inside.summary.emphasis}</strong>
+          </p>
+        </Reveal>
+
+        {/* The pull quote closes the section now: the cards make the case
+            product by product, the summary line names the stake, and this
+            is the argument stated outright. Ahead of the cards it was
+            asking the reader to take the claim on trust before seeing a
+            single number. */}
+        <Reveal className="relative mx-auto mt-9 max-w-[900px] rounded-r-2xl border-l-[5px] border-coral bg-cream px-8 py-9 shadow-soft sm:px-11">
           <span
             aria-hidden
             className="pointer-events-none absolute left-4 top-[-10px] font-display text-[90px] leading-none text-coral/25"
@@ -38,15 +51,6 @@ export default function InsideSection() {
           </p>
           <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-coral">
             {inside.callout.signature}
-          </p>
-        </Reveal>
-
-        <InsideCarousel />
-
-        <Reveal className="mx-auto mt-9 max-w-[760px] text-center">
-          <p className="font-display text-[19px] italic leading-relaxed sm:text-[22px]">
-            {inside.summary.lead}{' '}
-            <strong className="font-bold not-italic text-coral">{inside.summary.emphasis}</strong>
           </p>
         </Reveal>
       </div>

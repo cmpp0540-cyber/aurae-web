@@ -77,7 +77,7 @@ export default function TestimonialCarousel() {
               <Reveal
                 as="article"
                 delay={(index % LANDING_TESTIMONIALS.length) * 70}
-                className="flex flex-col rounded-2xl bg-cream p-7 shadow-[0_2px_20px_rgba(58,46,42,0.05)]"
+                className="flex flex-col rounded-2xl bg-cream p-6 shadow-[0_2px_20px_rgba(58,46,42,0.05)]"
               >
                 <span
                   className={[
@@ -87,15 +87,15 @@ export default function TestimonialCarousel() {
                 >
                   {item.tag}
                 </span>
-                <Stars count={item.stars} className="mt-4 block" />
-                <p className="mt-3 font-display text-[18px] font-semibold leading-snug">
+                <Stars count={item.stars} className="mt-3 block" />
+                <p className="mt-2.5 font-display text-[17px] font-semibold leading-snug">
                   &ldquo;{item.headline}&rdquo;
                 </p>
-                <p className="mt-3 flex-1 text-[14px] leading-relaxed text-espresso/70">
+                <p className="mt-2.5 flex-1 text-[13px] leading-[1.6] text-espresso/70">
                   {item.body}
                 </p>
-                <div className="mt-6 flex items-center gap-3 border-t border-espresso/10 pt-4">
-                  <span className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-full bg-blush font-display text-[15px] font-bold text-coral">
+                <div className="mt-5 flex items-center gap-3 border-t border-espresso/10 pt-3.5">
+                  <span className="grid h-8 w-8 flex-shrink-0 place-items-center rounded-full bg-blush font-display text-[14px] font-bold text-coral">
                     {item.author.charAt(0)}
                   </span>
                   <span className="flex-1">

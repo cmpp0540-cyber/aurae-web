@@ -40,19 +40,11 @@ export default function StorySection() {
             className="mt-4 font-display font-bold leading-[1.08] text-cream"
             style={{ fontSize: 'clamp(2.25rem, 5.5vw, 4rem)' }}
           >
-            {/* Sized in `em` so the sparkles stay in proportion to the
-                headline at every breakpoint. */}
-            <span aria-hidden className="mr-[0.35em] align-middle text-[0.38em] text-[#FFE3EA]/85">
-              ✦
-            </span>
             {STORY.titleLead}
             <br />
             {/* Blush rather than the old yellow: the same italic the hero
                 uses, so the two ends of the page rhyme. */}
             <em className="italic text-[#FFE3EA]">{STORY.titleItalic}</em>
-            <span aria-hidden className="ml-[0.35em] align-middle text-[0.38em] text-[#FFE3EA]/85">
-              ✦
-            </span>
           </h2>
 
           <blockquote className="mt-8 max-w-[720px] font-display text-[21px] font-normal italic leading-[1.6] text-cream/90 sm:text-[24px] lg:text-[27px]">

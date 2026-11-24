@@ -201,11 +201,19 @@ export default function Hero() {
             342px the band actually offers, which was forcing a third and
             fourth line. The band's own padding sets the measure instead.
 
-            `text-balance` evens the two lines out rather than leaving one
-            long and one short — the tidy look of justified text without the
+            `text-balance` evens the lines out rather than leaving one long
+            and one short — the tidy look of justified text without the
             ragged gaps real justification would open in a line this short.
+
+            This is the one paragraph on the site set in the display serif
+            rather than the body sans, and the one deliberate exception:
+            the hero is a brand statement, not dense reading, so a single
+            typographic voice reads better here than the contrast that
+            serves the rest of the page. At 12.5px sans it looked washed
+            out next to a 40px headline; the fix was size and weight, not
+            bolding a small sans, which only ever reads as app chrome.
           */}
-          <p className="mt-4 text-balance text-[12.5px] leading-relaxed text-espresso/70 lg:mx-0 lg:u-hero-shadow lg:max-w-[44ch] lg:text-[14px] lg:text-[#FFE3EA]/85">
+          <p className="mt-4 text-balance font-display text-[15px] font-normal leading-[1.6] text-espresso/80 lg:mx-0 lg:u-hero-shadow lg:max-w-[44ch] lg:text-[16.5px] lg:text-[#FFE3EA]/88">
           {SITE.hero.body}
         </p>
 

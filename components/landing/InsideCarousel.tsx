@@ -88,25 +88,25 @@ export default function InsideCarousel() {
                     eight of these from turning into a paint chart. */}
                 <span aria-hidden className={`block h-[3px] w-full ${accent.imageGradient}`} />
 
-                <div className="flex flex-1 flex-col p-7 sm:p-8">
+                <div className="flex flex-1 flex-col p-6 sm:p-7">
                   <div className="flex items-baseline justify-between gap-4">
-                    <h3 className="font-display text-[26px] font-bold leading-none tracking-[0.01em]">
+                    <h3 className="font-display text-[23px] font-bold leading-none tracking-[0.01em]">
                       {item.product}
                     </h3>
                     <span className="flex-shrink-0 text-[10px] font-medium tracking-[0.18em] text-espresso/30">
                       {String((index % INSIDE_COMPARISONS.length) + 1).padStart(2, '0')} / {total}
                     </span>
                   </div>
-                  <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-espresso/45">
+                  <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-espresso/45">
                     {item.subject}
                   </p>
 
                   {/* Ours */}
-                  <p className="mt-7 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-coral">
+                  <p className="mt-5 flex items-center gap-2 text-[13px] font-bold uppercase tracking-[0.2em] text-coral">
                     <span aria-hidden className={`block h-1.5 w-1.5 rounded-full ${accent.dot}`} />
                     {LANDING.inside.labels.us}
                   </p>
-                  <p className="mt-3 text-[14px] leading-relaxed text-espresso/85">{item.us}</p>
+                  <p className="mt-2.5 text-[13px] leading-[1.6] text-espresso/85">{item.us}</p>
 
                   {/*
                     Theirs is pinned to the bottom, so the recessed panels line
@@ -114,13 +114,13 @@ export default function InsideCarousel() {
                     It is set smaller, lighter and on a tinted ground: the
                     hierarchy makes the point before a word is read.
                   */}
-                  <div className="mt-auto pt-7">
-                    <div className="rounded-xl bg-blush/40 px-5 py-4">
-                      <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-espresso/35">
-                        <span aria-hidden className="block h-1.5 w-1.5 rounded-full bg-espresso/20" />
+                  <div className="mt-auto pt-5">
+                    <div className="rounded-xl bg-blush/40 px-4 py-3.5">
+                      <p className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-espresso">
+                        <span aria-hidden className="block h-1.5 w-1.5 rounded-full bg-espresso/70" />
                         {LANDING.inside.labels.them}
                       </p>
-                      <p className="mt-2.5 text-[13px] leading-relaxed text-espresso/50">
+                      <p className="mt-2 text-[12px] leading-[1.55] text-espresso/50">
                         {item.them}
                       </p>
                     </div>

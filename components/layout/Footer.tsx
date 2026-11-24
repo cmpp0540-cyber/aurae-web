@@ -11,22 +11,25 @@ const LEGAL_LINKS = [
 export default function Footer() {
   return (
     <footer className="bg-espresso text-ivory">
-      <div className="shell grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-5 lg:py-20">
-        <div className="lg:col-span-1">
+      {/*
+        Two columns on a phone, not one. Stacked, the brand block plus four
+        link lists ran past 1,000px of nothing but text — the single tallest
+        thing after the hero, at the point where a visitor is least invested.
+        Side by side it is about half that, and a footer is scanned, never
+        read, so narrow columns cost nothing.
+      */}
+      <div className="shell grid grid-cols-2 gap-x-6 gap-y-9 py-12 sm:gap-x-10 lg:grid-cols-5 lg:gap-12 lg:py-14">
+        <div className="col-span-2 lg:col-span-1">
           <p className="font-display text-[32px] font-bold leading-none text-coral">aurae</p>
           <p className="mt-2 font-display text-[14px] italic text-ivory/60">{SITE.tagline}</p>
-          <p className="mt-6 max-w-[240px] text-[13px] leading-relaxed text-ivory/50">
-            Premium cellular beauty supplements, dosed at science-backed levels and made in
-            GMP-certified facilities.
-          </p>
         </div>
 
         {SITE.footer.columns.map((column) => (
           <div key={column.title}>
-            <h4 className="mb-4 text-[11px] font-semibold uppercase tracking-[0.2em] text-sun">
+            <h4 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.2em] text-sun">
               {column.title}
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {column.links.map((link) => (
                 <li key={`${column.title}-${link.label}`}>
                   <Link
@@ -43,7 +46,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-ivory/10">
-        <div className="shell flex flex-col gap-4 py-6 text-[12px] text-ivory/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="shell flex flex-col gap-3 py-5 text-[12px] text-ivory/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Aurae All rights reserved.</p>
           <ul className="flex gap-6">
             {LEGAL_LINKS.map((item) => (
@@ -55,7 +58,7 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <div className="shell pb-8">
+        <div className="shell pb-6">
           <p className="max-w-3xl text-[11px] leading-relaxed text-ivory/30">
             These statements have not been evaluated by the Food and Drug Administration. This
             product is not intended to diagnose, treat, cure or prevent any disease. Consult your
