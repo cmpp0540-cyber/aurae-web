@@ -22,24 +22,15 @@ export const SITE = {
     titleLead: 'Lit from',
     titleItalic: 'within.',
     /**
-     * The line that says what Aurae actually sells, in the display serif.
-     * Broken deliberately into two, so it never wraps at an arbitrary word:
-     * what Aurae is on the first line, who it is for on the second. The
-     * break is hard, so keep the lead short enough to fit a 360px phone —
-     * at 19px it measures 287px against 312px of room.
+     * The brand line, in the display serif, broken deliberately rather
+     * than left to wrap where it lands: the claim on the first line, the
+     * reason under it. The lead is hard-broken, so keep it under about 30
+     * characters or it wraps on a 360px phone; the tail wraps on its own
+     * and runs to two lines, three in all.
      */
-    taglineLead: 'Premium cellular beauty supplements',
-    taglineTail: 'for the modern woman.',
-    /**
-     * The supporting paragraph, in the body sans.
-     *
-     * Three lines on a phone, and that is deliberate. Two lines would need
-     * the type down at 9.5px — below the legible minimum, and this sits at
-     * 70% opacity over a tinted band. The full sentence is worth the line.
-     * `text-balance` in Hero.tsx keeps the three lines even.
-     */
-    body:
-      'Science-backed formulas that make cellular wellness accessible, credible, and undeniably luxe. Because your glow is built from within.',
+    taglineLead: 'Cellular beauty made ritual,',
+    taglineTail:
+      'because true radiance isn’t something you apply — it’s something you build.',
     primaryCta: 'Try Aurae Vital Risk-Free',
     secondaryCta: 'Explore the Rituals',
     /**
@@ -143,76 +134,56 @@ export const HERO_PILLARS: (HeroPillar & { x: number; y: number })[] = [
  * margin the label sits in and which half of the frame is tappable. `y` is the
  * vertical centre of the product, `top`/`height` its band, all as percentages.
  */
+/**
+ * Phone shot, `public/images/aurae-hero-mobile-v2.webp`: two rows of four.
+ *
+ * The labels moved from the margins to above and below. With eight products
+ * in two horizontal rows there are no longer eight free vertical bands to
+ * hang them in, so each label now sits in the empty strip at the top or the
+ * bottom of the frame, centred over its own product.
+ *
+ * `x` is the centre of the product, `left` and `width` its own edges for the
+ * tap target — all percentages of the 4:5 frame, measured against THIS
+ * image. Reshoot the hero and every number here needs re-measuring.
+ */
 export const HERO_PILLARS_MOBILE: (HeroPillar & {
-  side: 'l' | 'r';
-  y: number;
-  top: number;
-  height: number;
-  /** RELEASE, CALM and VITAL run down the middle of the frame, far from
-   *  either margin. Their labels sit further in than the rest so the eye
-   *  does not have to cross an empty third of the photograph to reach the
-   *  bottle. */
-  centred?: boolean;
+  row: 'top' | 'bottom';
+  x: number;
+  left: number;
+  width: number;
 })[] = [
   {
     label: 'Radiant skin*',
     product: 'GLOW',
     handle: 'grass-fed-hydrolyzed-collagen-peptides',
-    side: 'l',
-    y: 13.8,
-    top: 3.1,
-    height: 22.4,
+    row: 'top',
+    x: 21,
+    left: 8,
+    width: 27,
   },
-  {
-    label: 'Easy digestion*',
-    product: 'RELEASE',
-    handle: null,
-    side: 'r',
-    y: 20,
-    top: 13.8,
-    height: 11.7,
-    centred: true,
-  },
-  {
-    label: 'Cellular energy*',
-    product: 'RENEWAL',
-    handle: 'nad',
-    side: 'r',
-    y: 36.2,
-    top: 25.5,
-    height: 19.2,
-  },
+  { label: 'Cellular energy*', product: 'RENEWAL', handle: 'nad', row: 'top', x: 45.5, left: 38, width: 15 },
   {
     label: 'Longevity*',
     product: 'RADIANCE',
     handle: 'resveratrol-50-600mg',
-    side: 'l',
-    y: 39.4,
-    top: 28.7,
-    height: 16,
+    row: 'top',
+    x: 64,
+    left: 55.5,
+    width: 17.5,
   },
   {
     label: 'Mental clarity*',
     product: 'CALM',
     handle: 'ashwagandha-plus',
-    side: 'r',
-    y: 50,
-    top: 44.7,
-    height: 12.3,
-    centred: true,
+    row: 'top',
+    x: 83.5,
+    left: 75,
+    width: 17,
   },
-  { label: 'Relaxed focus*', product: 'STILL', handle: null, side: 'r', y: 63, top: 57, height: 13.3 },
-  { label: 'Gut balance*', product: 'FLORA', handle: null, side: 'l', y: 66, top: 61.8, height: 9.2 },
-  {
-    label: 'Sharper focus*',
-    product: 'VITAL',
-    handle: null,
-    side: 'r',
-    y: 82,
-    top: 71.4,
-    height: 22.4,
-    centred: true,
-  },
+  { label: 'Gut balance*', product: 'FLORA', handle: null, row: 'bottom', x: 20.5, left: 13.5, width: 16 },
+  { label: 'Easy digestion*', product: 'RELEASE', handle: null, row: 'bottom', x: 41, left: 32, width: 17 },
+  { label: 'Sharper focus*', product: 'VITAL', handle: null, row: 'bottom', x: 61.5, left: 52.5, width: 17.5 },
+  { label: 'Relaxed focus*', product: 'STILL', handle: null, row: 'bottom', x: 81, left: 72, width: 18 },
 ];
 
 /** Section intros for the landing page. */

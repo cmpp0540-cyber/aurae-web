@@ -21,8 +21,11 @@ const HERO_IMAGE = {
 };
 
 const HERO_IMAGE_MOBILE = {
-  src: '/images/aurae-hero-mobile.webp',
-  alt: 'The full Aurae line — RADIANCE, RENEWAL, CALM, GLOW, FLORA, RELEASE, VITAL and STILL — spiralling up a coral background around an iridescent glass ribbon',
+  // A new filename, not a new upload under the old one: phones cache the
+  // hero hard, and the last reshoot had us chasing a stale image for an
+  // afternoon.
+  src: '/images/aurae-hero-mobile-v3.webp',
+  alt: 'The full Aurae line in two rows — GLOW, RENEWAL, RADIANCE and CALM above; FLORA, RELEASE, VITAL and STILL below — on a pale peach background with an iridescent glass ribbon behind them',
 };
 
 /**
@@ -31,9 +34,9 @@ const HERO_IMAGE_MOBILE = {
  * right; the colour blocks above and below the photo continue them.
  */
 const MOBILE_TOP =
-  'linear-gradient(90deg,#FCEEE5,#FEEDE3,#FBEBE3,#FBEBE3,#F9E8DE,#F5E2D8,#F2DED4,#F0DBCE,#ECD6CC)';
+  'linear-gradient(90deg,#FEEDE3,#FEECE0,#FCEBDE,#FCE9DC,#FBE5D9,#F9E1D5,#F6DCD0,#F1D8CB,#F0D4C8)';
 const MOBILE_BOTTOM =
-  'linear-gradient(90deg,#EDD4C8,#EFD7CB,#F1DACE,#F2DCD2,#F2DDD2,#F0DBCF,#F0D7CC,#EED6CB,#ECD4CA)';
+  'linear-gradient(90deg,#F3D9CE,#F0D5C9,#F4D9CC,#F2D6CB,#F3D8CD,#EFDBD2,#EFD8CD,#EFD4C9,#F6DFD5)';
 
 /** Pale pink that reads on the coral without washing out. */
 const INK = '#FFE3EA';
@@ -179,7 +182,7 @@ export default function Hero() {
         Ink flips with the backdrop: espresso on the pale phone band, blush on
         the coral desktop photograph.
       */}
-      <div className="animate-fade-up bg-[image:var(--m-top)] px-6 pb-2 pt-9 text-center lg:absolute lg:left-[4%] lg:top-[7%] lg:z-10 lg:w-[40%] lg:bg-none lg:px-0 lg:pb-0 lg:pt-0 lg:text-left">
+      <div className="animate-fade-up bg-[image:var(--m-top)] px-6 pb-1 pt-9 text-center lg:absolute lg:left-[4%] lg:top-[7%] lg:z-10 lg:w-[40%] lg:bg-none lg:px-0 lg:pb-0 lg:pt-0 lg:text-left">
         <h1
           className="font-display font-semibold leading-[1.08] tracking-[-0.01em] text-espresso lg:u-hero-shadow lg:text-[#FFE3EA]"
           style={{ fontSize: 'clamp(2.5rem, 4.6vw, 4.25rem)' }}
@@ -194,27 +197,6 @@ export default function Hero() {
           {SITE.hero.taglineLead}
           <br />
           {SITE.hero.taglineTail}
-        </p>
-
-        {/*
-            No width cap on a phone: 36ch is about 270px, narrower than the
-            342px the band actually offers, which was forcing a third and
-            fourth line. The band's own padding sets the measure instead.
-
-            `text-balance` evens the lines out rather than leaving one long
-            and one short — the tidy look of justified text without the
-            ragged gaps real justification would open in a line this short.
-
-            This is the one paragraph on the site set in the display serif
-            rather than the body sans, and the one deliberate exception:
-            the hero is a brand statement, not dense reading, so a single
-            typographic voice reads better here than the contrast that
-            serves the rest of the page. At 12.5px sans it looked washed
-            out next to a 40px headline; the fix was size and weight, not
-            bolding a small sans, which only ever reads as app chrome.
-          */}
-          <p className="mt-4 text-balance font-display text-[15px] font-normal leading-[1.6] text-espresso/80 lg:mx-0 lg:u-hero-shadow lg:max-w-[44ch] lg:text-[16.5px] lg:text-[#FFE3EA]/88">
-          {SITE.hero.body}
         </p>
 
         <DesktopActions />
@@ -262,7 +244,7 @@ export default function Hero() {
       </div>
 
       {/* ── Phone photograph: tall, the full line spiralling up ───────── */}
-      <div className="relative aspect-[4/5] w-full lg:hidden">
+      <div className="relative aspect-[8/9] w-full lg:hidden">
         <SmartImage
           src={HERO_IMAGE_MOBILE.src}
           alt={HERO_IMAGE_MOBILE.alt}
@@ -293,17 +275,19 @@ export default function Hero() {
           }}
         />
 
-        {/* Tap a bottle to open it — only the half of the frame it sits in. */}
+        {/* Tap a bottle to open it — its own column, within its row. */}
         {HERO_PILLARS_MOBILE.map((pillar) =>
           pillar.handle ? (
             <Link
               key={pillar.product}
               href={`/product/${pillar.handle}`}
-              className={[
-                'absolute z-10',
-                pillar.side === 'l' ? 'left-[6%] right-[50%]' : 'left-[50%] right-[6%]',
-              ].join(' ')}
-              style={{ top: `${pillar.top}%`, height: `${pillar.height}%` }}
+              className="absolute z-10"
+              style={{
+                left: `${pillar.left}%`,
+                width: `${pillar.width}%`,
+                top: pillar.row === 'top' ? '13%' : '50.5%',
+                height: pillar.row === 'top' ? '37%' : '31%',
+              }}
             >
               <span className="sr-only">
                 {pillar.label} — shop {pillar.product}
@@ -312,44 +296,36 @@ export default function Hero() {
           ) : null,
         )}
 
-        {/* Benefit labels, in the margin on the product's own side */}
+        {/*
+          Benefit labels, in the empty strip above or below their own row.
+
+          They used to sit in the left and right margins, one per vertical
+          band. Two rows of four leaves no such bands, so each label is
+          centred on its product's column instead and the rule turned from
+          horizontal to vertical. 5% clears the GLOW tub, which is the
+          tallest thing in the back row; 87% clears the front row's feet.
+          Both are measured against the 8:9 crop — recrop and they move.
+        */}
         <ul aria-hidden className="pointer-events-none">
           {HERO_PILLARS_MOBILE.map((pillar) => {
-            const left = pillar.side === 'l';
+            const top = pillar.row === 'top';
             return (
               <li
                 key={pillar.product}
-                className={[
-                  'absolute z-20 -translate-y-1/2',
-                  // The centred bottles get a tighter inset: 64% leaves the
-                  // label a hair clear of the bottle instead of stranded in
-                  // the margin. The rule points inward from the label, so it
-                  // is the inset — not the rule's length — that closes the gap.
-                  left
-                    ? pillar.centred
-                      ? 'right-[64%]'
-                      : 'right-[77%]'
-                    : pillar.centred
-                      ? 'left-[64%]'
-                      : 'left-[77%]',
-                ].join(' ')}
-                style={{ top: `${pillar.y}%` }}
+                className="absolute z-20 -translate-x-1/2"
+                style={{ left: `${pillar.x}%`, top: top ? '5%' : '87%' }}
               >
                 <span
                   className={[
                     'flex items-center gap-1',
-                    left ? 'flex-row' : 'flex-row-reverse',
+                    // Reversed below, so the rule always points at the row.
+                    top ? 'flex-col' : 'flex-col-reverse',
                   ].join(' ')}
                 >
-                  <span
-                    className={[
-                      'block max-w-[68px] break-words font-display text-[9px] font-medium uppercase leading-tight tracking-[0.06em] text-espresso/80',
-                      left ? 'text-right' : 'text-left',
-                    ].join(' ')}
-                  >
+                  <span className="block max-w-[68px] break-words text-center font-display text-[9px] font-medium uppercase leading-tight tracking-[0.06em] text-espresso/80">
                     {pillar.label}
                   </span>
-                  <span className="block h-px w-3 flex-shrink-0 bg-espresso/40" />
+                  <span className="block h-2.5 w-px flex-shrink-0 bg-espresso/40" />
                 </span>
               </li>
             );
@@ -359,7 +335,7 @@ export default function Hero() {
 
       {/* ── Phone actions, on the light end of the photograph ─────────── */}
       <div
-        className="flex flex-col items-center gap-1 px-5 pb-12 pt-4 lg:hidden"
+        className="flex flex-col items-center gap-1 px-5 pb-12 pt-2 lg:hidden"
         style={{ backgroundImage: MOBILE_BOTTOM }}
       >
         <Link href="#shop" className="btn-dark">
