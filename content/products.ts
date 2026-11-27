@@ -713,38 +713,180 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
       sub: 'Three longevity molecules. One morning capsule.',
     },
   },
+  // ─────────────────────────────────────────── FLORA
+  'probiotic-40-billion-with-prebiotics': {
+    accent: 'flora',
+    eyebrow: 'Gut Balance',
+    tagline: 'Calm digestion. Steady energy. It starts here.',
+    intro:
+      'Bloating that shows up by three in the afternoon, digestion that feels unpredictable, an immune system that catches everything going round — these usually trace back to the same place. FLORA delivers 40 billion CFU from four named strains, with the prebiotic fibre to feed them, so your gut gets what it has been asking for.',
+    quickFacts: [
+      '40 billion CFU · four named strains',
+      'MAKTREK® Bi-Pass delivery',
+      '60 capsules · two daily',
+    ],
+    benefits: [
+      {
+        icon: 'circles',
+        title: 'A calmer middle',
+        text: 'Less bloating, more regularity, fewer days where your stomach decides the agenda. This is the one most women notice first.',
+      },
+      {
+        icon: 'star',
+        title: 'Defences that hold',
+        text: 'A large share of your immune activity lives in the gut lining. Keeping that balance supported is keeping your defences supported.*',
+      },
+      {
+        icon: 'spark',
+        title: 'More from every meal',
+        text: 'A balanced gut absorbs better. The nutrients you are already paying for in your food actually reach you.*',
+      },
+      {
+        icon: 'bloom',
+        title: 'Skin, mood, energy',
+        text: 'Everything downstream of digestion runs better when digestion does. It is unglamorous and it is foundational.',
+      },
+    ],
+    ritual: {
+      intro: 'Two capsules a day. Split them and you cover the whole day.',
+      steps: [
+        {
+          label: 'Step 01',
+          title: 'One in the day, one in the evening',
+          text: 'Two capsules daily is the dose. Splitting them keeps a steady supply arriving rather than one crowd all at once.',
+        },
+        {
+          label: 'Step 02',
+          title: 'They survive the journey',
+          text: 'MAKTREK® Bi-Pass Technology is built to carry the cultures through stomach acid. A probiotic only counts where it arrives.',
+        },
+        {
+          label: 'Step 03',
+          title: 'Give it two to four weeks',
+          text: 'Colonisation is not instant. Most women notice the difference in how they feel after meals before they notice anything else.',
+        },
+      ],
+    },
+    science: {
+      headline: 'Named strains, and something to feed them.',
+      body: [
+        'Two things separate a probiotic that works from one that is expensive yoghurt. The first is whether the strains are identified. "Probiotic blend, 40 billion CFU" tells you a number and nothing about what is in it — different strains do different things, and the research is strain-specific. FLORA names all four: Lactobacillus acidophilus La-14, Bifidobacterium lactis Bl-04, Lactobacillus plantarum Lp-115 and Lactobacillus paracasei Lpc-37.',
+        'The second is what happens on the way down. Stomach acid is designed to kill bacteria, and it does not make an exception for the helpful ones. MAKTREK® Bi-Pass Technology exists to get the cultures past it. Then there is the part most brands skip entirely: 24mg of fructooligosaccharides and 60mg of a complex marine polysaccharide — prebiotic fibre, which is simply food for the bacteria you just swallowed.*',
+      ],
+      stats: [
+        { value: '40B', label: 'CFU per serving' },
+        { value: '4', label: 'Named clinical strains' },
+        { value: '24mg', label: 'FOS prebiotic fibre' },
+      ],
+      evidence: [
+        {
+          claim: 'Strain identity matters',
+          detail:
+            'Probiotic research is conducted on specific strains, not on CFU counts. Naming La-14, Bl-04, Lp-115 and Lpc-37 is what makes the number meaningful.',
+        },
+        {
+          claim: 'Delivery is the bottleneck',
+          detail:
+            'Stomach acid destroys most unprotected cultures. MAKTREK® Bi-Pass Technology is included to carry them through.*',
+        },
+        {
+          claim: 'Prebiotics feed probiotics',
+          detail:
+            'FOS is a fermentable fibre that beneficial bacteria use as a food source — which is why the two belong in the same capsule.*',
+        },
+      ],
+    },
+    testimonials: [],
+    faqs: [
+      {
+        q: 'How long before I feel anything?',
+        a: [
+          'Most women notice the change in how they feel after meals within two to four weeks. Bloating and regularity tend to shift first.',
+          'If you are coming off a course of antibiotics or a rough stretch of eating, give it the full month.',
+        ],
+      },
+      {
+        q: 'Does it need refrigerating?',
+        a: [
+          'No. Store it in a cool, dry place. The MAKTREK® delivery system and the capsule are built for shelf stability.',
+        ],
+      },
+      {
+        q: 'How is FLORA different from RELEASE?',
+        a: [
+          'FLORA is live bacteria that populate your gut over weeks. RELEASE is enzymes that break down the meal in front of you right now.',
+          'Terrain versus this afternoon. They solve different problems, which is exactly why The Gut Ritual pairs them.',
+        ],
+      },
+      {
+        q: 'Can I take it with other Aurae formulas?',
+        a: [
+          'Yes. Most women take FLORA first thing, and it layers with everything else in the line.',
+        ],
+      },
+      {
+        q: 'Any reason not to take it?',
+        a: [
+          'FLORA is for adults. Talk to your healthcare provider first if you are pregnant, nursing, take prescription medication or have a known medical condition — particularly anything affecting your immune system.',
+        ],
+      },
+    ],
+    sustainability: [
+      {
+        title: 'Named, not hidden',
+        text: 'Every strain identified on the label, alongside its exact blend weight.',
+      },
+      {
+        title: 'Free from the usual',
+        text: 'Gluten free, lactose free, allergen free, hormone free and corn free.',
+      },
+      {
+        title: 'Vegetarian capsule',
+        text: 'Hypromellose shell, plant cellulose, no gelatin. Made in the USA.',
+      },
+    ],
+    crossSell: {
+      intro: 'Your gut does not work alone.',
+      handles: ['digestive-enzyme-pro-blend', 'grass-fed-hydrolyzed-collagen-peptides', 'omega-3-epa-180mg-dha-120mg'],
+    },
+    finalCta: {
+      headline: 'Ready to stop negotiating with your stomach?',
+      sub: '40 billion CFU, four named strains, fed and delivered.',
+    },
+  },
+
   // ─────────────────────────────────────────── RELEASE
   'digestive-enzyme-pro-blend': {
     accent: 'release',
     eyebrow: 'Easy Digestion',
-    tagline: 'Break it down. Actually absorb it.',
+    tagline: 'Eat the meal. Skip the aftermath.',
     intro:
-      'A good meal is only as good as what you absorb from it. RELEASE is a full-spectrum enzyme blend — protease, lipase, lactase and alpha-galactosidase built around Makzyme-Pro™ — taken 20 minutes before you eat, so protein, fat, carbohydrate and fibre arrive at your gut already halfway broken down.',
+      'The heaviness an hour after dinner. The pasta that sits there. The beans and the cheese board you quietly decided were not worth it. RELEASE is one capsule taken twenty minutes before you eat — 400mg of Makzyme-Pro™ at 2,500 HUT — so your food arrives already halfway broken down and you get the meal without the afternoon that follows it.',
     quickFacts: [
-      'Makzyme-Pro™ enzyme blend',
+      'Makzyme-Pro™ 400mg · 2,500 HUT',
       '60 capsules · one twice daily',
       'Taken 20–30 min before meals',
     ],
     benefits: [
       {
         icon: 'wave',
-        title: 'Comfort after eating',
-        text: 'Enzymes do the work your gut would otherwise strain through, which is what makes the hour after a heavy meal feel lighter.',
+        title: 'Lighter after eating',
+        text: 'The hour after a heavy meal is the whole point. Enzymes do the work your gut would otherwise strain through.*',
       },
       {
         icon: 'circles',
-        title: 'Every macronutrient covered',
-        text: 'Protease for protein, lipase for fat, lactase for dairy sugars, alpha-galactosidase for the beans and cruciferous vegetables that tend to sit heavy.',
+        title: 'Beans and dairy back on the menu',
+        text: 'Lactase for the sugars in dairy, alpha-galactosidase for the carbohydrates in beans and vegetables — the two that most often decide what you order.*',
       },
       {
         icon: 'spark',
         title: 'More from the same food',
-        text: 'Nutrients you cannot break down are nutrients you do not absorb. Better breakdown means more of what you already eat actually reaches you.',
+        text: 'What you cannot break down, you cannot absorb. Better breakdown means more of what you already eat actually reaches you.*',
       },
       {
         icon: 'bloom',
-        title: 'Plant enzymes, not animal',
-        text: 'Bromelain from pineapple and papain from papaya, alongside fungal-fermented enzymes — active across a wide pH range, so they keep working past the stomach.',
+        title: 'Eat like yourself again',
+        text: 'Not a diet, not a restriction. Support for the varied meals you already want to be eating.',
       },
     ],
     ritual: {
@@ -753,46 +895,46 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
         {
           label: 'Step 01',
           title: 'One capsule, twice daily',
-          text: 'Take it 20–30 minutes before your two largest meals. Swallowed after eating, the enzymes arrive behind the food they were meant to meet.',
+          text: 'Take it 20–30 minutes before your two largest meals. Swallowed afterwards, the enzymes arrive behind the food they were meant to meet.',
         },
         {
           label: 'Step 02',
-          title: 'The blend goes to work',
-          text: 'Each enzyme targets a different bond — proteins into amino acids, fats into fatty acids, complex sugars into simple ones your gut can handle.',
+          title: 'Each enzyme takes its part',
+          text: 'Protease, bromelain and papain on protein. Lipase on fat. Lactase on dairy sugars. Alpha-galactosidase on the beans and vegetables.*',
         },
         {
           label: 'Step 03',
           title: 'You notice it on the heavy days',
-          text: 'The difference is clearest after a big or unfamiliar meal. On a light day you may not notice anything at all, which is the point.',
+          text: 'After a big or unfamiliar meal the difference is obvious. On a light day you may notice nothing at all, which is rather the point.',
         },
       ],
     },
     science: {
-      headline: 'Your body makes enzymes. Modern eating asks for more.',
+      headline: 'A number almost no label prints.',
       body: [
-        'Raw foods arrive with some of the enzymes needed to digest them. Cooking, processing and long shelf lives strip most of that away, which leaves your pancreas and small intestine doing the whole job alone — and enzyme output declines with age regardless.',
-        'RELEASE is built around Makzyme-Pro™, a fermented blend pairing fungal protease from Aspergillus oryzae with three Lactobacillus strains. Around it sit bromelain and papain from pineapple and papaya, fungal lipase for fats, lactase for dairy sugars, and alpha-galactosidase for the oligosaccharides in beans and cruciferous vegetables — the ones most responsible for that heavy, gassy feeling afterwards.',
+        'Enzyme supplements are usually sold by weight — "500mg digestive enzyme blend" — which tells you how much powder is in the capsule and nothing about whether it works. Enzymes are measured by activity, not mass, and for protease the unit is HUT. RELEASE states it: 2,500 HUT in 400mg of Makzyme-Pro™. If a competitor does not print an activity unit, there is a reason.',
+        'The other half is coverage. No single enzyme digests a real meal, because a real meal is protein and fat and dairy and fibre at once. Makzyme-Pro™ brings fungal protease fermented from Aspergillus oryzae with three Lactobacillus species, plus bromelain from pineapple and papain from papaya for protein; fungal lipase for fats; lactase for lactose; and alpha-galactosidase for the complex carbohydrates in beans and vegetables that human enzymes simply cannot touch.*',
       ],
       stats: [
-        { value: '7+', label: 'Distinct enzyme activities' },
-        { value: '60', label: 'Vegetable capsules' },
+        { value: '2,500', label: 'HUT protease activity' },
+        { value: '400mg', label: 'Makzyme-Pro™ per capsule' },
         { value: '20 min', label: 'Before a meal' },
       ],
       evidence: [
         {
-          claim: 'Enzymes are substrate-specific',
+          claim: 'Activity, not weight',
           detail:
-            'No single enzyme digests everything. Protease, lipase, lactase and alpha-galactosidase each act on a different class of molecule, which is why a blend covers a real meal.',
+            'HUT measures what protease actually does. Milligrams of blend measure what is in the capsule. Only one of those is a dose.',
         },
         {
-          claim: 'Alpha-galactosidase targets the usual culprits',
+          claim: 'Enzymes are substrate-specific',
           detail:
-            'It breaks down the oligosaccharides in legumes and cruciferous vegetables that human enzymes cannot, leaving less for gut bacteria to ferment.',
+            'Protease works on protein, lipase on fat, lactase on lactose, alpha-galactosidase on complex carbohydrates. A real meal needs all four.*',
         },
         {
           claim: 'Fungal enzymes tolerate a wide pH',
           detail:
-            'Unlike animal-derived enzymes, fungal-fermented ones stay active across stomach and intestinal conditions.',
+            'Unlike animal-derived enzymes, fungal-fermented ones stay active across stomach and intestinal conditions rather than quitting early.',
         },
       ],
     },
@@ -802,48 +944,49 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
         q: 'When exactly should I take it?',
         a: [
           'One capsule 20–30 minutes before each of your two largest meals.',
-          'Taken after eating it still helps, but less — the enzymes work best when they are already present as the food arrives.',
+          'Taken after eating it still helps, but less. The enzymes work best when they are already there as the food arrives.',
         ],
       },
       {
         q: 'How is RELEASE different from FLORA?',
         a: [
-          'They solve different problems. RELEASE supplies enzymes that break food down in the moment. FLORA supplies live bacteria that populate your gut over weeks.',
-          'Enzymes act on this meal; probiotics act on the terrain. That is exactly why The Gut Ritual pairs them.',
+          'RELEASE supplies enzymes that break down the meal in front of you right now. FLORA supplies live bacteria that populate your gut over weeks.',
+          'This afternoon versus the terrain. They solve different problems, which is exactly why The Gut Ritual pairs them.',
         ],
       },
       {
-        q: 'Can I take it with every meal?',
+        q: 'What is HUT and why does it matter?',
         a: [
-          'The suggested use is one capsule twice daily. Do not exceed the recommended dose without speaking to your healthcare professional.',
+          'HUT is the standard unit for protease activity — how much protein the enzyme can actually break down, rather than how much powder is in the capsule.',
+          'RELEASE is 2,500 HUT per capsule. A label that lists only milligrams is not telling you the dose.',
         ],
       },
       {
         q: 'Is it vegetarian?',
         a: [
-          'The enzymes are plant- and fungal-derived, and the capsule is hypromellose — plant cellulose, not gelatin.',
+          'Yes. The enzymes are plant- and fungal-derived and the capsule is hypromellose — plant cellulose, not gelatin.',
         ],
       },
       {
         q: 'Any reason not to take it?',
         a: [
-          'Speak to your doctor first if you are pregnant, breastfeeding, under 18, take prescription medication or have a known medical condition — particularly ulcers or a pancreatic condition.',
+          'RELEASE is for adults. Talk to your healthcare provider first if you are pregnant, nursing, take prescription medication or have a known medical condition — particularly ulcers or a pancreatic condition.',
           'Bromelain and papain can interact with blood thinners.',
         ],
       },
     ],
     sustainability: [
       {
-        title: 'Fermented, not extracted from animals',
-        text: 'The enzyme activities come from fungal fermentation and fruit, not from animal pancreas.',
+        title: 'Activity printed, not hidden',
+        text: '2,500 HUT stated on the label, alongside the exact blend weight.',
       },
       {
-        title: 'Vegetable capsules',
-        text: 'Hypromellose shells. No gelatin, no artificial colourants.',
+        title: 'Fermented, not animal-derived',
+        text: 'Enzyme activity from fungal fermentation and fruit, never from animal pancreas.',
       },
       {
-        title: 'Made in the USA',
-        text: 'Manufactured in a facility held to US dietary-supplement standards.',
+        title: 'Vegetarian capsule',
+        text: 'Hypromellose shell, plant cellulose, no gelatin. Made in the USA.',
       },
     ],
     crossSell: {
@@ -852,7 +995,7 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
     },
     finalCta: {
       headline: 'Ready to stop dreading the heavy meal?',
-      sub: 'Seven enzyme activities. Twenty minutes before you eat.',
+      sub: '2,500 HUT, twenty minutes before you eat.',
     },
   },
 
@@ -860,34 +1003,34 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
   'omega-3-epa-180mg-dha-120mg': {
     accent: 'vital',
     eyebrow: 'Sharper Focus',
-    tagline: 'The two fats your brain is largely built from.',
+    tagline: 'For the organ you think with.',
     intro:
-      'Your brain is close to sixty percent fat, and DHA is the single most abundant structural one in it. VITAL delivers 180mg EPA and 120mg DHA per serving from fish-oil concentrate — the two omega-3s with the actual research behind them, stabilised with vitamin E so they reach you unoxidised.',
+      'Unless you are eating oily fish twice a week, you are almost certainly short on the two fats your brain is largely built from. VITAL delivers 180mg EPA and 120mg DHA per softgel from sardine and anchovy oil — printed on the front, where most brands print the weight of the oil instead.',
     quickFacts: [
-      'EPA 180mg · DHA 120mg per serving',
+      'EPA 180mg · DHA 120mg per softgel',
+      'Sardine & anchovy · 1,000mg concentrate',
       '100 softgels · one twice daily',
-      'Stabilised with vitamin E',
     ],
     benefits: [
       {
         icon: 'spark',
-        title: 'Brain structure and function',
-        text: 'DHA is a primary structural component of neuronal membranes and of the retina — it is not a stimulant, it is building material.',
+        title: 'A clearer head',
+        text: 'DHA is a primary structural fat in your brain. This is not a stimulant that fires and fades — it is building material.*',
       },
       {
         icon: 'wave',
-        title: 'Cardiovascular support',
-        text: 'EPA supports normal cholesterol and triglyceride metabolism and a healthy, regular heartbeat.',
+        title: 'Heart you do not think about',
+        text: 'EPA supports normal cholesterol and triglyceride metabolism and a normal, healthy heartbeat.*',
       },
       {
         icon: 'orbit',
-        title: 'Vision across every stage',
-        text: 'DHA concentrates in retinal tissue, where it supports normal vision throughout life.',
+        title: 'Eyes that hold up',
+        text: 'DHA concentrates in retinal tissue, supporting normal vision at every stage of life.*',
       },
       {
         icon: 'circles',
-        title: 'What most diets are short on',
-        text: 'EPA and DHA come almost entirely from oily fish. Eat it rarely and there is no other meaningful dietary source.',
+        title: 'The gap in almost every diet',
+        text: 'EPA and DHA come almost entirely from oily fish. Eat it rarely and there is no other meaningful source.',
       },
     ],
     ritual: {
@@ -896,41 +1039,41 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
         {
           label: 'Step 01',
           title: 'One softgel, twice daily',
-          text: 'Take with meals. Omega-3s are fat-soluble, so taking them alongside food meaningfully improves how much you absorb.',
+          text: 'Take with meals. Omega-3s are fat-soluble, so food alongside them meaningfully improves how much you absorb — and it is what stops the aftertaste.',
         },
         {
           label: 'Step 02',
           title: 'They become part of you',
-          text: 'EPA and DHA incorporate into cell membranes over weeks. This is structural work, not a signal that fires and fades.',
+          text: 'EPA and DHA incorporate into your cell membranes over weeks. Structural work, not a signal that peaks and drops.*',
         },
         {
           label: 'Step 03',
           title: 'Give it a season',
-          text: 'Membrane composition turns over slowly. Most of the research measures outcomes in months, and so should you.',
+          text: 'Membrane composition turns over slowly. The research measures this in months, and so should you.',
         },
       ],
     },
     science: {
-      headline: 'EPA and DHA. Not "omega-3" as a vague number.',
+      headline: 'Read the back of the bottle you own now.',
       body: [
-        'A label advertising "1000mg fish oil" is telling you the weight of the oil, not the dose of what matters. What matters is how much EPA and DHA sit inside it, and on a lot of shelf products that figure is a fraction of the headline.',
-        'VITAL states both plainly: 180mg EPA and 120mg DHA per serving, from fish-oil concentrate rather than raw oil. EPA is the one tied to cholesterol and triglyceride metabolism and cardiovascular function; DHA is the structural one, concentrated in the brain and retina. Vitamin E is included because polyunsaturated fats oxidise easily, and an oxidised omega-3 is worse than none.',
+        'Pick up almost any fish oil and the front says something like "1000mg". That is the weight of the oil in the softgel, not the dose of anything that does something. The two compounds with the research behind them are EPA and DHA, and on plenty of shelf products you have to turn the bottle over to find out how little of each is in there.',
+        'VITAL contains 1,000mg of fish oil concentrate, and we print what it yields: 180mg EPA and 120mg DHA per softgel. The oil comes from sardines and anchovies — small, short-lived fish low on the food chain — and is concentrated rather than raw, which is how a real dose fits into a softgel you will actually swallow twice a day. Vitamin E is in there because polyunsaturated fats oxidise on contact with air and light, and an oxidised omega-3 is worse than none.',
       ],
       stats: [
-        { value: '180mg', label: 'EPA per serving' },
-        { value: '120mg', label: 'DHA per serving' },
+        { value: '180mg', label: 'EPA per softgel' },
+        { value: '120mg', label: 'DHA per softgel' },
         { value: '100', label: 'Softgels per bottle' },
       ],
       evidence: [
         {
           claim: 'DHA is structural, not stimulant',
           detail:
-            'It is a primary fatty acid in neuronal and retinal membranes, supporting normal brain function and vision at every life stage.',
+            'A primary fatty acid in neuronal and retinal membranes, supporting normal brain function and vision at every life stage.*',
         },
         {
           claim: 'EPA works on the cardiovascular side',
           detail:
-            'It supports normal cholesterol and triglyceride metabolism and the maintenance of a normal heartbeat.',
+            'It supports normal cholesterol and triglyceride metabolism and the maintenance of a normal heartbeat.*',
         },
         {
           claim: 'Oxidation is the real quality question',
@@ -942,10 +1085,10 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
     testimonials: [],
     faqs: [
       {
-        q: 'Why only 180mg EPA when other brands advertise 1000mg?',
+        q: 'Why print 180mg when other brands advertise 1000mg?',
         a: [
-          'Those are different numbers. "1000mg fish oil" is the weight of the oil; EPA and DHA are what is inside it, and many such products contain 180mg and 120mg of them — exactly what VITAL states on the front.',
-          'We print the actives rather than the oil weight, because the actives are what you are buying.',
+          'Those are two different numbers. VITAL also contains 1,000mg of fish oil concentrate — that is the oil. The 180mg EPA and 120mg DHA are what the oil yields, and they are the part the research is about.',
+          'We put the actives on the front because that is what you are buying. Compare them against whatever bottle you have now.',
         ],
       },
       {
@@ -955,38 +1098,38 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
         ],
       },
       {
-        q: 'Is it suitable if I do not eat fish?',
+        q: 'Where does the fish oil come from?',
         a: [
-          'The oil is fish-derived and the softgel shell is gelatin, so it is not vegan or vegetarian.',
-          'If you avoid fish for dietary rather than ethical reasons, this is precisely the gap VITAL is meant to fill.',
+          'Sardines and anchovies — small, short-lived species low on the food chain, which is the preferred source for fish oil.',
+          'The softgel shell is gelatin, so VITAL is not vegetarian or vegan.',
         ],
       },
       {
         q: 'How long until I notice anything?',
         a: [
-          'Omega-3s work by changing the composition of your cell membranes, which takes time. Think in terms of a season rather than a week.',
+          'Omega-3s work by changing the composition of your cell membranes, and that takes time. Think in terms of a season rather than a week.',
         ],
       },
       {
         q: 'Any reason not to take it?',
         a: [
           'Omega-3s can have a mild blood-thinning effect, so speak to your doctor if you take anticoagulants or have surgery scheduled.',
-          'Check first if you are pregnant, breastfeeding, under 18 or have a fish allergy.',
+          'Not suitable if you have a fish allergy. Check first if you are pregnant, nursing or under 18.',
         ],
       },
     ],
     sustainability: [
       {
-        title: 'Concentrated, not raw oil',
-        text: 'Concentration means a meaningful EPA and DHA dose in a smaller softgel, and less oil per serving.',
+        title: 'Small fish, short lives',
+        text: 'Sardines and anchovies sit low on the food chain — the preferred source for fish oil.',
+      },
+      {
+        title: 'Concentrated, not raw',
+        text: 'Concentration means a real EPA and DHA dose in a smaller softgel, and less oil per serving.',
       },
       {
         title: 'Protected from oxidation',
-        text: 'Vitamin E is included as an antioxidant, and the softgel shell keeps light and air off the oil.',
-      },
-      {
-        title: 'Made in the USA',
-        text: 'Manufactured in a facility held to US dietary-supplement standards.',
+        text: 'Vitamin E as an antioxidant, and a softgel shell that keeps light and air off the oil. Made in the USA.',
       },
     ],
     crossSell: {
@@ -995,7 +1138,7 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
     },
     finalCta: {
       headline: 'Ready to feed the organ you think with?',
-      sub: 'EPA and DHA stated plainly, twice a day.',
+      sub: 'EPA and DHA printed on the front. Twice a day.',
     },
   },
 
@@ -1003,34 +1146,34 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
   'reishi-relax-gummies': {
     accent: 'sleep',
     eyebrow: 'Relaxed Focus',
-    tagline: 'Calm that does not cost you the afternoon.',
+    tagline: 'Take the edge off. Keep the afternoon.',
     intro:
-      'Most calming supplements trade alertness for peace. STILL is built the other way round: reishi at 200mg with L-theanine, lemon balm, passion flower and valerian root, in a blackberry gummy you can take at your desk — botanicals traditionally used to settle the mind without switching it off.',
+      'Three in the afternoon, shoulders up around your ears, and the thing you cannot do is get sleepy — there is still a meeting at four. STILL is reishi at 200mg with L-theanine and three calming botanicals, in a blackberry gummy you chew at your desk. No water, no capsule, no melatonin.',
     quickFacts: [
       'Reishi 200mg + L-theanine 25mg',
-      '30 blackberry gummies · one to two daily',
-      'No capsule, no water, no melatonin',
+      'Pectin gummy, no gelatin',
+      '30 gummies · one to two daily',
     ],
     benefits: [
       {
         icon: 'moon',
-        title: 'Settles without sedating',
-        text: 'L-theanine is the amino acid in green tea associated with a relaxed but alert state — calm that does not read as drowsy.',
+        title: 'Calm you can work through',
+        text: 'L-theanine is the amino acid in green tea associated with a relaxed but alert state. Settled, not sedated.*',
       },
       {
         icon: 'bloom',
-        title: 'An adaptogenic mushroom',
-        text: 'Reishi has been used for centuries to help the body hold its balance under load, and is the formula’s anchor at 200mg.',
+        title: 'Steadier under load',
+        text: 'Reishi is an adaptogen — traditionally used to help the body hold its balance through a demanding stretch rather than after it.*',
       },
       {
         icon: 'circles',
-        title: 'Four calming botanicals',
-        text: 'Lemon balm, passion flower and valerian root round out the blend — the traditional European trio for a busy mind.',
+        title: 'The edge comes off',
+        text: 'Lemon balm, passion flower and valerian root, the traditional trio for a mind that will not put itself down.*',
       },
       {
         icon: 'star',
-        title: 'Easy enough to actually keep up',
-        text: 'A gummy you take at your desk gets taken. A capsule that needs water and a glass of it often does not.',
+        title: 'Easy enough to keep up',
+        text: 'A gummy you chew at your desk gets taken. A capsule that needs a glass of water, often, quietly, does not.',
       },
     ],
     ritual: {
@@ -1039,46 +1182,46 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
         {
           label: 'Step 01',
           title: 'One to two gummies daily',
-          text: 'Take them when you feel the day building — mid-afternoon for most women, or an hour before winding down in the evening.',
+          text: 'The full 200mg of reishi sits in a single gummy, so one is a real dose. Take it when you feel the day building, or an hour before you want to wind down.',
         },
         {
           label: 'Step 02',
           title: 'Chew, do not swallow whole',
-          text: 'The gummy format means absorption begins in the mouth. No water needed, which is most of why it fits into a working day.',
+          text: 'No water needed, which is most of the reason it fits into a working day rather than waiting on your kitchen counter.',
         },
         {
           label: 'Step 03',
-          title: 'Notice where the edge went',
-          text: 'The effect is subtraction rather than addition — less noise, not more energy. It is the kind of thing you register in hindsight.',
+          title: 'Notice where the noise went',
+          text: 'The effect is subtraction, not addition — less static, not more energy. It tends to register in hindsight.',
         },
       ],
     },
     science: {
-      headline: 'Calm and sedation are not the same thing.',
+      headline: 'Calm and sedation are not the same product.',
       body: [
-        'Plenty of products confuse the two. Anything strong enough to put you under is strong enough to cost you the rest of your day, which is no help at two in the afternoon when the meeting is at four.',
-        'STILL leads with reishi at 200mg, an adaptogenic mushroom traditionally used to support the body’s balance under sustained load. L-theanine at 25mg is the amino acid from green tea long associated with relaxed alertness. Lemon balm, passion flower and valerian root at 25mg each are the classical European calming botanicals. The blend is deliberately moderate: enough to take the edge off, not enough to take the afternoon.',
+        'Most of the calming aisle is built for bedtime. Anything strong enough to put you under is strong enough to cost you the rest of your day, which is no use at three in the afternoon when the meeting is at four. The useful question is not how much it knocks you out, but whether it leaves you able to think.',
+        'STILL leads with reishi at 200mg, an adaptogenic mushroom traditionally used to support the body through sustained load. L-theanine at 25mg is the amino acid from green tea long associated with relaxed alertness — the reason a cup of green tea feels different from a cup of coffee. Lemon balm, passion flower and valerian root at 25mg each are the classical European calming botanicals. The doses are deliberately moderate, and that is the formula’s whole argument.*',
       ],
       stats: [
-        { value: '200mg', label: 'Reishi extract' },
+        { value: '200mg', label: 'Reishi per gummy' },
         { value: '5', label: 'Calming actives' },
-        { value: '30', label: 'Gummies per jar' },
+        { value: '0', label: 'Melatonin' },
       ],
       evidence: [
         {
           claim: 'L-theanine is associated with relaxed alertness',
           detail:
-            'The amino acid naturally present in green tea, long used for calm that does not come with drowsiness.',
+            'The amino acid naturally present in green tea, long used for calm that does not arrive as drowsiness.*',
         },
         {
           claim: 'Reishi is an adaptogen',
           detail:
-            'Traditionally used to support the body in maintaining balance and a normal response to occasional stress.',
+            'Traditionally used to support the body in maintaining balance and a normal response to occasional stress.*',
         },
         {
           claim: 'A traditional calming trio',
           detail:
-            'Lemon balm, passion flower and valerian root have a long history of traditional use for relaxation and a settled mind.',
+            'Lemon balm, passion flower and valerian root have a long history of traditional use for relaxation and a settled mind.*',
         },
       ],
     },
@@ -1094,42 +1237,43 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
       {
         q: 'How is STILL different from CALM?',
         a: [
-          'CALM works on the stress response across the whole day, led by KSM-66 ashwagandha at 600mg with supporting vitamins and adaptogens.',
-          'STILL is the in-the-moment one: reishi and L-theanine for when the day tightens. They are designed to be taken together, which is what The Unwind Ritual is.',
+          'CALM works across the whole day on the stress response, led by KSM-66 ashwagandha at 600mg with supporting vitamins and adaptogens.',
+          'STILL is the in-the-moment one: reishi and L-theanine for when the day tightens. They are built to be taken together, which is what The Unwind Ritual is.',
         ],
       },
       {
         q: 'Does it contain melatonin?',
         a: [
-          'No. There is no melatonin in STILL — it is reishi, L-theanine and three calming botanicals.',
+          'No. There is no melatonin in STILL — it is reishi, L-theanine and three botanicals. Non-habit forming.',
         ],
       },
       {
         q: 'How much sugar is in a gummy?',
         a: [
-          'The gummies are made with organic cane sugar and tapioca syrup, coloured with blackberry and flavoured naturally. The full panel is on the label.',
+          'Two grams of sugar and ten calories per gummy. It is set with organic cane sugar and tapioca syrup, coloured with blackberries and naturally flavoured.',
+          'The gel is citrus pectin rather than gelatin, so the gummies are vegetarian.',
         ],
       },
       {
         q: 'Any reason not to take it?',
         a: [
-          'Speak to your doctor first if you are pregnant, breastfeeding, under 18, take prescription medication — sedatives in particular — or have a known medical condition.',
+          'Talk to your healthcare provider first if you are pregnant, nursing, under 18, take prescription medication — sedatives in particular — or have a known medical condition.',
           'Do not exceed two gummies daily.',
         ],
       },
     ],
     sustainability: [
       {
+        title: 'Pectin, not gelatin',
+        text: 'Set with citrus pectin, so the gummies are vegetarian.',
+      },
+      {
         title: 'Coloured with fruit',
-        text: 'Colour comes from blackberries and the flavour is natural. No synthetic dyes.',
+        text: 'Colour from blackberries and natural flavour. No synthetic dyes.',
       },
       {
         title: 'No melatonin, non-habit forming',
-        text: 'Botanicals and an amino acid, not a hormone.',
-      },
-      {
-        title: 'Made in the USA',
-        text: 'Manufactured in a facility held to US dietary-supplement standards.',
+        text: 'Botanicals and an amino acid, not a hormone. Made in the USA.',
       },
     ],
     crossSell: {
