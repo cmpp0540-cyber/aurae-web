@@ -181,8 +181,8 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
       {
         q: 'Is it safe to take alongside the other Aurae formulas?',
         a: [
-          'Yes. GLOW is protein, not an active compound, so it layers with CALM, SLEEP, RADIANCE and RENEWAL without interaction.',
-          'Most women take GLOW and RENEWAL together in the morning, RADIANCE midday, CALM early evening and SLEEP before bed.',
+          'Yes. GLOW is protein, not an active compound, so it layers with CALM, STILL, RADIANCE and RENEWAL without interaction.',
+          'Most women take GLOW and RENEWAL together in the morning, RADIANCE midday, CALM early evening and STILL to wind down.',
         ],
       },
       {
@@ -309,13 +309,6 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
     testimonials: [
       {
         stars: 5,
-        headline: 'Calm during the day. Out cold at night.',
-        body: 'I take CALM in the morning and SLEEP before bed. My baseline anxiety has dropped massively in six weeks. Genuine game changer.',
-        author: 'Emma R.',
-        location: 'Los Angeles, CA',
-      },
-      {
-        stars: 5,
         headline: 'I stopped snapping at my team.',
         body: 'Same workload, same deadlines, completely different reaction. I did not expect a supplement to change how I run a meeting.',
         author: 'Daniela O.',
@@ -334,7 +327,7 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
         q: 'Will CALM make me drowsy?',
         a: [
           'No. CALM is non-sedating — it contains no melatonin, no valerian and no stimulants. It lowers the felt intensity of stress rather than your alertness.',
-          'If you want help falling asleep, that is SLEEP. Many women take both: CALM in the morning, SLEEP 20 minutes before bed.',
+          'If you want help settling in the moment, that is STILL. Many women take both: CALM in the morning, STILL when the day tightens.',
         ],
       },
       {
@@ -381,176 +374,11 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
     ],
     crossSell: {
       intro: 'CALM works hardest when the rest of the day is handled too.',
-      handles: ['sleep-strips', 'nad', 'grass-fed-hydrolyzed-collagen-peptides'],
+      handles: ['reishi-relax-gummies', 'nad', 'grass-fed-hydrolyzed-collagen-peptides'],
     },
     finalCta: {
       headline: 'Ready to feel steady again?',
       sub: 'Eight actives, one capsule, no stimulants.',
-    },
-  },
-
-  // ─────────────────────────────────────────── SLEEP
-  'sleep-strips': {
-    accent: 'sleep',
-    eyebrow: 'Quality Sleep',
-    tagline: 'Dissolves on your tongue. Works in twenty minutes.',
-    intro:
-      'No water, no pill, no sticky gummy. SLEEP is a raspberry-flavoured oral strip that melts under your tongue and delivers five calming botanicals — valerian, lavender, chamomile, hibiscus and melatonin — straight through the sublingual tissue, bypassing the slow route through your stomach.',
-    quickFacts: [
-      '5 botanicals · sublingual delivery',
-      'Non-habit forming · no water needed',
-      'Raspberry · one strip per night',
-    ],
-    benefits: [
-      {
-        icon: 'moon',
-        title: 'Asleep in about 20 minutes',
-        text: 'Sublingual absorption skips first-pass metabolism, so onset is minutes rather than the hour a capsule needs.',
-      },
-      {
-        icon: 'wave',
-        title: 'Deeper, unbroken rest',
-        text: 'Valerian and chamomile support sleep continuity — fewer 3am ceiling-staring sessions, more actual restoration.',
-      },
-      {
-        icon: 'spark',
-        title: 'No morning grogginess',
-        text: 'A low, considered melatonin dose paired with botanicals, rather than the 10mg megadose that leaves you foggy until noon.',
-      },
-      {
-        icon: 'circles',
-        title: 'Travel-proof',
-        text: 'A flat strip in your passport sleeve. Nothing to swallow, nothing to spill, nothing to explain at security.',
-      },
-    ],
-    ritual: {
-      intro: 'The simplest ritual we make. One strip, and you are done.',
-      steps: [
-        {
-          label: 'Step 01',
-          title: 'Place one strip on your tongue',
-          text: 'Twenty to thirty minutes before bed. Let it dissolve — no water, no chewing, no swallowing required.',
-        },
-        {
-          label: 'Step 02',
-          title: 'Absorbs sublingually in minutes',
-          text: 'The botanicals cross the tissue under your tongue directly into the bloodstream, skipping the digestive delay entirely.',
-        },
-        {
-          label: 'Step 03',
-          title: 'Wake up clear, not heavy',
-          text: 'Melatonin clears quickly at this dose, so you wake to your alarm rather than through it. Maximum one strip per night.',
-        },
-      ],
-    },
-    science: {
-      headline: 'Delivery is the whole difference.',
-      body: [
-        'Swallow a sleep capsule and it has to survive your stomach, then pass through the liver before anything reaches your brain. That first-pass metabolism costs both time and potency — which is why capsules are dosed high and still take an hour.',
-        'The tissue under your tongue is thin and densely vascularised. A dissolving strip delivers its actives straight into circulation, so a smaller, gentler dose does the same work faster. Five botanicals also beats one: valerian and chamomile support sleep continuity, lavender and hibiscus support the wind-down, and melatonin handles the timing signal.',
-      ],
-      stats: [
-        { value: '5', label: 'Synergistic sleep botanicals' },
-        { value: '~20 min', label: 'Typical time to onset' },
-        { value: 'Sublingual', label: 'No water, no first-pass loss' },
-      ],
-      evidence: [
-        {
-          claim: 'Sublingual delivery is faster',
-          detail:
-            'Oral-mucosal absorption bypasses gastric transit and hepatic first-pass metabolism, shortening time to onset.',
-        },
-        {
-          claim: 'Melatonin is a timing signal',
-          detail:
-            'Melatonin shifts the circadian phase rather than sedating. Lower doses taken at a consistent hour are generally better tolerated.',
-        },
-        {
-          claim: 'Botanical synergy',
-          detail:
-            'Valerian, chamomile, lavender and hibiscus act on complementary calming pathways rather than duplicating one mechanism.',
-        },
-      ],
-    },
-    testimonials: [
-      {
-        stars: 5,
-        headline: 'Better than melatonin gummies, promise.',
-        body: 'The strips are genius. No sticky gummies, no chalky pills. They melt under your tongue and twenty minutes later I am dreaming.',
-        author: 'Ava L.',
-        location: 'Austin, TX',
-      },
-      {
-        stars: 5,
-        headline: 'My jet lag fix, permanently.',
-        body: 'I fly Europe monthly. One strip on landing night and my body clock resets in a day instead of five. They live in my passport case.',
-        author: 'Noor A.',
-        location: 'Miami, FL',
-      },
-      {
-        stars: 5,
-        headline: 'I wake up before my alarm now.',
-        body: 'Ten-milligram melatonin used to flatten me until lunch. This gets me down fast and lets me come up clean.',
-        author: 'Beatriz L.',
-        location: 'San Diego, CA',
-      },
-    ],
-    faqs: [
-      {
-        q: 'Will I feel groggy in the morning?',
-        a: [
-          'That is usually a melatonin-dose problem, and SLEEP is deliberately dosed low and paired with botanicals rather than relying on a megadose.',
-          'Take it 20–30 minutes before you actually intend to sleep. Taking it and then staying up another two hours is the most common cause of a heavy morning.',
-        ],
-      },
-      {
-        q: 'Is it habit forming?',
-        a: [
-          'No. There are no prescription sedatives or hypnotics in SLEEP — it is five botanicals plus melatonin, and it is non-habit forming.',
-          'Stick to one strip per night. More is not better with melatonin.',
-        ],
-      },
-      {
-        q: 'Do I need water?',
-        a: [
-          'No. That is the point of the format. Place one strip on your tongue and let it dissolve — nothing to swallow.',
-        ],
-      },
-      {
-        q: 'Can I take SLEEP and CALM together?',
-        a: [
-          'Yes, and it is our most popular pairing — that is exactly what The Calm & Sleep Ritual is. CALM in the morning for cortisol, SLEEP before bed for onset.',
-          'They work on different pathways, so there is no overlap or doubling up.',
-        ],
-      },
-      {
-        q: 'What does it taste like?',
-        a: [
-          'Raspberry. Light, not sweet, and gone in about thirty seconds.',
-        ],
-      },
-    ],
-    sustainability: [
-      {
-        title: 'Lighter to ship',
-        text: 'A strip pack weighs a fraction of a glass bottle of pills, which cuts shipping weight and emissions per dose.',
-      },
-      {
-        title: 'No water, no waste',
-        text: 'No plastic dosing cup, no sugar-syrup base, no gelatin — just the film and the actives.',
-      },
-      {
-        title: 'Tested for what is not in it',
-        text: 'Every batch is screened for heavy metals and contaminants alongside potency.',
-      },
-    ],
-    crossSell: {
-      intro: 'Sleep is one half of the nervous system. Here is the other.',
-      handles: ['ashwagandha-plus', 'nad', 'grass-fed-hydrolyzed-collagen-peptides'],
-    },
-    finalCta: {
-      headline: 'Ready for the good kind of tired?',
-      sub: 'One strip. Twenty minutes. No water.',
     },
   },
 
@@ -878,11 +706,439 @@ export const PRODUCT_CONTENT: Record<string, ProductContent> = {
     ],
     crossSell: {
       intro: 'Pair RENEWAL with the formulas that work the same pathways.',
-      handles: ['resveratrol-50-600mg', 'grass-fed-hydrolyzed-collagen-peptides', 'sleep-strips'],
+      handles: ['resveratrol-50-600mg', 'grass-fed-hydrolyzed-collagen-peptides', 'omega-3-epa-180mg-dha-120mg'],
     },
     finalCta: {
       headline: 'Ready for energy at the source?',
       sub: 'Three longevity molecules. One morning capsule.',
+    },
+  },
+  // ─────────────────────────────────────────── RELEASE
+  'digestive-enzyme-pro-blend': {
+    accent: 'release',
+    eyebrow: 'Easy Digestion',
+    tagline: 'Break it down. Actually absorb it.',
+    intro:
+      'A good meal is only as good as what you absorb from it. RELEASE is a full-spectrum enzyme blend — protease, lipase, lactase and alpha-galactosidase built around Makzyme-Pro™ — taken 20 minutes before you eat, so protein, fat, carbohydrate and fibre arrive at your gut already halfway broken down.',
+    quickFacts: [
+      'Makzyme-Pro™ enzyme blend',
+      '60 capsules · one twice daily',
+      'Taken 20–30 min before meals',
+    ],
+    benefits: [
+      {
+        icon: 'wave',
+        title: 'Comfort after eating',
+        text: 'Enzymes do the work your gut would otherwise strain through, which is what makes the hour after a heavy meal feel lighter.',
+      },
+      {
+        icon: 'circles',
+        title: 'Every macronutrient covered',
+        text: 'Protease for protein, lipase for fat, lactase for dairy sugars, alpha-galactosidase for the beans and cruciferous vegetables that tend to sit heavy.',
+      },
+      {
+        icon: 'spark',
+        title: 'More from the same food',
+        text: 'Nutrients you cannot break down are nutrients you do not absorb. Better breakdown means more of what you already eat actually reaches you.',
+      },
+      {
+        icon: 'bloom',
+        title: 'Plant enzymes, not animal',
+        text: 'Bromelain from pineapple and papain from papaya, alongside fungal-fermented enzymes — active across a wide pH range, so they keep working past the stomach.',
+      },
+    ],
+    ritual: {
+      intro: 'Before the meal, not after. Timing is most of the effect.',
+      steps: [
+        {
+          label: 'Step 01',
+          title: 'One capsule, twice daily',
+          text: 'Take it 20–30 minutes before your two largest meals. Swallowed after eating, the enzymes arrive behind the food they were meant to meet.',
+        },
+        {
+          label: 'Step 02',
+          title: 'The blend goes to work',
+          text: 'Each enzyme targets a different bond — proteins into amino acids, fats into fatty acids, complex sugars into simple ones your gut can handle.',
+        },
+        {
+          label: 'Step 03',
+          title: 'You notice it on the heavy days',
+          text: 'The difference is clearest after a big or unfamiliar meal. On a light day you may not notice anything at all, which is the point.',
+        },
+      ],
+    },
+    science: {
+      headline: 'Your body makes enzymes. Modern eating asks for more.',
+      body: [
+        'Raw foods arrive with some of the enzymes needed to digest them. Cooking, processing and long shelf lives strip most of that away, which leaves your pancreas and small intestine doing the whole job alone — and enzyme output declines with age regardless.',
+        'RELEASE is built around Makzyme-Pro™, a fermented blend pairing fungal protease from Aspergillus oryzae with three Lactobacillus strains. Around it sit bromelain and papain from pineapple and papaya, fungal lipase for fats, lactase for dairy sugars, and alpha-galactosidase for the oligosaccharides in beans and cruciferous vegetables — the ones most responsible for that heavy, gassy feeling afterwards.',
+      ],
+      stats: [
+        { value: '7+', label: 'Distinct enzyme activities' },
+        { value: '60', label: 'Vegetable capsules' },
+        { value: '20 min', label: 'Before a meal' },
+      ],
+      evidence: [
+        {
+          claim: 'Enzymes are substrate-specific',
+          detail:
+            'No single enzyme digests everything. Protease, lipase, lactase and alpha-galactosidase each act on a different class of molecule, which is why a blend covers a real meal.',
+        },
+        {
+          claim: 'Alpha-galactosidase targets the usual culprits',
+          detail:
+            'It breaks down the oligosaccharides in legumes and cruciferous vegetables that human enzymes cannot, leaving less for gut bacteria to ferment.',
+        },
+        {
+          claim: 'Fungal enzymes tolerate a wide pH',
+          detail:
+            'Unlike animal-derived enzymes, fungal-fermented ones stay active across stomach and intestinal conditions.',
+        },
+      ],
+    },
+    testimonials: [],
+    faqs: [
+      {
+        q: 'When exactly should I take it?',
+        a: [
+          'One capsule 20–30 minutes before each of your two largest meals.',
+          'Taken after eating it still helps, but less — the enzymes work best when they are already present as the food arrives.',
+        ],
+      },
+      {
+        q: 'How is RELEASE different from FLORA?',
+        a: [
+          'They solve different problems. RELEASE supplies enzymes that break food down in the moment. FLORA supplies live bacteria that populate your gut over weeks.',
+          'Enzymes act on this meal; probiotics act on the terrain. That is exactly why The Gut Ritual pairs them.',
+        ],
+      },
+      {
+        q: 'Can I take it with every meal?',
+        a: [
+          'The suggested use is one capsule twice daily. Do not exceed the recommended dose without speaking to your healthcare professional.',
+        ],
+      },
+      {
+        q: 'Is it vegetarian?',
+        a: [
+          'The enzymes are plant- and fungal-derived, and the capsule is hypromellose — plant cellulose, not gelatin.',
+        ],
+      },
+      {
+        q: 'Any reason not to take it?',
+        a: [
+          'Speak to your doctor first if you are pregnant, breastfeeding, under 18, take prescription medication or have a known medical condition — particularly ulcers or a pancreatic condition.',
+          'Bromelain and papain can interact with blood thinners.',
+        ],
+      },
+    ],
+    sustainability: [
+      {
+        title: 'Fermented, not extracted from animals',
+        text: 'The enzyme activities come from fungal fermentation and fruit, not from animal pancreas.',
+      },
+      {
+        title: 'Vegetable capsules',
+        text: 'Hypromellose shells. No gelatin, no artificial colourants.',
+      },
+      {
+        title: 'Made in the USA',
+        text: 'Manufactured in a facility held to US dietary-supplement standards.',
+      },
+    ],
+    crossSell: {
+      intro: 'Digestion is a system, not a single step.',
+      handles: ['probiotic-40-billion-with-prebiotics', 'omega-3-epa-180mg-dha-120mg', 'ashwagandha-plus'],
+    },
+    finalCta: {
+      headline: 'Ready to stop dreading the heavy meal?',
+      sub: 'Seven enzyme activities. Twenty minutes before you eat.',
+    },
+  },
+
+  // ─────────────────────────────────────────── VITAL
+  'omega-3-epa-180mg-dha-120mg': {
+    accent: 'vital',
+    eyebrow: 'Sharper Focus',
+    tagline: 'The two fats your brain is largely built from.',
+    intro:
+      'Your brain is close to sixty percent fat, and DHA is the single most abundant structural one in it. VITAL delivers 180mg EPA and 120mg DHA per serving from fish-oil concentrate — the two omega-3s with the actual research behind them, stabilised with vitamin E so they reach you unoxidised.',
+    quickFacts: [
+      'EPA 180mg · DHA 120mg per serving',
+      '100 softgels · one twice daily',
+      'Stabilised with vitamin E',
+    ],
+    benefits: [
+      {
+        icon: 'spark',
+        title: 'Brain structure and function',
+        text: 'DHA is a primary structural component of neuronal membranes and of the retina — it is not a stimulant, it is building material.',
+      },
+      {
+        icon: 'wave',
+        title: 'Cardiovascular support',
+        text: 'EPA supports normal cholesterol and triglyceride metabolism and a healthy, regular heartbeat.',
+      },
+      {
+        icon: 'orbit',
+        title: 'Vision across every stage',
+        text: 'DHA concentrates in retinal tissue, where it supports normal vision throughout life.',
+      },
+      {
+        icon: 'circles',
+        title: 'What most diets are short on',
+        text: 'EPA and DHA come almost entirely from oily fish. Eat it rarely and there is no other meaningful dietary source.',
+      },
+    ],
+    ritual: {
+      intro: 'With food, twice a day. Fat needs fat to absorb.',
+      steps: [
+        {
+          label: 'Step 01',
+          title: 'One softgel, twice daily',
+          text: 'Take with meals. Omega-3s are fat-soluble, so taking them alongside food meaningfully improves how much you absorb.',
+        },
+        {
+          label: 'Step 02',
+          title: 'They become part of you',
+          text: 'EPA and DHA incorporate into cell membranes over weeks. This is structural work, not a signal that fires and fades.',
+        },
+        {
+          label: 'Step 03',
+          title: 'Give it a season',
+          text: 'Membrane composition turns over slowly. Most of the research measures outcomes in months, and so should you.',
+        },
+      ],
+    },
+    science: {
+      headline: 'EPA and DHA. Not "omega-3" as a vague number.',
+      body: [
+        'A label advertising "1000mg fish oil" is telling you the weight of the oil, not the dose of what matters. What matters is how much EPA and DHA sit inside it, and on a lot of shelf products that figure is a fraction of the headline.',
+        'VITAL states both plainly: 180mg EPA and 120mg DHA per serving, from fish-oil concentrate rather than raw oil. EPA is the one tied to cholesterol and triglyceride metabolism and cardiovascular function; DHA is the structural one, concentrated in the brain and retina. Vitamin E is included because polyunsaturated fats oxidise easily, and an oxidised omega-3 is worse than none.',
+      ],
+      stats: [
+        { value: '180mg', label: 'EPA per serving' },
+        { value: '120mg', label: 'DHA per serving' },
+        { value: '100', label: 'Softgels per bottle' },
+      ],
+      evidence: [
+        {
+          claim: 'DHA is structural, not stimulant',
+          detail:
+            'It is a primary fatty acid in neuronal and retinal membranes, supporting normal brain function and vision at every life stage.',
+        },
+        {
+          claim: 'EPA works on the cardiovascular side',
+          detail:
+            'It supports normal cholesterol and triglyceride metabolism and the maintenance of a normal heartbeat.',
+        },
+        {
+          claim: 'Oxidation is the real quality question',
+          detail:
+            'Polyunsaturated fats degrade on contact with air and light. Vitamin E is included as an antioxidant for exactly that reason.',
+        },
+      ],
+    },
+    testimonials: [],
+    faqs: [
+      {
+        q: 'Why only 180mg EPA when other brands advertise 1000mg?',
+        a: [
+          'Those are different numbers. "1000mg fish oil" is the weight of the oil; EPA and DHA are what is inside it, and many such products contain 180mg and 120mg of them — exactly what VITAL states on the front.',
+          'We print the actives rather than the oil weight, because the actives are what you are buying.',
+        ],
+      },
+      {
+        q: 'Will it repeat on me?',
+        a: [
+          'Taking it with a meal rather than on an empty stomach is the single thing that helps most. Some women also keep the bottle in the fridge.',
+        ],
+      },
+      {
+        q: 'Is it suitable if I do not eat fish?',
+        a: [
+          'The oil is fish-derived and the softgel shell is gelatin, so it is not vegan or vegetarian.',
+          'If you avoid fish for dietary rather than ethical reasons, this is precisely the gap VITAL is meant to fill.',
+        ],
+      },
+      {
+        q: 'How long until I notice anything?',
+        a: [
+          'Omega-3s work by changing the composition of your cell membranes, which takes time. Think in terms of a season rather than a week.',
+        ],
+      },
+      {
+        q: 'Any reason not to take it?',
+        a: [
+          'Omega-3s can have a mild blood-thinning effect, so speak to your doctor if you take anticoagulants or have surgery scheduled.',
+          'Check first if you are pregnant, breastfeeding, under 18 or have a fish allergy.',
+        ],
+      },
+    ],
+    sustainability: [
+      {
+        title: 'Concentrated, not raw oil',
+        text: 'Concentration means a meaningful EPA and DHA dose in a smaller softgel, and less oil per serving.',
+      },
+      {
+        title: 'Protected from oxidation',
+        text: 'Vitamin E is included as an antioxidant, and the softgel shell keeps light and air off the oil.',
+      },
+      {
+        title: 'Made in the USA',
+        text: 'Manufactured in a facility held to US dietary-supplement standards.',
+      },
+    ],
+    crossSell: {
+      intro: 'The formulas that work the same pathways.',
+      handles: ['nad', 'ashwagandha-plus', 'grass-fed-hydrolyzed-collagen-peptides'],
+    },
+    finalCta: {
+      headline: 'Ready to feed the organ you think with?',
+      sub: 'EPA and DHA stated plainly, twice a day.',
+    },
+  },
+
+  // ─────────────────────────────────────────── STILL
+  'reishi-relax-gummies': {
+    accent: 'sleep',
+    eyebrow: 'Relaxed Focus',
+    tagline: 'Calm that does not cost you the afternoon.',
+    intro:
+      'Most calming supplements trade alertness for peace. STILL is built the other way round: reishi at 200mg with L-theanine, lemon balm, passion flower and valerian root, in a blackberry gummy you can take at your desk — botanicals traditionally used to settle the mind without switching it off.',
+    quickFacts: [
+      'Reishi 200mg + L-theanine 25mg',
+      '30 blackberry gummies · one to two daily',
+      'No capsule, no water, no melatonin',
+    ],
+    benefits: [
+      {
+        icon: 'moon',
+        title: 'Settles without sedating',
+        text: 'L-theanine is the amino acid in green tea associated with a relaxed but alert state — calm that does not read as drowsy.',
+      },
+      {
+        icon: 'bloom',
+        title: 'An adaptogenic mushroom',
+        text: 'Reishi has been used for centuries to help the body hold its balance under load, and is the formula’s anchor at 200mg.',
+      },
+      {
+        icon: 'circles',
+        title: 'Four calming botanicals',
+        text: 'Lemon balm, passion flower and valerian root round out the blend — the traditional European trio for a busy mind.',
+      },
+      {
+        icon: 'star',
+        title: 'Easy enough to actually keep up',
+        text: 'A gummy you take at your desk gets taken. A capsule that needs water and a glass of it often does not.',
+      },
+    ],
+    ritual: {
+      intro: 'One when the day tightens. Two when it really does.',
+      steps: [
+        {
+          label: 'Step 01',
+          title: 'One to two gummies daily',
+          text: 'Take them when you feel the day building — mid-afternoon for most women, or an hour before winding down in the evening.',
+        },
+        {
+          label: 'Step 02',
+          title: 'Chew, do not swallow whole',
+          text: 'The gummy format means absorption begins in the mouth. No water needed, which is most of why it fits into a working day.',
+        },
+        {
+          label: 'Step 03',
+          title: 'Notice where the edge went',
+          text: 'The effect is subtraction rather than addition — less noise, not more energy. It is the kind of thing you register in hindsight.',
+        },
+      ],
+    },
+    science: {
+      headline: 'Calm and sedation are not the same thing.',
+      body: [
+        'Plenty of products confuse the two. Anything strong enough to put you under is strong enough to cost you the rest of your day, which is no help at two in the afternoon when the meeting is at four.',
+        'STILL leads with reishi at 200mg, an adaptogenic mushroom traditionally used to support the body’s balance under sustained load. L-theanine at 25mg is the amino acid from green tea long associated with relaxed alertness. Lemon balm, passion flower and valerian root at 25mg each are the classical European calming botanicals. The blend is deliberately moderate: enough to take the edge off, not enough to take the afternoon.',
+      ],
+      stats: [
+        { value: '200mg', label: 'Reishi extract' },
+        { value: '5', label: 'Calming actives' },
+        { value: '30', label: 'Gummies per jar' },
+      ],
+      evidence: [
+        {
+          claim: 'L-theanine is associated with relaxed alertness',
+          detail:
+            'The amino acid naturally present in green tea, long used for calm that does not come with drowsiness.',
+        },
+        {
+          claim: 'Reishi is an adaptogen',
+          detail:
+            'Traditionally used to support the body in maintaining balance and a normal response to occasional stress.',
+        },
+        {
+          claim: 'A traditional calming trio',
+          detail:
+            'Lemon balm, passion flower and valerian root have a long history of traditional use for relaxation and a settled mind.',
+        },
+      ],
+    },
+    testimonials: [],
+    faqs: [
+      {
+        q: 'Will STILL make me sleepy?',
+        a: [
+          'It is formulated for calm rather than sedation, and the doses are deliberately moderate.',
+          'That said, valerian root affects people differently. Try your first gummy on an evening rather than before something that needs your full attention.',
+        ],
+      },
+      {
+        q: 'How is STILL different from CALM?',
+        a: [
+          'CALM works on the stress response across the whole day, led by KSM-66 ashwagandha at 600mg with supporting vitamins and adaptogens.',
+          'STILL is the in-the-moment one: reishi and L-theanine for when the day tightens. They are designed to be taken together, which is what The Unwind Ritual is.',
+        ],
+      },
+      {
+        q: 'Does it contain melatonin?',
+        a: [
+          'No. There is no melatonin in STILL — it is reishi, L-theanine and three calming botanicals.',
+        ],
+      },
+      {
+        q: 'How much sugar is in a gummy?',
+        a: [
+          'The gummies are made with organic cane sugar and tapioca syrup, coloured with blackberry and flavoured naturally. The full panel is on the label.',
+        ],
+      },
+      {
+        q: 'Any reason not to take it?',
+        a: [
+          'Speak to your doctor first if you are pregnant, breastfeeding, under 18, take prescription medication — sedatives in particular — or have a known medical condition.',
+          'Do not exceed two gummies daily.',
+        ],
+      },
+    ],
+    sustainability: [
+      {
+        title: 'Coloured with fruit',
+        text: 'Colour comes from blackberries and the flavour is natural. No synthetic dyes.',
+      },
+      {
+        title: 'No melatonin, non-habit forming',
+        text: 'Botanicals and an amino acid, not a hormone.',
+      },
+      {
+        title: 'Made in the USA',
+        text: 'Manufactured in a facility held to US dietary-supplement standards.',
+      },
+    ],
+    crossSell: {
+      intro: 'Calm works better as a pair.',
+      handles: ['ashwagandha-plus', 'probiotic-40-billion-with-prebiotics', 'nad'],
+    },
+    finalCta: {
+      headline: 'Ready to take the edge off without losing the day?',
+      sub: 'Reishi and L-theanine. One gummy, no water.',
     },
   },
 };
