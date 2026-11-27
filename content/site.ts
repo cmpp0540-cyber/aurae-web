@@ -62,8 +62,9 @@ export const SITE = {
       {
         title: 'Rituals',
         links: [
+          { label: 'The Gut Ritual', href: '/bundle/the-gut-ritual' },
+          { label: 'The Unwind Ritual', href: '/bundle/the-unwind-ritual' },
           { label: 'The Glow Ritual', href: '/bundle/the-glow-ritual' },
-          { label: 'The Calm & Sleep Ritual', href: '/bundle/the-calm-sleep-ritual' },
           { label: 'The Full Aurae Ritual', href: '/bundle/the-full-aurae-ritual' },
         ],
       },

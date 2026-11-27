@@ -53,6 +53,52 @@ export const BUNDLE_CONTENT: Record<string, BundleContent> = {
       'CALM brings KSM-66 ashwagandha at 600mg with eight supporting actives. STILL brings reishi with L-theanine, lemon balm and passion flower. One works on the stress response across the day, the other settles the mind without sedation — so you can wind down and still think straight.',
     contains: ['ashwagandha-plus', 'reishi-relax-gummies'],
     badge: null,
+    synergy: {
+      headline: 'One holds the floor. One catches the spikes.',
+      body: 'Stress does not arrive evenly. There is the background level you carry all week, and there are the afternoons that go sideways. Most supplements pick one of those and ignore the other.',
+      points: [
+        {
+          title: 'Baseline',
+          text: 'CALM works on the background level. KSM-66 ashwagandha at 600mg with D3, B6, B12 and four botanicals — taken daily, it lowers the floor you are starting from.*',
+        },
+        {
+          title: 'In the moment',
+          text: 'STILL is for the spike. Reishi at 200mg with L-theanine and three calming botanicals, chewed at your desk when the day tightens, with no water and no wait.*',
+        },
+        {
+          title: 'Neither one sedates',
+          text: 'That is the constraint both formulas were built around. No melatonin anywhere in this ritual — you stay clear-headed, which is the only version of calm that is any use before four in the afternoon.',
+        },
+      ],
+    },
+    ritual: {
+      headline: 'Your Unwind Ritual, hour by hour.',
+      note: 'One fixed habit, one you reach for. The second is the point.',
+      slots: [
+        {
+          time: 'Morning',
+          handle: 'ashwagandha-plus',
+          dose: 'Two capsules',
+          why: 'With breakfast. CALM works on the whole day, so it goes in before the day starts rather than after it has already gone wrong.',
+        },
+        {
+          time: 'When the day tightens',
+          handle: 'reishi-relax-gummies',
+          dose: 'One gummy',
+          why: 'Mid-afternoon for most women. The full 200mg of reishi is in a single gummy, so one is a real dose — chew it, no water needed.',
+        },
+        {
+          time: 'Evening, if you want it',
+          handle: 'reishi-relax-gummies',
+          dose: 'A second gummy',
+          why: 'An hour before you want to wind down. Two a day is the ceiling; most women find one is enough once CALM has settled the baseline.',
+        },
+      ],
+    },
+    finalCta: {
+      headline: 'Ready for calm that does not cost you the day?',
+      sub: 'Baseline and spikes — one ritual, two formulas.',
+    },
   },
   'the-gut-ritual': {
     accent: 'flora',
@@ -62,6 +108,58 @@ export const BUNDLE_CONTENT: Record<string, BundleContent> = {
       'FLORA seeds the gut with 40 billion CFU across four clinically studied strains, carried past stomach acid by MAKTREK Bi-Pass delivery and fed by prebiotic fibre. RELEASE adds a six-enzyme blend at a declared 2,500 HUT, so what you eat is actually broken down. Culture and digestion, handled together.',
     contains: ['probiotic-40-billion-with-prebiotics', 'digestive-enzyme-pro-blend'],
     badge: null,
+    synergy: {
+      headline: 'Fix the terrain. Handle the meal.',
+      body: 'Gut supplements almost always solve one half of the problem. A probiotic changes what lives in your gut over weeks. An enzyme changes what happens to dinner tonight. Buy one and you are still waiting on the other.',
+      points: [
+        {
+          title: 'Seed',
+          text: 'FLORA delivers 40 billion CFU across four named strains, carried past stomach acid by MAKTREK® Bi-Pass delivery. This is the part that takes weeks and lasts.*',
+        },
+        {
+          title: 'Feed',
+          text: 'Prebiotic fibre — 24mg of FOS plus a marine polysaccharide — arrives in the same capsule, because cultures that land with nothing to eat do not stay long.*',
+        },
+        {
+          title: 'Break down',
+          text: 'RELEASE handles the meal in front of you: 2,500 HUT of protease activity plus lipase, lactase and alpha-galactosidase, twenty minutes before you sit down.*',
+        },
+      ],
+    },
+    ritual: {
+      headline: 'Your Gut Ritual, hour by hour.',
+      note: 'Four small moments, none of which need a reminder after week one.',
+      slots: [
+        {
+          time: 'Morning',
+          handle: 'probiotic-40-billion-with-prebiotics',
+          dose: 'One capsule',
+          why: 'First thing. FLORA is two capsules a day and splitting them keeps a steady supply arriving rather than one crowd all at once.',
+        },
+        {
+          time: 'Before lunch',
+          handle: 'digestive-enzyme-pro-blend',
+          dose: 'One capsule',
+          why: '20–30 minutes ahead of the meal. Taken afterwards the enzymes arrive behind the food they were meant to meet.',
+        },
+        {
+          time: 'Before dinner',
+          handle: 'digestive-enzyme-pro-blend',
+          dose: 'One capsule',
+          why: 'Same again before your second large meal. This is the one you will notice most on a heavy evening.',
+        },
+        {
+          time: 'Evening',
+          handle: 'probiotic-40-billion-with-prebiotics',
+          dose: 'Second capsule',
+          why: 'The other half of the daily dose. Do not exceed two capsules of FLORA per day.',
+        },
+      ],
+    },
+    finalCta: {
+      headline: 'Ready to stop negotiating with your stomach?',
+      sub: 'Seed, feed and break down — one ritual, two formulas.',
+    },
   },
   'the-glow-ritual': {
     accent: 'glow',
@@ -136,124 +234,71 @@ export const BUNDLE_CONTENT: Record<string, BundleContent> = {
     },
   },
 
-  'the-calm-sleep-ritual': {
-    accent: 'calm',
-    // The "Most Popular" badge already says it — keep the eyebrow descriptive.
-    eyebrow: 'Two-formula ritual',
-    tagline: 'Stress down. Sleep deep.',
-    intro:
-      'Poor sleep raises cortisol, and raised cortisol wrecks sleep. It is a loop, and breaking it from one side rarely holds. CALM lowers the daytime stress load while SLEEP handles the night-time onset — the same twenty-four hours, addressed twice.',
-    contains: ['ashwagandha-plus', 'sleep-strips'],
-    badge: 'Most Popular',
-    synergy: {
-      headline: 'One loop, two interventions.',
-      body: 'Cortisol and sleep are the same system observed at different hours. Treating only the night is why most sleep aids stop working by week three.',
-      points: [
-        {
-          title: 'Days',
-          text: 'CALM supports a normal cortisol response with 600mg of KSM-66 plus seven supporting actives — so the stress does not accumulate into the evening.',
-        },
-        {
-          title: 'Nights',
-          text: 'SLEEP delivers five botanicals sublingually for roughly twenty-minute onset, with a low melatonin dose that clears before your alarm.',
-        },
-        {
-          title: 'Reinforce',
-          text: 'Lower daytime cortisol makes falling asleep easier; better sleep lowers tomorrow’s cortisol. Run both and the loop starts working for you.',
-        },
-      ],
-    },
-    ritual: {
-      headline: 'Your Calm & Sleep Ritual, hour by hour.',
-      note: 'One with breakfast, one at bedtime. Nothing to carry, nothing to time precisely.',
-      slots: [
-        {
-          time: 'Morning',
-          handle: 'ashwagandha-plus',
-          dose: 'Two capsules with a meal',
-          why: 'Food improves withanolide absorption. Taking both together delivers the full 600mg clinical serving in one go.',
-        },
-        {
-          time: '20–30 min before bed',
-          handle: 'sleep-strips',
-          dose: 'One oral strip',
-          why: 'Dissolves on the tongue, no water. Take it when you actually intend to sleep — not two hours earlier.',
-        },
-      ],
-    },
-    testimonials: [
-      {
-        stars: 5,
-        headline: 'Calm during the day. Out cold at night.',
-        body: 'I was sceptical about sleep strips but they work in about twenty minutes. Combined with CALM, my anxiety has dropped massively. Game changer.',
-        author: 'Emma R.',
-        location: 'Los Angeles, CA',
-      },
-      {
-        stars: 5,
-        headline: 'I stopped waking at 3am.',
-        body: 'The strips got me down and CALM seems to be what keeps me down. First uninterrupted stretch of sleep in about four years.',
-        author: 'Rebecca J.',
-        location: 'Atlanta, GA',
-      },
-      {
-        stars: 5,
-        headline: 'My husband bought his own.',
-        body: 'He watched me stop doom-scrolling at midnight and asked for a set. We are now a two-ritual household.',
-        author: 'Anaïs D.',
-        location: 'Houston, TX',
-      },
-    ],
-    finalCta: {
-      headline: 'Ready to break the loop?',
-      sub: 'Calmer days. Deeper nights. Both, from tonight.',
-    },
-  },
-
   'the-full-aurae-ritual': {
     accent: 'ritual',
     eyebrow: 'The complete ritual',
     tagline: 'Everything your glow needs.',
     intro:
-      'All five formulas, sequenced across one day: collagen and cellular energy in the morning, antioxidant protection at midday, cortisol support in the early evening, and sleep onset before bed. Five systems, zero overlap — this is the full Aurae protocol, and the only way to buy it at this price.',
+      'All eight formulas, sequenced across one day: gut and collagen first thing, cellular energy alongside them, enzymes and omega-3s with your meals, antioxidant protection at midday, something to take the edge off in the afternoon, and cortisol support with dinner. Eight systems, zero overlap — the full Aurae protocol, and the only way to buy it at this price.',
     contains: [
+      'probiotic-40-billion-with-prebiotics',
       'grass-fed-hydrolyzed-collagen-peptides',
       'nad',
+      'digestive-enzyme-pro-blend',
+      'omega-3-epa-180mg-dha-120mg',
       'resveratrol-50-600mg',
+      'reishi-relax-gummies',
       'ashwagandha-plus',
-      'sleep-strips',
     ],
     badge: 'Best Value',
     synergy: {
-      headline: 'Five formulas, five systems, no overlap.',
-      body: 'This is not five variations on one idea. Each formula owns a different mechanism, which is why they stack cleanly rather than competing for the same pathway.',
+      headline: 'Eight formulas, eight systems, no overlap.',
+      body: 'This is not eight variations on one idea. Each formula owns a different mechanism, which is why they stack cleanly rather than competing for the same pathway.',
       points: [
         {
+          title: 'Terrain',
+          text: 'FLORA seeds the gut with 40 billion CFU across four named strains, carried past stomach acid and fed by prebiotic fibre.*',
+        },
+        {
           title: 'Structure',
-          text: 'GLOW rebuilds the collagen matrix of skin, hair, nails and joints with Types 1 & 3 peptides.',
+          text: 'GLOW rebuilds the collagen matrix of skin, hair, nails and joints with Types 1 & 3 peptides.*',
         },
         {
           title: 'Energy & repair',
-          text: 'RENEWAL supplies NAD+ 500mg with quercetin and resveratrol for mitochondrial output and DNA repair.',
+          text: 'RENEWAL supplies NAD+ 500mg with quercetin and resveratrol for mitochondrial output and DNA repair.*',
+        },
+        {
+          title: 'Breakdown',
+          text: 'RELEASE brings 2,500 HUT of protease activity plus lipase, lactase and alpha-galactosidase, so your meals are actually broken down.*',
+        },
+        {
+          title: 'Membranes',
+          text: 'VITAL supplies EPA 180mg and DHA 120mg — the structural fats your brain, eyes and cardiovascular system are built from.*',
         },
         {
           title: 'Defence',
-          text: 'RADIANCE adds 600mg of 50% trans-resveratrol for antioxidant, vascular and cognitive support.',
+          text: 'RADIANCE adds 600mg of 50% trans-resveratrol for antioxidant, vascular and cognitive support.*',
+        },
+        {
+          title: 'Reset',
+          text: 'STILL is the in-the-moment one: reishi at 200mg with L-theanine, for the afternoons that tighten.*',
         },
         {
           title: 'Regulation',
-          text: 'CALM supports a normal cortisol response with KSM-66 plus seven supporting actives.',
-        },
-        {
-          title: 'Recovery',
-          text: 'SLEEP closes the day with five botanicals delivered sublingually for fast, clean onset.',
+          text: 'CALM supports a normal cortisol response with KSM-66 at 600mg plus seven supporting actives.*',
         },
       ],
     },
     ritual: {
       headline: 'The full ritual, hour by hour.',
-      note: 'Four touchpoints across the day. Most women have it automatic inside a week.',
+      note: 'It reads like a lot and it is roughly four minutes a day. Most women have it automatic inside a week.',
       slots: [
+        {
+          time: 'First thing',
+          handle: 'probiotic-40-billion-with-prebiotics',
+          dose: 'One capsule',
+          why: 'Before anything else. The second FLORA capsule goes in the evening — splitting them keeps a steady supply arriving.',
+        },
         {
           time: 'Morning',
           handle: 'grass-fed-hydrolyzed-collagen-peptides',
@@ -267,22 +312,34 @@ export const BUNDLE_CONTENT: Record<string, BundleContent> = {
           why: 'Alongside GLOW. Morning dosing matches the energy curve and avoids feeling activated at bedtime.',
         },
         {
+          time: 'Before lunch',
+          handle: 'digestive-enzyme-pro-blend',
+          dose: 'One capsule',
+          why: '20–30 minutes ahead of the meal, with the second capsule before dinner. Taken afterwards it arrives behind the food.',
+        },
+        {
           time: 'Midday',
-          handle: 'resveratrol-50-600mg',
-          dose: 'One capsule (of two daily)',
-          why: '20–30 minutes before lunch, with the second capsule before dinner.',
+          handle: 'ashwagandha-plus',
+          dose: 'Two capsules with a meal',
+          why: 'With lunch. Taking CALM in the middle of the day gets ahead of the stress rather than catching up with it.',
+        },
+        {
+          time: 'With lunch',
+          handle: 'omega-3-epa-180mg-dha-120mg',
+          dose: 'One softgel (of two daily)',
+          why: 'Omega-3s are fat-soluble, so food alongside them improves absorption — and it is what stops the aftertaste. Second softgel with dinner.',
+        },
+        {
+          time: 'When the day tightens',
+          handle: 'reishi-relax-gummies',
+          dose: 'One gummy',
+          why: 'Mid-afternoon for most women. The full 200mg of reishi is in a single gummy. Chew it, no water needed.',
         },
         {
           time: 'Early evening',
-          handle: 'ashwagandha-plus',
-          dose: 'Two capsules with a meal',
-          why: 'With dinner. Early-evening dosing suits women whose stress peaks late in the working day.',
-        },
-        {
-          time: '20–30 min before bed',
-          handle: 'sleep-strips',
-          dose: 'One oral strip',
-          why: 'On the tongue, no water. The last thing in the ritual, right before lights out.',
+          handle: 'resveratrol-50-600mg',
+          dose: 'One capsule (of two daily)',
+          why: '20–30 minutes before dinner, alongside your evening skincare — protecting from the inside while you treat the outside. The first capsule goes before lunch.',
         },
       ],
     },
@@ -311,7 +368,7 @@ export const BUNDLE_CONTENT: Record<string, BundleContent> = {
     ],
     finalCta: {
       headline: 'Ready for the whole ritual?',
-      sub: 'Five formulas. One day. Everything your glow needs.',
+      sub: 'Eight formulas. One day. Everything your glow needs.',
     },
   },
 };
