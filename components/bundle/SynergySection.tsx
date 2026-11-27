@@ -1,7 +1,12 @@
 import type { BundleContent } from '@/content/bundles';
 import Reveal from '@/components/ui/Reveal';
 
-type Props = { synergy: BundleContent['synergy'] };
+/**
+ * Non-nullable: `synergy` is optional on BundleContent, but the page only
+ * mounts this component once it has one. Narrowing at the call site does
+ * not reach the prop type, so it is stated here.
+ */
+type Props = { synergy: NonNullable<BundleContent['synergy']> };
 
 /** Why the products are better together than apart. */
 export default function SynergySection({ synergy }: Props) {

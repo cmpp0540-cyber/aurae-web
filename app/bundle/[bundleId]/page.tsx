@@ -68,16 +68,18 @@ export default async function BundlePage({ params }: Params) {
         currency={bundle.currency}
       />
 
-      {content ? (
-        <>
-          <SynergySection synergy={content.synergy} />
-          <RitualTimeline ritual={content.ritual} contents={contents} accent={content.accent} />
-          <ReviewsSection
-            testimonials={content.testimonials}
-            productTitle={bundle.title}
-            accent={content.accent}
-          />
-        </>
+      {/* Guarded one by one, not as a block: a bundle may have its identity
+          written up long before it has synergy copy or a single review. */}
+      {content?.synergy ? <SynergySection synergy={content.synergy} /> : null}
+      {content?.ritual ? (
+        <RitualTimeline ritual={content.ritual} contents={contents} accent={content.accent} />
+      ) : null}
+      {content?.testimonials?.length ? (
+        <ReviewsSection
+          testimonials={content.testimonials}
+          productTitle={bundle.title}
+          accent={content.accent}
+        />
       ) : null}
 
       <div className="bg-cream px-6 pb-10 pt-4">
@@ -87,8 +89,8 @@ export default async function BundlePage({ params }: Params) {
       <FinalCta
         product={bundle}
         label="Add Bundle to Cart"
-        headline={content?.finalCta.headline ?? `Ready for ${bundle.title}?`}
-        sub={content?.finalCta.sub ?? 'Free shipping. Cancel anytime.'}
+        headline={content?.finalCta?.headline ?? `Ready for ${bundle.title}?`}
+        sub={content?.finalCta?.sub ?? 'Free shipping. Cancel anytime.'}
       />
     </>
   );

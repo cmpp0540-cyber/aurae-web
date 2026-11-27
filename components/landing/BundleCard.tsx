@@ -23,7 +23,7 @@ export default function BundleCard({ bundle, index = 0 }: Props) {
       as="article"
       delay={index * 90}
       className={[
-        'relative flex flex-col overflow-hidden rounded-[18px] p-7 text-center transition-all duration-300 ease-aurae hover:-translate-y-1 sm:p-9',
+        'relative flex flex-col overflow-hidden rounded-[18px] p-6 text-center transition-all duration-300 ease-aurae hover:-translate-y-1 sm:p-7',
         isPremium
           ? 'bg-espresso text-ivory hover:shadow-[0_25px_60px_rgba(58,46,42,0.3)]'
           : isFeatured
@@ -40,7 +40,7 @@ export default function BundleCard({ bundle, index = 0 }: Props) {
       {saved ? (
         <span
           className={[
-            'mx-auto mb-5 inline-block rounded-2xl px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em]',
+            'mx-auto mb-4 inline-block rounded-2xl px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-[0.15em]',
             isFeatured ? 'mt-4 bg-coral text-cream' : isPremium ? 'bg-sun text-espresso' : 'bg-blush text-coral',
           ].join(' ')}
         >
@@ -49,7 +49,7 @@ export default function BundleCard({ bundle, index = 0 }: Props) {
       ) : null}
 
       {/* The bundle's single Shopify image */}
-      <Link href={href} className="group relative mx-auto block w-full max-w-[280px] overflow-hidden rounded-2xl">
+      <Link href={href} className="group relative mx-auto block w-full max-w-[200px] overflow-hidden rounded-2xl sm:max-w-[240px]">
         <span
           aria-hidden
           className={[
@@ -65,17 +65,17 @@ export default function BundleCard({ bundle, index = 0 }: Props) {
             width={image.width}
             height={image.height}
             quality={74}
-            sizes="(max-width: 768px) 80vw, 280px"
+            sizes="(max-width: 640px) 200px, 240px"
             className="relative"
             imgClassName="h-auto w-full object-cover transition-transform duration-700 ease-aurae group-hover:scale-[1.04]"
           />
         ) : null}
       </Link>
 
-      <Link href={href} className="mt-6 block">
+      <Link href={href} className="mt-5 block">
         <h3
           className={[
-            'font-display text-[21px] font-bold leading-tight transition-colors duration-300 sm:text-[22px]',
+            'font-display text-[19px] font-bold leading-tight transition-colors duration-300 sm:text-[20px]',
             isPremium ? 'text-ivory hover:text-sun' : 'hover:text-coral',
           ].join(' ')}
         >
@@ -90,7 +90,7 @@ export default function BundleCard({ bundle, index = 0 }: Props) {
       {content ? (
         <p
           className={[
-            'mt-3 font-display text-[14px] italic',
+            'mt-2.5 font-display text-[13.5px] italic',
             isPremium ? 'text-sun' : 'text-coral',
           ].join(' ')}
         >
@@ -98,7 +98,7 @@ export default function BundleCard({ bundle, index = 0 }: Props) {
         </p>
       ) : null}
 
-      <div className="mt-6">
+      <div className="mt-5">
         {bundle.compareAtPrice ? (
           <span
             className={[
@@ -111,7 +111,7 @@ export default function BundleCard({ bundle, index = 0 }: Props) {
         ) : null}
         <span
           className={[
-            'font-display text-[34px] font-bold',
+            'font-display text-[30px] font-bold',
             isPremium ? 'text-sun' : 'text-coral',
           ].join(' ')}
         >
@@ -122,7 +122,7 @@ export default function BundleCard({ bundle, index = 0 }: Props) {
       {saved ? (
         <p
           className={[
-            'mt-2 text-[11px] font-bold uppercase tracking-[0.15em]',
+            'mt-1.5 text-[11px] font-bold uppercase tracking-[0.15em]',
             isPremium ? 'text-sun' : 'text-coral',
           ].join(' ')}
         >
@@ -130,7 +130,7 @@ export default function BundleCard({ bundle, index = 0 }: Props) {
         </p>
       ) : null}
 
-      <div className="mt-6 space-y-3">
+      <div className="mt-5 space-y-2.5">
         <AddToCart
           product={bundle}
           label="Add Bundle to Cart"
@@ -150,7 +150,7 @@ export default function BundleCard({ bundle, index = 0 }: Props) {
 
       <p
         className={[
-          'mt-4 font-display text-[11px] italic',
+          'mt-3 font-display text-[11px] italic',
           isPremium ? 'text-sun/80' : 'text-espresso/50',
         ].join(' ')}
       >

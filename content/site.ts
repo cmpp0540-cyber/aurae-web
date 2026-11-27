@@ -122,10 +122,10 @@ export const HERO_PILLARS: (HeroPillar & { x: number; y: number })[] = [
   },
   { label: 'Cellular energy*', product: 'RENEWAL', handle: 'nad', x: 45, y: 44.5 },
   { label: 'Mental clarity*', product: 'CALM', handle: 'ashwagandha-plus', x: 52.5, y: 36 },
-  { label: 'Gut balance*', product: 'FLORA', handle: null, x: 63, y: 25.5 },
+  { label: 'Gut balance*', product: 'FLORA', handle: 'probiotic-40-billion-with-prebiotics', x: 63, y: 25.5 },
   { label: 'Longevity*', product: 'RADIANCE', handle: 'resveratrol-50-600mg', x: 70, y: 33.5 },
-  { label: 'Sharper focus*', product: 'VITAL', handle: null, x: 81.5, y: 13.5 },
-  { label: 'Easy digestion*', product: 'RELEASE', handle: null, x: 89, y: 4.5 },
+  { label: 'Sharper focus*', product: 'VITAL', handle: 'omega-3-epa-180mg-dha-120mg', x: 81.5, y: 13.5 },
+  { label: 'Easy digestion*', product: 'RELEASE', handle: 'digestive-enzyme-pro-blend', x: 89, y: 4.5 },
 ];
 
 /**
@@ -180,10 +180,10 @@ export const HERO_PILLARS_MOBILE: (HeroPillar & {
     left: 75,
     width: 17,
   },
-  { label: 'Gut balance*', product: 'FLORA', handle: null, row: 'bottom', x: 20.5, left: 13.5, width: 16 },
-  { label: 'Easy digestion*', product: 'RELEASE', handle: null, row: 'bottom', x: 41, left: 32, width: 17 },
-  { label: 'Sharper focus*', product: 'VITAL', handle: null, row: 'bottom', x: 61.5, left: 52.5, width: 17.5 },
-  { label: 'Relaxed focus*', product: 'STILL', handle: null, row: 'bottom', x: 81, left: 72, width: 18 },
+  { label: 'Gut balance*', product: 'FLORA', handle: 'probiotic-40-billion-with-prebiotics', row: 'bottom', x: 20.5, left: 13.5, width: 16 },
+  { label: 'Easy digestion*', product: 'RELEASE', handle: 'digestive-enzyme-pro-blend', row: 'bottom', x: 41, left: 32, width: 17 },
+  { label: 'Sharper focus*', product: 'VITAL', handle: 'omega-3-epa-180mg-dha-120mg', row: 'bottom', x: 61.5, left: 52.5, width: 17.5 },
+  { label: 'Relaxed focus*', product: 'STILL', handle: 'reishi-relax-gummies', row: 'bottom', x: 81, left: 72, width: 18 },
 ];
 
 /** Section intros for the landing page. */
@@ -574,6 +574,46 @@ export const PRODUCT_CARD: Record<
   string,
   { accent: AccentKey; shortName: string; benefits: string[] }
 > = {
+  'probiotic-40-billion-with-prebiotics': {
+    accent: 'flora',
+    shortName: 'Flora',
+    benefits: [
+      '40 billion CFU, four strains',
+      'MAKTREK delivery past stomach acid',
+      'Prebiotic fibre to feed the cultures',
+      'Gut balance & immunity support',
+    ],
+  },
+  'digestive-enzyme-pro-blend': {
+    accent: 'release',
+    shortName: 'Release',
+    benefits: [
+      'Six-enzyme Makzyme-Pro blend',
+      '2,500 HUT of declared activity',
+      'Breaks down protein, fat & carbs',
+      'Less heaviness after meals',
+    ],
+  },
+  'omega-3-epa-180mg-dha-120mg': {
+    accent: 'vital',
+    shortName: 'Vital',
+    benefits: [
+      'Wild-caught sardine & anchovy oil',
+      '180mg EPA + 120mg DHA declared',
+      'Stabilised with vitamin E',
+      'Heart, brain & joint support',
+    ],
+  },
+  'reishi-relax-gummies': {
+    accent: 'sleep',
+    shortName: 'Still',
+    benefits: [
+      'Reishi 200mg with L-theanine',
+      'Lemon balm & passion flower',
+      'Calm alertness, not sedation',
+      'Caffeine-free',
+    ],
+  },
   'grass-fed-hydrolyzed-collagen-peptides': {
     accent: 'glow',
     shortName: 'Glow',
@@ -592,16 +632,6 @@ export const PRODUCT_CARD: Record<
       'Boosts daily energy & vitality',
       'Sharper mental clarity',
       'Supports immune & nervous system',
-    ],
-  },
-  'sleep-strips': {
-    accent: 'sleep',
-    shortName: 'Sleep',
-    benefits: [
-      'Fall asleep in 20 minutes',
-      'Deeper, restorative rest',
-      'Wake up refreshed, no grogginess',
-      'Non-addictive, no water needed',
     ],
   },
   'resveratrol-50-600mg': {

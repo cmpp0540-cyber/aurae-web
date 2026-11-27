@@ -81,7 +81,7 @@ export default function BundleHero({ bundle, content }: Props) {
             </p>
           ) : null}
 
-          {content?.testimonials.length ? (
+          {content?.testimonials?.length ? (
             <div className="mt-5 flex items-center gap-3">
               <Stars />
               <span className="text-[12px] text-espresso/55">

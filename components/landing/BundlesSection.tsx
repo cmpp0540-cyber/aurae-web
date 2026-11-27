@@ -20,7 +20,12 @@ export default function BundlesSection({ bundles }: { bundles: AuraeProduct[] })
           subtitle={LANDING.bundles.subtitle}
         />
 
-        <div className="mx-auto mt-9 grid max-w-[1200px] grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
+        {/* Four across from `lg`: at three columns each card ran ~380px wide
+            while the product image inside is capped at 240, so the row was
+            mostly air — and a fourth bundle would have orphaned itself on a
+            second line. At four the card width matches its own image and
+            the section holds to one row. */}
+        <div className="mx-auto mt-9 grid max-w-[1200px] grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {bundles.map((bundle, index) => (
             <BundleCard key={bundle.id} bundle={bundle} index={index} />
           ))}

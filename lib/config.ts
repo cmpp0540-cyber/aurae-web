@@ -22,29 +22,55 @@ export const SUBSCRIBE_DISCOUNT = Number(
  * in Shopify shows up without a code change.
  */
 export const BUNDLE_HANDLES = [
-  'the-glow-ritual',
-  'the-calm-sleep-ritual',
+  'the-glow-ritual',   // GLOW + RADIANCE
+  'the-unwind-ritual', // CALM + STILL
+  'the-gut-ritual',    // FLORA + RELEASE
   'the-full-aurae-ritual',
 ] as const;
 
-/** Display order of the five hero products on the landing page. */
+/**
+ * Display order of the eight products in the landing-page carousel.
+ *
+ * GLOW leads because it is the flagship; the rest follow the day the
+ * "Your rituals" line sets out just above the carousel, morning to night.
+ * This list only ranks — a product missing from it still appears, sorted
+ * alphabetically after the ones listed, so a new Shopify product is never
+ * invisible, just last.
+ */
 export const PRODUCT_ORDER = [
-  'grass-fed-hydrolyzed-collagen-peptides', // GLOW
-  'ashwagandha-plus',                       // CALM
-  'sleep-strips',                           // SLEEP
-  'resveratrol-50-600mg',                   // RADIANCE
-  'nad',                                    // RENEWAL
+  'grass-fed-hydrolyzed-collagen-peptides', // GLOW     · radiant skin
+  'probiotic-40-billion-with-prebiotics',   // FLORA    · gut balance
+  'nad',                                    // RENEWAL  · cellular energy
+  'digestive-enzyme-pro-blend',             // RELEASE  · easy digestion
+  'omega-3-epa-180mg-dha-120mg',            // VITAL    · sharper focus
+  'ashwagandha-plus',                       // CALM     · mental clarity
+  'resveratrol-50-600mg',                   // RADIANCE · longevity
+  'reishi-relax-gummies',                   // STILL    · relaxed focus
 ] as const;
 
-/** Display order of the bundles (cheapest → full ritual). */
+/**
+ * Display order of the bundles (cheapest → full ritual).
+ *
+ * `the-calm-sleep-ritual` is gone: SLEEP was discontinued, and the Unwind
+ * Ritual (CALM + STILL) replaces it. The old product still sits in Shopify
+ * as a draft — delete or archive it there so it can never be published by
+ * accident, since classify.ts treats anything named "ritual" as a bundle.
+ */
 export const BUNDLE_ORDER = [
-  'the-glow-ritual',
-  'the-calm-sleep-ritual',
+  'the-gut-ritual',    // $50.83
+  'the-unwind-ritual', // $58.65
+  'the-glow-ritual',   // $59.33
   'the-full-aurae-ritual',
 ] as const;
 
-/** Which bundle card gets the "Most Popular" treatment. */
-export const FEATURED_BUNDLE_HANDLE = 'the-calm-sleep-ritual';
+/**
+ * Which bundle card gets the "Most Popular" treatment.
+ *
+ * It used to point at `the-calm-sleep-ritual`, a draft that never reaches
+ * the Storefront API, so the badge simply never rendered. The Glow Ritual
+ * carries it now: it pairs the two flagship products.
+ */
+export const FEATURED_BUNDLE_HANDLE = 'the-glow-ritual';
 
 /** Which bundle card gets the dark "Best value" treatment. */
 export const PREMIUM_BUNDLE_HANDLE = 'the-full-aurae-ritual';

@@ -8,7 +8,12 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import SmartImage from '@/components/ui/SmartImage';
 
 type Props = {
-  ritual: BundleContent['ritual'];
+  /**
+   * Non-nullable: `ritual` is optional on BundleContent, but the page only
+   * mounts this component once it has one. Narrowing at the call site does
+   * not reach the prop type, so it is stated here.
+   */
+  ritual: NonNullable<BundleContent['ritual']>;
   /** Resolved Shopify products, for names and thumbnails. */
   contents: AuraeProduct[];
   accent: BundleContent['accent'];

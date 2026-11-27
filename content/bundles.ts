@@ -29,13 +29,40 @@ export type BundleContent = {
   /** Shopify handles of the products inside, in ritual order. */
   contains: string[];
   badge: string | null;
-  synergy: { headline: string; body: string; points: SynergyPoint[] };
-  ritual: { headline: string; note: string; slots: RitualSlot[] };
-  testimonials: Testimonial[];
-  finalCta: { headline: string; sub: string };
+  /**
+   * Everything below is optional. A bundle can ship with just its identity
+   * — accent, eyebrow, tagline, intro, contains — and the page renders the
+   * hero and the contents list without the deeper sections. That matters:
+   * without an entry at all, BundleIncludes returns null and the page never
+   * says what is in the box.
+   *
+   * Testimonials stay empty until there are real ones to quote.
+   */
+  synergy?: { headline: string; body: string; points: SynergyPoint[] };
+  ritual?: { headline: string; note: string; slots: RitualSlot[] };
+  testimonials?: Testimonial[];
+  finalCta?: { headline: string; sub: string };
 };
 
 export const BUNDLE_CONTENT: Record<string, BundleContent> = {
+  'the-unwind-ritual': {
+    accent: 'calm',
+    eyebrow: 'Two-formula ritual',
+    tagline: 'Stress down. Head clear.',
+    intro:
+      'CALM brings KSM-66 ashwagandha at 600mg with eight supporting actives. STILL brings reishi with L-theanine, lemon balm and passion flower. One works on the stress response across the day, the other settles the mind without sedation — so you can wind down and still think straight.',
+    contains: ['ashwagandha-plus', 'reishi-relax-gummies'],
+    badge: null,
+  },
+  'the-gut-ritual': {
+    accent: 'flora',
+    eyebrow: 'Two-formula ritual',
+    tagline: 'Everything your gut asks for.',
+    intro:
+      'FLORA seeds the gut with 40 billion CFU across four clinically studied strains, carried past stomach acid by MAKTREK Bi-Pass delivery and fed by prebiotic fibre. RELEASE adds a six-enzyme blend at a declared 2,500 HUT, so what you eat is actually broken down. Culture and digestion, handled together.',
+    contains: ['probiotic-40-billion-with-prebiotics', 'digestive-enzyme-pro-blend'],
+    badge: null,
+  },
   'the-glow-ritual': {
     accent: 'glow',
     eyebrow: 'Two-formula ritual',
