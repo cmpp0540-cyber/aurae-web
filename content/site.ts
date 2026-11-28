@@ -9,7 +9,17 @@ import type { Faq, Testimonial } from './products';
 export const SITE = {
   name: 'Aurae',
   tagline: 'lit from within ✦',
-  announcement: 'Free shipping over $40',
+  /**
+   * The scrolling strip above the header. Every line has to be true and
+   * provable elsewhere on the site — these three are the shipping threshold,
+   * the guarantee under every Add to Cart, and the subscription discount.
+   * Keep them short: a long line reads as a blur at marquee speed.
+   */
+  announcements: [
+    'Free shipping over $40',
+    '30-day money-back guarantee',
+    'Subscribe & save 10%',
+  ],
   supportEmail: 'hello@auraevital.com',
   nav: [
     { label: 'Shop', href: '/#shop' },
@@ -19,8 +29,8 @@ export const SITE = {
   ],
   hero: {
     /** Rendered as two lines, with `titleItalic` set in italics. */
-    titleLead: 'Lit from',
-    titleItalic: 'within.',
+    titleLead: 'Beauty starts',
+    titleItalic: 'in the cell.',
     /**
      * The brand line, in the display serif, broken deliberately rather
      * than left to wrap where it lands: the claim on the first line, the

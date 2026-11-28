@@ -19,6 +19,9 @@ const config: Config = {
         'coral-soft': '#FFA9A3',
         sun: '#FFD66B',
         blush: '#FFE5D9',
+        // Cooler and pinker than blush, which is a peach. Used for the
+        // masthead, where blush would blend into the hero below it.
+        petal: '#FFD9E3',
         ivory: '#FFF8F0',
         espresso: '#3A2E2A',
         cream: '#FFFCF8',

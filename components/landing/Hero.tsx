@@ -133,12 +133,16 @@ function DesktopActions() {
   return (
     <div className="mt-8 hidden lg:block">
       <div className="flex flex-wrap items-center gap-5">
-        <Link href="#shop" className="btn-cream">
+        {/* Both CTAs are full pills. The secondary used to be an underlined
+            text link, which read as a footnote beside a filled button; as an
+            outlined pill of the same height it reads as the second of two
+            choices, which is what it is. */}
+        <Link href="#shop" className="btn-cream rounded-full">
           {SITE.hero.primaryCta}
         </Link>
         <Link
           href="#rituals"
-          className="btn u-hero-shadow border-b-2 px-0 py-4 transition-colors duration-300 hover:text-cream"
+          className="btn u-hero-shadow rounded-full border-2 px-9 py-[17px] transition-colors duration-300 hover:bg-cream hover:text-coral"
           style={{ color: INK, borderColor: INK }}
         >
           {SITE.hero.secondaryCta} →
@@ -182,18 +186,30 @@ export default function Hero() {
         Ink flips with the backdrop: espresso on the pale phone band, blush on
         the coral desktop photograph.
       */}
-      <div className="animate-fade-up bg-[image:var(--m-top)] px-6 pb-1 pt-9 text-center lg:absolute lg:left-[4%] lg:top-[7%] lg:z-10 lg:w-[40%] lg:bg-none lg:px-0 lg:pb-0 lg:pt-0 lg:text-left">
+      <div className="animate-fade-up bg-[image:var(--m-top)] px-6 pb-1 pt-9 text-left lg:absolute lg:left-[4%] lg:top-[7%] lg:z-10 lg:w-[40%] lg:bg-none lg:px-0 lg:pb-0 lg:pt-0">
         <h1
           className="font-display font-semibold leading-[1.08] tracking-[-0.01em] text-espresso lg:u-hero-shadow lg:text-[#FFE3EA]"
           style={{ fontSize: 'clamp(2.5rem, 4.6vw, 4.25rem)' }}
         >
-          {SITE.hero.titleLead}{' '}
+          {/* Hard break, not a natural wrap: the line has to split in the
+              same place at every width, because the colour change lands on
+              it. Left to wrap, a narrow column would put "in" on the first
+              line and the coral would start mid-phrase. */}
+          {SITE.hero.titleLead}
+          <br />
           <em className="italic text-coral lg:text-[#FFE3EA]">{SITE.hero.titleItalic}</em>
         </h1>
 
-        {/* The break is explicit, so there is no max-width here: a `ch`
-            cap would add a second, unwanted wrap on top of it. */}
-        <p className="mt-4 font-display text-[19px] italic leading-[1.45] text-espresso/80 lg:u-hero-shadow lg:text-[22px] lg:text-[#FFE3EA]/90">
+        {/* Set to match the reassurance row under the buttons — same size,
+            weight, case and tracking — so the hero reads as two instances of
+            one caption style rather than three competing treatments. The
+            colours match too: espresso/75 on the phone band, the pink INK on
+            the desktop photograph.
+
+            The only departure is leading. The reassurance row is a single
+            line, so it never needed any; this runs to three, and all-caps
+            with no descenders knits together without the extra air. */}
+        <p className="mt-4 text-[10px] font-semibold uppercase leading-[1.8] tracking-[0.12em] text-espresso/65 lg:u-hero-shadow lg:text-[#FFE3EA]/90">
           {SITE.hero.taglineLead}
           <br />
           {SITE.hero.taglineTail}
@@ -226,7 +242,7 @@ export default function Hero() {
               <PillarLabel
                 pillar={pillar}
                 className={[
-                  'u-hero-shadow block animate-float whitespace-nowrap font-display text-[13px] font-medium uppercase tracking-[0.18em] xl:text-[15px]',
+                  'u-hero-shadow block animate-float whitespace-nowrap text-[13px] font-light uppercase tracking-[0.14em] xl:text-[15px]',
                   pillar.handle
                     ? 'transition-all duration-300 ease-aurae hover:-translate-y-0.5 hover:text-cream'
                     : '',
@@ -322,7 +338,12 @@ export default function Hero() {
                     top ? 'flex-col' : 'flex-col-reverse',
                   ].join(' ')}
                 >
-                  <span className="block max-w-[68px] break-words text-center font-display text-[9px] font-medium uppercase leading-tight tracking-[0.06em] text-espresso/80">
+                  {/* Same face and weight as the desktop pillars and the hero
+                      tagline — Inter light, uppercase. Tracking is 0.10em
+                      rather than their 0.14em: these labels are boxed to
+                      68px and sit in columns about that wide, so the extra
+                      letter-space would push them into their neighbours. */}
+                  <span className="block max-w-[68px] break-words text-center text-[9px] font-light uppercase leading-tight tracking-[0.10em] text-espresso/80">
                     {pillar.label}
                   </span>
                   <span className="block h-2.5 w-px flex-shrink-0 bg-espresso/40" />
@@ -338,12 +359,12 @@ export default function Hero() {
         className="flex flex-col items-center gap-1 px-5 pb-12 pt-2 lg:hidden"
         style={{ backgroundImage: MOBILE_BOTTOM }}
       >
-        <Link href="#shop" className="btn-dark">
+        <Link href="#shop" className="btn-dark rounded-full">
           {SITE.hero.primaryCta}
         </Link>
         <Link
           href="#rituals"
-          className="btn border-b-2 border-espresso/70 px-0 py-4 text-espresso transition-colors duration-300 hover:text-ivory"
+          className="btn mt-2 rounded-full border-2 border-espresso px-9 py-[17px] text-espresso transition-colors duration-300 hover:bg-espresso hover:text-ivory"
         >
           {SITE.hero.secondaryCta} →
         </Link>

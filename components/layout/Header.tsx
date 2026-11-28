@@ -5,6 +5,25 @@ import { useEffect, useState } from 'react';
 import { SITE } from '@/content/site';
 import { useCart } from '@/components/cart/CartProvider';
 
+/**
+ * The sticky masthead.
+ *
+ * Petal pink (#FFD9E3), not cream and not espresso. Cream made the header and
+ * the hero read as one undifferentiated pale block; espresso stacked a second
+ * dark band under the black announcement strip. Pink separates from both, and
+ * the hard black strip directly above it is what keeps it from reading sweet.
+ *
+ * THE WORDMARK IS BLACK, NOT CORAL, and that is the one thing here worth not
+ * undoing. Coral on this pink is 2.05:1 — it fails the 3:1 minimum for large
+ * text, and the two colours are close enough in tone that the logo muddies
+ * into the background on a phone outdoors. Black is 17.1:1 and matches the
+ * strip above. Worth knowing: coral on the old cream header was already only
+ * 2.59:1, so this was never passing; the pink only made it visible.
+ *
+ * The nav sits in espresso rather than black, a step down in weight from the
+ * wordmark, which is the hierarchy you want. Hover goes to black, not coral,
+ * for the same contrast reason.
+ */
 export default function Header() {
   const { count, open, hydrated } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,15 +39,17 @@ export default function Header() {
   return (
     <header
       className={[
-        'sticky top-0 z-[120] bg-cream/95 backdrop-blur transition-shadow duration-300',
-        scrolled ? 'shadow-[0_1px_0_rgba(58,46,42,0.08),0_10px_30px_rgba(58,46,42,0.05)]' : 'border-b border-espresso/[0.08]',
+        'sticky top-0 z-[120] bg-petal/95 text-espresso backdrop-blur transition-shadow duration-300',
+        scrolled
+          ? 'shadow-[0_1px_0_rgba(58,46,42,0.10),0_10px_30px_rgba(58,46,42,0.07)]'
+          : 'border-b border-espresso/[0.10]',
       ].join(' ')}
     >
       <div className="shell flex items-center justify-between py-4 lg:py-5">
         <Link
           href="/"
           onClick={() => setMenuOpen(false)}
-          className="font-display text-[30px] font-bold leading-none tracking-[0.01em] text-coral lg:text-[34px]"
+          className="font-display text-[30px] font-bold leading-none tracking-[0.01em] text-black lg:text-[34px]"
         >
           aurae
         </Link>
@@ -39,7 +60,7 @@ export default function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-[13px] font-medium uppercase tracking-[0.15em] transition-colors duration-300 hover:text-coral"
+                  className="text-[13px] font-medium uppercase tracking-[0.15em] text-espresso/85 transition-colors duration-300 hover:text-black"
                 >
                   {item.label}
                 </Link>
@@ -53,7 +74,7 @@ export default function Header() {
             type="button"
             onClick={open}
             aria-label={`Open cart${count ? `, ${count} items` : ''}`}
-            className="relative grid h-10 w-10 place-items-center rounded-full transition-colors duration-300 hover:bg-blush"
+            className="relative grid h-10 w-10 place-items-center rounded-full text-espresso transition-colors duration-300 hover:bg-white/60"
           >
             <svg
               viewBox="0 0 24 24"
@@ -79,7 +100,7 @@ export default function Header() {
             onClick={() => setMenuOpen((current) => !current)}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
-            className="grid h-10 w-10 place-items-center rounded-full transition-colors duration-300 hover:bg-blush lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full transition-colors duration-300 hover:bg-white/60 lg:hidden"
           >
             <span className="relative block h-[11px] w-[19px]" aria-hidden>
               <span
@@ -102,7 +123,7 @@ export default function Header() {
       {/* Mobile nav */}
       <div
         className={[
-          'grid overflow-hidden border-espresso/[0.08] transition-all duration-300 ease-aurae lg:hidden',
+          'grid overflow-hidden border-espresso/[0.10] transition-all duration-300 ease-aurae lg:hidden',
           menuOpen ? 'grid-rows-[1fr] border-t' : 'grid-rows-[0fr]',
         ].join(' ')}
       >
@@ -113,7 +134,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block border-b border-espresso/[0.06] py-4 text-[13px] font-medium uppercase tracking-[0.15em] last:border-0"
+                  className="block border-b border-espresso/[0.08] py-4 text-[13px] font-medium uppercase tracking-[0.15em] text-espresso/85 last:border-0"
                 >
                   {item.label}
                 </Link>
