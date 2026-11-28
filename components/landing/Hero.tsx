@@ -150,10 +150,12 @@ function Reassurance({
  * Sentence case at reading size, the brand sans at its normal weight, in a
  * softened espresso — the shape of a hero subhead rather than a caption.
  *
- * NO HARD BREAK. The line is capped at 34ch and set with `text-balance`, so
- * the browser divides it into even lines instead of leaving one long and one
- * short. A manual break would fight both: it fixes the split at one width
- * and stops balance from working at every other.
+ * NO HARD BREAK, and no width cap on a phone: the line runs the full content
+ * width, so it measures exactly as wide as the primary button beneath it.
+ * `text-balance` then divides it into even lines instead of leaving one long
+ * and one short. A manual break would fight that — it fixes the split at one
+ * width and stops balance working at every other. The 38ch cap applies only
+ * from `lg`, where the copy floats in a column beside the photograph.
  *
  * Espresso on the phone band; pink with the hero shadow on the desktop
  * photograph, where a dark ink would lose the letters entirely.
@@ -162,8 +164,8 @@ function Tagline({ className = '' }: { className?: string }) {
   return (
     <p
       className={[
-        'mx-auto max-w-[34ch] text-balance text-[13px] font-semibold leading-[1.4] text-espresso/65',
-        'lg:mx-0 lg:u-hero-shadow lg:max-w-[38ch] lg:text-[14px] lg:text-[#FFE3EA]/90',
+        'text-balance text-[13px] font-semibold leading-[1.4] text-espresso/65',
+        'lg:u-hero-shadow lg:max-w-[38ch] lg:text-[14px] lg:text-[#FFE3EA]/90',
         className,
       ].join(' ')}
     >
