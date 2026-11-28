@@ -152,6 +152,11 @@ function Reassurance({
  *
  * NO HARD BREAK, and no width cap on a phone: the line runs the full content
  * width, so it measures exactly as wide as the primary button beneath it.
+ *
+ * 11px is chosen, not guessed: measured at this weight and width, the
+ * sentence sets in two lines at 11px on both a 360px and a 390px phone, and
+ * in three at 12px on the 360. Raise it and the line count changes with the
+ * handset. To make it bigger, shorten the sentence first.
  * `text-balance` then divides it into even lines instead of leaving one long
  * and one short. A manual break would fight that — it fixes the split at one
  * width and stops balance working at every other. The 38ch cap applies only
@@ -164,7 +169,7 @@ function Tagline({ className = '' }: { className?: string }) {
   return (
     <p
       className={[
-        'text-balance text-[13px] font-semibold leading-[1.4] text-espresso/65',
+        'text-balance text-[11px] font-semibold leading-[1.4] text-espresso/65',
         'lg:u-hero-shadow lg:max-w-[38ch] lg:text-[14px] lg:text-[#FFE3EA]/90',
         className,
       ].join(' ')}
