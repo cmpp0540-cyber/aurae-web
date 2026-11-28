@@ -8,7 +8,12 @@
      up over the hero photograph, where lighter serifs wash out.
      'Fraunces' is kept loaded as the previous face, for an easy revert. */
   --font-display: 'Playfair Display', 'Fraunces', Georgia, serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  /* Swap the body font brand-wide from here. Poppins is a geometric sans:
+     flat-cut terminals on the 't', single-storey 'a', circular 'o'. It is
+     wider and has a taller x-height than Inter, so the same px value reads
+     larger — retune sizes after a swap rather than assuming they carry.
+     'Inter' is kept in the stack as the previous face, for an easy revert. */
+  --font-body: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 @layer base {

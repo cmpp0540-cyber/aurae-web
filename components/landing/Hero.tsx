@@ -3,6 +3,7 @@ import { HERO_PILLARS, HERO_PILLARS_MOBILE, SITE } from '@/content/site';
 import type { HeroPillar } from '@/content/site';
 import { HERO_BLUR_DATA_URL, HERO_CORAL } from '@/lib/hero-blur';
 import SmartImage from '@/components/ui/SmartImage';
+import { TrustBadges } from '@/components/layout/TrustBar';
 
 /**
  * Desktop: the wide photograph, seven products on the brand coral.
@@ -96,9 +97,14 @@ const REASSURANCE_ICONS: Record<string, React.ReactNode> = {
  */
 function Reassurance({
   className = '',
+  /* The size lives on the <li>, not the <ul>, so a caller cannot shrink the
+     row by putting a text size in `className` — it would be overridden. This
+     prop is the way to change it. */
+  itemClassName = 'text-[11px]',
   style,
 }: {
   className?: string;
+  itemClassName?: string;
   style?: React.CSSProperties;
 }) {
   return (
@@ -106,7 +112,7 @@ function Reassurance({
       {SITE.hero.reassurance.map((item) => (
         <li
           key={item.text}
-          className="flex items-center gap-2 whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.12em]"
+          className={`flex items-center gap-1.5 whitespace-nowrap font-semibold uppercase tracking-[0.1em] ${itemClassName}`}
         >
           <svg
             width="15"
@@ -126,6 +132,43 @@ function Reassurance({
         </li>
       ))}
     </ul>
+  );
+}
+
+/**
+ * The hero's support line, rendered in two places.
+ *
+ * On a phone it sits BELOW the photograph, in the actions band, where it
+ * introduces the buttons rather than crowding the headline. From `lg` up it
+ * sits under the headline in the floating copy block, because there the
+ * photograph is beside the text, not above it.
+ *
+ * One component, two mountings, each hidden at the other's breakpoint — so
+ * the markup exists twice but only ever one is rendered, and the wording and
+ * styling can never drift apart.
+ *
+ * Sentence case at reading size, the brand sans at its normal weight, in a
+ * softened espresso — the shape of a hero subhead rather than a caption.
+ *
+ * NO HARD BREAK. The line is capped at 34ch and set with `text-balance`, so
+ * the browser divides it into even lines instead of leaving one long and one
+ * short. A manual break would fight both: it fixes the split at one width
+ * and stops balance from working at every other.
+ *
+ * Espresso on the phone band; pink with the hero shadow on the desktop
+ * photograph, where a dark ink would lose the letters entirely.
+ */
+function Tagline({ className = '' }: { className?: string }) {
+  return (
+    <p
+      className={[
+        'mx-auto max-w-[34ch] text-balance text-[13px] font-semibold leading-[1.4] text-espresso/65',
+        'lg:mx-0 lg:u-hero-shadow lg:max-w-[38ch] lg:text-[14px] lg:text-[#FFE3EA]/90',
+        className,
+      ].join(' ')}
+    >
+      {SITE.hero.taglineLead} {SITE.hero.taglineTail}
+    </p>
   );
 }
 
@@ -186,7 +229,7 @@ export default function Hero() {
         Ink flips with the backdrop: espresso on the pale phone band, blush on
         the coral desktop photograph.
       */}
-      <div className="animate-fade-up bg-[image:var(--m-top)] px-6 pb-1 pt-9 text-left lg:absolute lg:left-[4%] lg:top-[7%] lg:z-10 lg:w-[40%] lg:bg-none lg:px-0 lg:pb-0 lg:pt-0">
+      <div className="animate-fade-up bg-[image:var(--m-top)] px-6 pb-0 pt-4 text-center lg:absolute lg:left-[4%] lg:top-[7%] lg:z-10 lg:w-[40%] lg:bg-none lg:px-0 lg:pb-0 lg:pt-0 lg:text-left">
         <h1
           className="font-display font-semibold leading-[1.08] tracking-[-0.01em] text-espresso lg:u-hero-shadow lg:text-[#FFE3EA]"
           style={{ fontSize: 'clamp(2.5rem, 4.6vw, 4.25rem)' }}
@@ -200,20 +243,31 @@ export default function Hero() {
           <em className="italic text-coral lg:text-[#FFE3EA]">{SITE.hero.titleItalic}</em>
         </h1>
 
-        {/* Set to match the reassurance row under the buttons — same size,
-            weight, case and tracking — so the hero reads as two instances of
-            one caption style rather than three competing treatments. The
-            colours match too: espresso/75 on the phone band, the pink INK on
-            the desktop photograph.
+        <Tagline className="mt-4" />
 
-            The only departure is leading. The reassurance row is a single
-            line, so it never needed any; this runs to three, and all-caps
-            with no descenders knits together without the extra air. */}
-        <p className="mt-4 text-[10px] font-semibold uppercase leading-[1.8] tracking-[0.12em] text-espresso/65 lg:u-hero-shadow lg:text-[#FFE3EA]/90">
-          {SITE.hero.taglineLead}
-          <br />
-          {SITE.hero.taglineTail}
-        </p>
+        {/* Phone actions, above the photograph.
+
+            The whole call to action — buttons, reassurance, marks — now sits
+            between the copy and the picture, so a phone reads headline,
+            promise, button without scrolling past the bottles first. The
+            band below the photograph is gone with it; the copy band's own
+            paint carries the seam.
+
+            On desktop this is hidden and DesktopActions takes over, because
+            there the photograph is beside the text rather than under it. */}
+        <div className="flex flex-col items-center pb-0 pt-6 lg:hidden">
+          <Link href="#shop" className="btn-dark w-full rounded-full">
+            {SITE.hero.primaryCta}
+          </Link>
+          {/* One row, never two. Measured: at 10px with a 16px gap the two
+              claims come to exactly the width of a 360px phone, and 11px
+              overflows it. Do not raise the size or the tracking here
+              without re-measuring at 360. */}
+          <Reassurance
+            className="mt-5 flex-nowrap justify-center gap-x-4 text-espresso/75"
+            itemClassName="text-[10px]"
+          />
+        </div>
 
         <DesktopActions />
       </div>
@@ -354,22 +408,30 @@ export default function Hero() {
         </ul>
       </div>
 
-      {/* ── Phone actions, on the light end of the photograph ─────────── */}
-      <div
-        className="flex flex-col items-center gap-1 px-5 pb-12 pt-2 lg:hidden"
-        style={{ backgroundImage: MOBILE_BOTTOM }}
-      >
-        <Link href="#shop" className="btn-dark rounded-full">
-          {SITE.hero.primaryCta}
-        </Link>
+      {/* The secondary call to action, below the photograph on a phone.
+
+          Split from the primary on purpose: the filled button sits above the
+          picture where it catches the first look, and this one waits under
+          the bottles for whoever scrolled past it. On desktop DesktopActions
+          keeps the pair together, because there they share a line. */}
+      <div className="px-6 pb-10 pt-6 lg:hidden" style={{ backgroundImage: MOBILE_BOTTOM }}>
         <Link
           href="#rituals"
-          className="btn mt-2 rounded-full border-2 border-espresso px-9 py-[17px] text-espresso transition-colors duration-300 hover:bg-espresso hover:text-ivory"
+          className="btn w-full rounded-full border-2 border-espresso px-9 py-[17px] text-espresso transition-colors duration-300 hover:bg-espresso hover:text-ivory"
         >
           {SITE.hero.secondaryCta} →
         </Link>
 
-        <Reassurance className="mt-3 justify-center text-espresso/75" />
+        {/* The manufacturing marks close the hero. The yellow TrustBar strip
+            is desktop-only for this reason — both draw from the same BADGES
+            list in TrustBar.tsx.
+
+            One row, guaranteed. Measured from the badges' own intrinsic
+            sizes: at 40px tall with a 16px gap the four come to 291px, which
+            clears a 360px phone's 312px of content width; 44px does not.
+            `flex-nowrap` holds the row, so raising either number pushes a
+            badge off the screen rather than wrapping it. */}
+        <TrustBadges className="mt-8 flex-nowrap gap-x-4" imgClassName="h-10 w-auto opacity-80" />
       </div>
     </section>
   );
